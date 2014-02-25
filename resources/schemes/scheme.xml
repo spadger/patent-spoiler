@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-scheme publication-date="2013-09-03" scheme-type="cpc" publication-type="official"> 
+<classification-item breakdown-code="false" not-allocatable="true" level="2" additional-only="false" link-file="cpc-A.xml" sort-key="A" date-revised="2013-01-01"><classification-symbol>A</classification-symbol></classification-item> 
+<classification-item breakdown-code="false" not-allocatable="true" level="2" additional-only="false" link-file="cpc-B.xml" sort-key="B" date-revised="2013-01-01"><classification-symbol>B</classification-symbol></classification-item> 
+<classification-item breakdown-code="false" not-allocatable="true" level="2" additional-only="false" link-file="cpc-C.xml" sort-key="C" date-revised="2013-01-01"><classification-symbol>C</classification-symbol></classification-item> 
+<classification-item breakdown-code="false" not-allocatable="true" level="2" additional-only="false" link-file="cpc-D.xml" sort-key="D" date-revised="2013-01-01"><classification-symbol>D</classification-symbol></classification-item> 
+<classification-item breakdown-code="false" not-allocatable="true" level="2" additional-only="false" link-file="cpc-E.xml" sort-key="E" date-revised="2013-01-01"><classification-symbol>E</classification-symbol></classification-item> 
+<classification-item breakdown-code="false" not-allocatable="true" level="2" additional-only="false" link-file="cpc-F.xml" sort-key="F" date-revised="2013-01-01"><classification-symbol>F</classification-symbol></classification-item> 
+<classification-item breakdown-code="false" not-allocatable="true" level="2" additional-only="false" link-file="cpc-G.xml" sort-key="G" date-revised="2013-01-01"><classification-symbol>G</classification-symbol></classification-item> 
+<classification-item breakdown-code="false" not-allocatable="true" level="2" additional-only="false" link-file="cpc-H.xml" sort-key="H" date-revised="2013-01-01"><classification-symbol>H</classification-symbol></classification-item> 
+<classification-item breakdown-code="false" not-allocatable="true" level="2" additional-only="true" link-file="cpc-Y.xml" sort-key="Y" date-revised="2013-01-01"><classification-symbol>Y</classification-symbol></classification-item> </class-scheme>

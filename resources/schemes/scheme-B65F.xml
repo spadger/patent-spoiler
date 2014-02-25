@@ -1,0 +1,2935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-scheme publication-date="2013-09-03" scheme-type="cpc" publication-type="official">
+    <classification-item breakdown-code="false" not-allocatable="true" level="5"
+        additional-only="false" sort-key="B65F" date-revised="2013-01-01">
+        <classification-symbol>B65F</classification-symbol>
+        <class-title date-revised="2013-01-01">
+            <title-part>
+                <text scheme="ipc">GATHERING OR REMOVAL OF DOMESTIC OR LIKE REFUSE </text>
+                <reference><text scheme="ipc">disinfecting refuse
+                        <class-ref scheme="cpc">A61L</class-ref>; refuse disintegrators
+                        <class-ref scheme="cpc">B02C</class-ref>; sorting refuse
+                        <class-ref scheme="cpc">B03B</class-ref>;
+                        <class-ref scheme="cpc">B07B</class-ref>; handcarts for transporting refuse
+                        receptacles <class-ref scheme="cpc">B62B</class-ref>; sack holders
+                        <class-ref scheme="cpc">B65B67/00</class-ref>; converting refuse into
+                        fertilisers <class-ref scheme="cpc">C05F</class-ref>; converting refuse into
+                        solid fuels <class-ref scheme="cpc">C10L</class-ref>; sewers, cesspools
+                        <class-ref scheme="cpc">E03F</class-ref>; arrangements in buildings for the
+                        disposal of refuse <class-ref scheme="cpc">E04F17/10</class-ref>;
+                        refuse-consuming furnaces <class-ref scheme="cpc">F23G</class-ref>;
+                            </text><CPC-specific-text><text scheme="cpc"> for surgical articles
+                            <class-ref scheme="cpc">A61B19/0287</class-ref></text></CPC-specific-text></reference>
+            </title-part>
+        </class-title>
+        <classification-item breakdown-code="false" not-allocatable="false" level="6"
+            additional-only="false" sort-key="B65F1/00" date-revised="2013-01-01">
+            <classification-symbol>B65F1/00</classification-symbol>
+            <class-title date-revised="2013-01-01"/>
+            <classification-item breakdown-code="false" not-allocatable="false" level="7"
+                additional-only="false" sort-key="B65F1/00" date-revised="2013-01-01">
+                <classification-symbol>B65F1/00</classification-symbol>
+                <class-title date-revised="2013-01-01">
+                    <title-part>
+                        <text scheme="ipc">Refuse receptacles; </text>
+                        <CPC-specific-text><text scheme="cpc">Accessories
+                            therefor</text></CPC-specific-text>
+                        <reference><text scheme="ipc">containers not specially adapted for refuse,
+                                features of refuse receptacles of general interest
+                                <class-ref scheme="cpc">B65D</class-ref></text></reference>
+                    </title-part>
+                </class-title>
+                <classification-item breakdown-code="false" not-allocatable="false" level="8"
+                    additional-only="false" sort-key="B65F1/0006" date-revised="2013-01-01">
+                    <classification-symbol>B65F1/0006</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <CPC-specific-text><text scheme="cpc">Flexible refuse receptables, e.g.
+                                    bags, sacks</text></CPC-specific-text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/0013" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/0013</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc"> with means for fixing and
+                                        mounting of the receptacle to walls,
+                                    doors</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/002" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/002</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc"> with means for opening or
+                                        closing of the receptacle</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/0026" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/0026</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc"> with odor controlling
+                                        substances</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="false" not-allocatable="false" level="8"
+                    additional-only="false" sort-key="B65F1/0033" date-revised="2013-01-01">
+                    <classification-symbol>B65F1/0033</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <CPC-specific-text><text scheme="cpc">specially adapted for segregated
+                                    refuse collecting, e.g. receptacles with several compartments;
+                                    Combination of receptacles </text><reference><text scheme="cpc"
+                                        ><class-ref scheme="cpc">B65F1/0093</class-ref> takes
+                                        precedence</text></reference></CPC-specific-text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/004" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/004</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">the receptacles being divided
+                                        in compartments by partitions</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/0046"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/0046</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">the partitions being
+                                            movable, e.g. for varying the volume of the
+                                            compartments</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/0053" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/0053</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">Combination of several
+                                        receptacles</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/006"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/006</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">Rigid receptacles stored
+                                            in an enclosure or forming part of
+                                        it</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/0066"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/0066</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">Rigid receptacles fixed on
+                                            racks or posts</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/0073"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/0073</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">Flexible receptacles fixed
+                                            on a frame or in an enclosure </text><reference><text
+                                                scheme="cpc">sack holders <u> per se</u>
+                                                <class-ref scheme="cpc">B65B7/12</class-ref></text></reference></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="false" not-allocatable="false" level="8"
+                    additional-only="false" sort-key="B65F1/0093" date-revised="2013-01-01">
+                    <classification-symbol>B65F1/0093</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <CPC-specific-text><text scheme="cpc">specially adapted for collecting
+                                    refuse from arrangements in buildings</text></CPC-specific-text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="false" not-allocatable="false" level="8"
+                    additional-only="false" sort-key="B65F1/02" date-revised="2013-01-01">
+                    <classification-symbol>B65F1/02</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">without removable inserts</text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="false" not-allocatable="false" level="8"
+                    additional-only="false" sort-key="B65F1/04" date-revised="2013-01-01">
+                    <classification-symbol>B65F1/04</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">with removable inserts</text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/06" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/06</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">with flexible inserts, e.g. bags or sacks </text>
+                                <CPC-specific-text><reference><text scheme="cpc"
+                                            ><class-ref scheme="cpc">B65F1/0073</class-ref> takes
+                                            precedence</text></reference></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/062"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/062</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">having means for storing
+                                            or dispensing spare bags</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/065"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/065</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc"> with means aiding the
+                                            insertion of the flexible
+                                        insert</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/067"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/067</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">with a plurality of
+                                            flexible inserts</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/068"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/068</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc"> with means aiding the
+                                            removal of the flexible
+                                        insert</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/08" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/08</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">with rigid inserts</text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/085"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/085</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">with a plurality of rigid
+                                            inserts</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="false" not-allocatable="false" level="8"
+                    additional-only="false" sort-key="B65F1/10" date-revised="2013-01-01">
+                    <classification-symbol>B65F1/10</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">with refuse filling means, e.g. air-locks</text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/105" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/105</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">the filling means being
+                                        pneumatic, e.g. using suction</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="false" not-allocatable="false" level="8"
+                    additional-only="false" sort-key="B65F1/12" date-revised="2013-01-01">
+                    <classification-symbol>B65F1/12</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">with devices facilitating emptying</text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/122" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/122</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">Features allowing the
+                                        receptacle to be lifted and subsequently tipped by
+                                        associated means on a vehicle</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/125" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/125</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">Features allowing the
+                                        receptacle to be lifted and emptied by its
+                                    bottom</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/127" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/127</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">by
+                                    suction</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="false" not-allocatable="false" level="8"
+                    additional-only="false" sort-key="B65F1/14" date-revised="2013-01-01">
+                    <classification-symbol>B65F1/14</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Other constructional features; </text>
+                            <CPC-specific-text><text scheme="cpc"
+                                >Accessories</text></CPC-specific-text>
+                            <reference><text scheme="ipc">holders or carriers for hand articles
+                                    <class-ref scheme="cpc">A45F5/00</class-ref>; fastening devices
+                                    <class-ref scheme="cpc">E05C</class-ref></text></reference>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/1405" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/1405</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">Compressing means incorporated
+                                        in, or specially adapted for, refuse receptacles
+                                            </text><reference><text scheme="cpc">presses in general
+                                            <class-ref scheme="cpc">B30B</class-ref></text></reference></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/141" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/141</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">Supports, racks, stands, posts
+                                        or the like for holding refuse receptacles
+                                            </text><reference><text scheme="cpc"
+                                            ><class-ref scheme="cpc">B65F1/0066</class-ref> takes
+                                            precedence</text></reference></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/1415"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/1415</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">for flexible receptables,
+                                            e.g. bags, sacks</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/1421"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/1421</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">having means for operating
+                                            lids or covers </text><reference><text scheme="cpc"
+                                                >pedal or hand-lever operated
+                                                <class-ref scheme="cpc">B65D</class-ref></text></reference></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/1426" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/1426</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">Housings, cabinets or
+                                        enclosures for refuse receptacles </text><reference><text
+                                            scheme="cpc"
+                                            ><class-ref scheme="cpc">B65F1/006</class-ref>,
+                                            <class-ref scheme="cpc">B65F1/1452</class-ref> take
+                                            precedence</text></reference></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/1431"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/1431</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">having a waste disposal
+                                            chute integrally connected to a work top or the like,
+                                            the refuse receptacle remaining
+                                        static</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/1436"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/1436</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">having a waste receptacle
+                                            withdrawn upon opening of the
+                                        enclosure</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                            <classification-item breakdown-code="false" not-allocatable="false"
+                                level="11" additional-only="false" sort-key="B65F1/1442"
+                                date-revised="2013-01-01">
+                                <classification-symbol>B65F1/1442</classification-symbol>
+                                <class-title date-revised="2013-01-01">
+                                    <title-part>
+                                        <CPC-specific-text><text scheme="cpc">the receptacle being
+                                                rotated about a vertical
+                                            axis</text></CPC-specific-text>
+                                    </title-part>
+                                </class-title>
+                            </classification-item>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/1447"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/1447</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">located
+                                        underground</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/1452" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/1452</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">Lifting, hoisting, elevating
+                                        mechanisms or the like for refuse receptacles
+                                            </text><reference><text scheme="cpc">lifting in general
+                                            <class-ref scheme="cpc">B66</class-ref></text></reference></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/1457"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/1457</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">for refuse receptacles
+                                            located underground</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/1463" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/1463</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">Receptacles adapted to store
+                                        one or more piles of used stackable containers, e.g.
+                                        beverage cups</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/1468" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/1468</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">Means for facilitating the
+                                        transport of the receptacle, e.g. wheels, rolls
+                                            </text><reference><text scheme="cpc">hand-operated
+                                            refuse vehicles
+                                            <class-ref scheme="cpc">B65F3/005</class-ref></text></reference></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/1473"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/1473</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc"> Receptacles having
+                                            wheels</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/1478" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/1478</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">relating to noise reduction in
+                                        receptacles during collecting of refuse, e.g. of
+                                        glass</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/1484" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/1484</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">relating to the adaptation of
+                                        receptacles to carry identification
+                                    means</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F1/16" date-revised="2013-01-01">
+                        <classification-symbol>B65F1/16</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Lids or covers </text>
+                                <reference><CPC-specific-text><text scheme="cpc"
+                                            ><class-ref scheme="cpc">B65F1/1421</class-ref> takes
+                                            precedence</text></CPC-specific-text><text scheme="ipc"
+                                        >; pedal or hand-lever operated
+                                            </text><CPC-specific-text><text scheme="cpc">for
+                                            containers in general</text></CPC-specific-text><text
+                                        scheme="ipc">
+                                        <class-ref scheme="cpc">B65D</class-ref></text></reference>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/1607"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/1607</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">with filling
+                                            openings</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/1615"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/1615</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">with means for locking,
+                                            fastening or permanently closing
+                                        thereof</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/1623"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/1623</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">with means for assisting
+                                            the opening or closing thereof, e.g. springs
+                                                </text><reference><text scheme="cpc">spring-actuated
+                                                swinging wings
+                                                <class-ref scheme="cpc">E05F1/10</class-ref></text></reference></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                            <classification-item breakdown-code="false" not-allocatable="false"
+                                level="11" additional-only="false" sort-key="B65F1/163"
+                                date-revised="2013-01-01">
+                                <classification-symbol>B65F1/163</classification-symbol>
+                                <class-title date-revised="2013-01-01">
+                                    <title-part>
+                                        <CPC-specific-text><text scheme="cpc">Pedal-operated
+                                                lids</text></CPC-specific-text>
+                                    </title-part>
+                                </class-title>
+                            </classification-item>
+                            <classification-item breakdown-code="false" not-allocatable="false"
+                                level="11" additional-only="false" sort-key="B65F1/1638"
+                                date-revised="2013-01-01">
+                                <classification-symbol>B65F1/1638</classification-symbol>
+                                <class-title date-revised="2013-01-01">
+                                    <title-part>
+                                        <CPC-specific-text><text scheme="cpc">Electromechanically
+                                                operated lids</text></CPC-specific-text>
+                                    </title-part>
+                                </class-title>
+                            </classification-item>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F1/1646"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F1/1646</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">provided with means for
+                                            mounting on receptacles, e.g.
+                                        hinges</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                </classification-item>
+            </classification-item>
+            <classification-item breakdown-code="false" not-allocatable="false" level="7"
+                additional-only="false" sort-key="B65F3/00" date-revised="2013-01-01">
+                <classification-symbol>B65F3/00</classification-symbol>
+                <class-title date-revised="2013-01-01">
+                    <title-part>
+                        <text scheme="ipc">Vehicles particularly adapted for collecting refuse </text>
+                        <reference><text scheme="ipc">vehicles in general
+                                <class-ref scheme="cpc">B60</class-ref>; driving vehicle equipment
+                                or auxiliaries <class-ref scheme="cpc">B60K</class-ref>; discharging
+                                contents by tilting entire vehicles
+                                <class-ref scheme="cpc">B65G</class-ref>; wheeled apparatus for
+                                emptying sewers or cesspools
+                                <class-ref scheme="cpc">E03F7/10</class-ref></text></reference>
+                    </title-part>
+                </class-title>
+                <classification-item breakdown-code="false" not-allocatable="false" level="8"
+                    additional-only="false" sort-key="B65F3/001" date-revised="2013-01-01">
+                    <classification-symbol>B65F3/001</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <CPC-specific-text><text scheme="cpc">for segregated refuse collecting,
+                                    e.g. vehicles with several
+                                compartments</text></CPC-specific-text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="false" not-allocatable="false" level="8"
+                    additional-only="false" sort-key="B65F3/005" date-revised="2013-01-01">
+                    <classification-symbol>B65F3/005</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <CPC-specific-text><text scheme="cpc">Hand-operated refuse
+                                    vehicles</text></CPC-specific-text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="false" not-allocatable="false" level="8"
+                    additional-only="false" sort-key="B65F3/02" date-revised="2013-01-01">
+                    <classification-symbol>B65F3/02</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">with means for discharging refuse receptacles
+                                thereinto </text>
+                            <reference><text scheme="ipc">conveyer construction
+                                    <class-ref scheme="cpc">B65G</class-ref>; Loaders separate from
+                                    vehicles <class-ref scheme="cpc">B66F</class-ref>; fluid power
+                                    control systems in general
+                                    <class-ref scheme="cpc">F15B</class-ref></text></reference>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F3/0203" date-revised="2013-01-01">
+                        <classification-symbol>B65F3/0203</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">with crane-like
+                                        mechanisms</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F3/0206" date-revised="2013-01-01">
+                        <classification-symbol>B65F3/0206</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">while the receptacles remain
+                                        in place or are still attached to their supporting
+                                        means</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F3/0209"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F3/0209</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">using
+                                        suction</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F3/0213" date-revised="2013-01-01">
+                        <classification-symbol>B65F3/0213</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">Means for facilitating the
+                                        separation of discharging means from collecting
+                                        vehicles</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F3/04" date-revised="2013-01-01">
+                        <classification-symbol>B65F3/04</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Linkages, pivoted arms, or pivoted carriers for
+                                    raising and subsequently tipping receptacles</text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F3/041"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F3/041</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">Pivoted arms or pivoted
+                                            carriers</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                            <classification-item breakdown-code="false" not-allocatable="false"
+                                level="11" additional-only="false" sort-key="B65F3/043"
+                                date-revised="2013-01-01">
+                                <classification-symbol>B65F3/043</classification-symbol>
+                                <class-title date-revised="2013-01-01">
+                                    <title-part>
+                                        <CPC-specific-text><text scheme="cpc">with additional means
+                                                for keeping the receptacle substantially vertical
+                                                during raising</text></CPC-specific-text>
+                                    </title-part>
+                                </class-title>
+                                <classification-item breakdown-code="false" not-allocatable="false"
+                                    level="12" additional-only="false" sort-key="B65F3/045"
+                                    date-revised="2013-01-01">
+                                    <classification-symbol>B65F3/045</classification-symbol>
+                                    <class-title date-revised="2013-01-01">
+                                        <title-part>
+                                            <CPC-specific-text><text scheme="cpc">Four-bar
+                                                  linkages</text></CPC-specific-text>
+                                        </title-part>
+                                    </class-title>
+                                </classification-item>
+                            </classification-item>
+                            <classification-item breakdown-code="false" not-allocatable="false"
+                                level="11" additional-only="false" sort-key="B65F3/046"
+                                date-revised="2013-01-01">
+                                <classification-symbol>B65F3/046</classification-symbol>
+                                <class-title date-revised="2013-01-01">
+                                    <title-part>
+                                        <CPC-specific-text><text scheme="cpc">with additional means
+                                                for assisting the tipping of the receptacle after or
+                                                during raising</text></CPC-specific-text>
+                                    </title-part>
+                                </class-title>
+                            </classification-item>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F3/048"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F3/048</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">Linkages
+                                                </text><reference><text scheme="cpc"
+                                                ><class-ref scheme="cpc">B65F3/041</class-ref> takes
+                                                precedence</text></reference></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F3/06"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F3/06</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Arrangement and disposition of fluid
+                                        actuators</text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F3/08" date-revised="2013-01-01">
+                        <classification-symbol>B65F3/08</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Platform elevators or hoists with guides or
+                                    runways for raising or tipping receptacles </text>
+                                <CPC-specific-text><reference><text scheme="cpc">pivotable guides or
+                                            runways
+                                            <class-ref scheme="cpc">B65F3/041</class-ref></text></reference></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F3/10"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F3/10</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Arrangement and disposition of fluid
+                                        actuators</text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F3/12" date-revised="2013-01-01">
+                        <classification-symbol>B65F3/12</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Conjoint motion of lids, flaps, and shutters on
+                                    vehicle and on receptacle</text>
+                            </title-part>
+                            <title-part>
+                                <text scheme="ipc"> Operation of closures on vehicle conjointly with
+                                    tipping of receptacle</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="false" not-allocatable="false" level="8"
+                    additional-only="false" sort-key="B65F3/14" date-revised="2013-01-01">
+                    <classification-symbol>B65F3/14</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">with devices for charging, distributing or
+                                compressing refuse in the interior of the tank of a refuse vehicle </text>
+                            <reference><text scheme="ipc"
+                                    ><class-ref scheme="cpc">B65F3/02</class-ref> takes
+                                    precedence</text></reference>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F3/143" date-revised="2013-01-01">
+                        <classification-symbol>B65F3/143</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <CPC-specific-text><text scheme="cpc">Means facilitating the
+                                        separation of the charging, distributing or compressing
+                                        devices from the tank of refuse
+                                    vehicles</text></CPC-specific-text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F3/16" date-revised="2013-01-01">
+                        <classification-symbol>B65F3/16</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">with conveyer wheels </text>
+                                <reference><text scheme="ipc">with screw conveyers
+                                        <class-ref scheme="cpc">B65F3/22</class-ref></text></reference>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F3/18" date-revised="2013-01-01">
+                        <classification-symbol>B65F3/18</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">with endless conveyers, e.g. elevators</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F3/20" date-revised="2013-01-01">
+                        <classification-symbol>B65F3/20</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">with charging pistons, plates, or the like </text>
+                                <reference><text scheme="ipc">for discharging
+                                        <class-ref scheme="cpc">B65F3/28</class-ref></text></reference>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F3/201"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F3/201</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">the charging pistons,
+                                            plates or the like moving
+                                        rectilinearly</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F3/202"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F3/202</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">with radially shiftable
+                                            charging plates or the like mounted on a rotary
+                                            drum</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F3/203"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F3/203</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">with charging teeth,
+                                            cutters or the like mounted on an axle or a drum
+                                            <class-ref scheme="cpc">B65F3/202</class-ref>,
+                                            <class-ref scheme="cpc">B65F3/205</class-ref>,
+                                            <class-ref scheme="cpc">B65F3/206</class-ref> take
+                                            precedence</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F3/205"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F3/205</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">with two or more movable
+                                            and co-operating plates or the like for charging refuse
+                                            from the loading hopper to the interior of a refuse
+                                            vehicle</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F3/206"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F3/206</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">with charging plates or
+                                            the like rotating around a vertical
+                                        axis</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F3/207"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F3/207</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">guided by tracks,
+                                            channels, slots or the like provided on the
+                                            vehicle</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F3/208"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F3/208</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">the charging pistons,
+                                            plates or the like oscillating about a horizontal
+                                            axis</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F3/22" date-revised="2013-01-01">
+                        <classification-symbol>B65F3/22</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">with screw conveyers, rotary tanks</text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="false" not-allocatable="false"
+                            level="10" additional-only="false" sort-key="B65F3/225"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F3/225</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <CPC-specific-text><text scheme="cpc">Tanks rotating about a
+                                            transversal axis for compressing the garbage by
+                                            gravity</text></CPC-specific-text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="false" not-allocatable="false" level="8"
+                    additional-only="false" sort-key="B65F3/24" date-revised="2013-01-01">
+                    <classification-symbol>B65F3/24</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">with devices for unloading the tank of a refuse
+                                vehicle</text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F3/26" date-revised="2013-01-01">
+                        <classification-symbol>B65F3/26</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">by tipping the tank</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="false" not-allocatable="false" level="9"
+                        additional-only="false" sort-key="B65F3/28" date-revised="2013-01-01">
+                        <classification-symbol>B65F3/28</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">by a lengthwise movement of a wall, e.g. a plate,
+                                    a piston, or the like </text>
+                                <reference><text scheme="ipc">for charging
+                                        <class-ref scheme="cpc">B65F3/20</class-ref></text></reference>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+            </classification-item>
+            <classification-item breakdown-code="false" not-allocatable="false" level="7"
+                additional-only="false" sort-key="B65F5/00" date-revised="2013-01-01">
+                <classification-symbol>B65F5/00</classification-symbol>
+                <class-title date-revised="2013-01-01">
+                    <title-part>
+                        <text scheme="ipc">Gathering or removal of refuse otherwise than by
+                            receptacles or vehicles </text>
+                        <reference><text scheme="ipc">storage silos, charging and discharging
+                                thereof <class-ref scheme="cpc">B65G</class-ref></text></reference>
+                    </title-part>
+                </class-title>
+                <classification-item breakdown-code="false" not-allocatable="false" level="8"
+                    additional-only="false" sort-key="B65F5/005" date-revised="2013-01-01">
+                    <classification-symbol>B65F5/005</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <CPC-specific-text><text scheme="cpc">by pneumatic means, e.g. by
+                                    suction </text><reference><text scheme="cpc">conveying materials
+                                        in bulk pneumatically in general
+                                        <class-ref scheme="cpc">B65G53/04</class-ref></text></reference></CPC-specific-text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+            </classification-item>
+            <classification-item breakdown-code="false" not-allocatable="false" level="7"
+                additional-only="false" sort-key="B65F7/00" date-revised="2013-01-01">
+                <classification-symbol>B65F7/00</classification-symbol>
+                <class-title date-revised="2013-01-01">
+                    <title-part>
+                        <text scheme="ipc">Cleaning or disinfecting devices combined with refuse
+                            receptacles or refuse vehicles </text>
+                        <reference><text scheme="ipc">such devices per se
+                                <class-ref scheme="cpc">A61L</class-ref>,
+                                <class-ref scheme="cpc">B08B</class-ref></text></reference>
+                    </title-part>
+                </class-title>
+                <classification-item breakdown-code="false" not-allocatable="false" level="8"
+                    additional-only="false" sort-key="B65F7/005" date-revised="2013-01-01">
+                    <classification-symbol>B65F7/005</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <CPC-specific-text><text scheme="cpc">Devices, mounted on refuse
+                                    collecting vehicles, for cleaning or disinfecting refuse
+                                    receptacles</text></CPC-specific-text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+            </classification-item>
+            <classification-item breakdown-code="false" not-allocatable="false" level="7"
+                additional-only="false" sort-key="B65F9/00" date-revised="2013-01-01">
+                <classification-symbol>B65F9/00</classification-symbol>
+                <class-title date-revised="2013-01-01">
+                    <title-part>
+                        <text scheme="ipc">Transferring of refuse between vehicles or containers
+                            with intermediate storage or pressing </text>
+                        <reference><text scheme="ipc">presses for baling per se
+                                <class-ref scheme="cpc">B30B9/30</class-ref></text></reference>
+                    </title-part>
+                </class-title>
+            </classification-item>
+        </classification-item>
+        <classification-item breakdown-code="false" not-allocatable="true" level="6"
+            additional-only="true" sort-key="B65F2001/00" date-revised="2013-01-01">
+            <classification-symbol>B65F2001/00</classification-symbol>
+            <classification-item breakdown-code="false" not-allocatable="true" level="7"
+                additional-only="true" sort-key="B65F1/00" date-revised="2013-01-01">
+                <classification-symbol>B65F2001/00</classification-symbol>
+                <class-title date-revised="2013-01-01">
+                    <title-part>
+                        <text scheme="ipc">Refuse receptacles; </text>
+                        <CPC-specific-text><text scheme="cpc">Accessories
+                            therefor</text></CPC-specific-text>
+                        <reference><text scheme="ipc">containers not specially adapted for refuse,
+                                features of refuse receptacles of general interest
+                                <class-ref scheme="cpc">B65D</class-ref></text></reference>
+                    </title-part>
+                </class-title>
+                <classification-item breakdown-code="false" not-allocatable="true" level="8"
+                    additional-only="true" sort-key="B65F1/0033" date-revised="2013-01-01">
+                    <classification-symbol>B65F2001/0033</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <CPC-specific-text><text scheme="cpc">specially adapted for segregated
+                                    refuse collecting, e.g. receptacles with several compartments;
+                                    Combination of receptacles </text><reference><text scheme="cpc"
+                                        ><class-ref scheme="cpc">B65F1/0093</class-ref> takes
+                                        precedence</text></reference></CPC-specific-text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F1/008" date-revised="2013-01-01">
+                        <classification-symbol>B65F2001/008</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Means for automatically selecting the receptacle
+                                    in which refuse should be placed </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F1/0086" date-revised="2013-01-01">
+                        <classification-symbol>B65F2001/0086</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Means for holding receptacles together </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="false" not-allocatable="true" level="8"
+                    additional-only="true" sort-key="B65F1/04" date-revised="2013-01-01">
+                    <classification-symbol>B65F2001/04</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">with removable inserts</text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F1/061" date-revised="2013-01-01">
+                        <classification-symbol>B65F2001/061</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">the flexible inserts being used shopping bags
+                                </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F1/064" date-revised="2013-01-01">
+                        <classification-symbol>B65F2001/064</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">having a plurality of flexible inserts, e.g. on a
+                                    roll </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="false" not-allocatable="true" level="8"
+                    additional-only="true" sort-key="B65F1/14" date-revised="2013-01-01">
+                    <classification-symbol>B65F2001/14</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Other constructional features; </text>
+                            <CPC-specific-text><text scheme="cpc"
+                                >Accessories</text></CPC-specific-text>
+                            <reference><text scheme="ipc">holders or carriers for hand articles
+                                    <class-ref scheme="cpc">A45F5/00</class-ref>; fastening devices
+                                    <class-ref scheme="cpc">E05C</class-ref></text></reference>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F1/1489" date-revised="2013-01-01">
+                        <classification-symbol>B65F2001/1489</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Refuse receptacles adapted or modified for
+                                    gathering compostable domestic refuse </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F1/1494" date-revised="2013-01-01">
+                        <classification-symbol>B65F2001/1494</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Refuse receptacles comprising means for
+                                    preventing or extinguishing fire </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F1/1653" date-revised="2013-01-01">
+                        <classification-symbol>B65F2001/1653</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Constructional features of lids or covers </text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F1/1661"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2001/1661</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">relating to noise reduction, e.g. during
+                                        opening or closing </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F1/1669"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2001/1669</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">relating to means for fixing or latching the
+                                        lid or cover in a certain angle </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F1/1676"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2001/1676</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">relating to means for sealing the lid or
+                                        cover, e.g. against escaping odors </text>
+                                </title-part>
+                            </class-title>
+                            <classification-item breakdown-code="true" not-allocatable="false"
+                                level="11" additional-only="true" sort-key="B65F1/1684"
+                                date-revised="2013-01-01">
+                                <classification-symbol>B65F2001/1684</classification-symbol>
+                                <class-title date-revised="2013-01-01">
+                                    <title-part>
+                                        <text scheme="ipc">Water slot seals </text>
+                                    </title-part>
+                                </class-title>
+                            </classification-item>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F1/1692"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2001/1692</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">relating to safety means, e.g. for children
+                                        trapped inside the refuse receptacle </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                </classification-item>
+            </classification-item>
+            <classification-item breakdown-code="false" not-allocatable="true" level="7"
+                additional-only="true" sort-key="B65F3/00" date-revised="2013-01-01">
+                <classification-symbol>B65F2003/00</classification-symbol>
+                <class-title date-revised="2013-01-01">
+                    <title-part>
+                        <text scheme="ipc">Vehicles particularly adapted for collecting refuse </text>
+                        <reference><text scheme="ipc">vehicles in general
+                                <class-ref scheme="cpc">B60</class-ref>; driving vehicle equipment
+                                or auxiliaries <class-ref scheme="cpc">B60K</class-ref>; discharging
+                                contents by tilting entire vehicles
+                                <class-ref scheme="cpc">B65G</class-ref>; wheeled apparatus for
+                                emptying sewers or cesspools
+                                <class-ref scheme="cpc">E03F7/10</class-ref></text></reference>
+                    </title-part>
+                </class-title>
+                <classification-item breakdown-code="false" not-allocatable="true" level="8"
+                    additional-only="true" sort-key="B65F3/001" date-revised="2013-01-01">
+                    <classification-symbol>B65F2003/001</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <CPC-specific-text><text scheme="cpc">for segregated refuse collecting,
+                                    e.g. vehicles with several
+                                compartments</text></CPC-specific-text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F3/003" date-revised="2013-01-01">
+                        <classification-symbol>B65F2003/003</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Footboards </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F3/006" date-revised="2013-01-01">
+                    <classification-symbol>B65F2003/006</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Constructional features relating to the tank of the
+                                refuse vehicle </text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F3/008" date-revised="2013-01-01">
+                        <classification-symbol>B65F2003/008</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">interchangeable </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="false" not-allocatable="true" level="8"
+                    additional-only="true" sort-key="B65F3/02" date-revised="2013-01-01">
+                    <classification-symbol>B65F2003/02</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">with means for discharging refuse receptacles
+                                thereinto </text>
+                            <reference><text scheme="ipc">conveyer construction
+                                    <class-ref scheme="cpc">B65G</class-ref>; Loaders separate from
+                                    vehicles <class-ref scheme="cpc">B66F</class-ref>; fluid power
+                                    control systems in general
+                                    <class-ref scheme="cpc">F15B</class-ref></text></reference>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F3/0216" date-revised="2013-01-01">
+                        <classification-symbol>B65F2003/0216</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">the discharging means comprising a device for
+                                    determining the volume of the content of refuse receptacles
+                                </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F3/022" date-revised="2013-01-01">
+                        <classification-symbol>B65F2003/022</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">the discharging means comprising a device for
+                                    determining the weight of the content of refuse receptacles
+                                </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F3/0223" date-revised="2013-01-01">
+                        <classification-symbol>B65F2003/0223</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">the discharging means comprising elements for
+                                    holding the receptacle</text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/0226"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/0226</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">having means for adapting to different sized
+                                        receptacles </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/023"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/023</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Gripper arms for embracing the
+                                        receptacle</text>
+                                </title-part>
+                            </class-title>
+                            <classification-item breakdown-code="true" not-allocatable="false"
+                                level="11" additional-only="true" sort-key="B65F3/0233"
+                                date-revised="2013-01-01">
+                                <classification-symbol>B65F2003/0233</classification-symbol>
+                                <class-title date-revised="2013-01-01">
+                                    <title-part>
+                                        <text scheme="ipc">for embracing two or more
+                                            receptacles</text>
+                                    </title-part>
+                                </class-title>
+                            </classification-item>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/0236"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/0236</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Suction or vacuum heads</text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/024"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/024</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Means for locking the rim </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/0243"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/0243</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Means for locking the side, e.g. via spigots
+                                        or trunnion pins </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/0246"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/0246</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Means for locking the front, e.g. via a
+                                        handle </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F3/025" date-revised="2013-01-01">
+                        <classification-symbol>B65F2003/025</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Constructional features relating to actuating
+                                    means for lifting or tipping containers</text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/0253"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/0253</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Means for synchronising or coupling two or
+                                        more discharging devices, e.g.for allowing the discharge of
+                                        one large container or the simultaneous discharge of two or
+                                        more containers</text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/0256"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/0256</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Means for vibrating or shaking the containers
+                                        for facilitating emptying</text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/0259"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/0259</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Means for automatically varying the speed of
+                                        operation</text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F3/0263" date-revised="2013-01-01">
+                        <classification-symbol>B65F2003/0263</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Constructional features relating to discharging
+                                    means </text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/0266"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/0266</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">comprising at least one telescopic arm
+                                    </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/0269"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/0269</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">capable of moving along the side of the
+                                        vehicle </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/0273"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/0273</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">capable of rotating around a vertical axis
+                                    </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/0276"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/0276</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">capable of moving towards or away from the
+                                        vehicle </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/0279"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/0279</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">the discharging means mounted at the front of
+                                        the vehicle </text>
+                                </title-part>
+                            </class-title>
+                            <classification-item breakdown-code="true" not-allocatable="false"
+                                level="11" additional-only="true" sort-key="B65F3/0283"
+                                date-revised="2013-01-01">
+                                <classification-symbol>B65F2003/0283</classification-symbol>
+                                <class-title date-revised="2013-01-01">
+                                    <title-part>
+                                        <text scheme="ipc">between the cab and the collection
+                                            compartment </text>
+                                    </title-part>
+                                </class-title>
+                            </classification-item>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F3/0286" date-revised="2013-01-01">
+                        <classification-symbol>B65F2003/0286</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Means mounted on the vehicle for opening the lid
+                                    or cover of the receptacle </text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/0289"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/0289</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">the opening means being mounted on the
+                                        discharging means </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F3/0293" date-revised="2013-01-01">
+                        <classification-symbol>B65F2003/0293</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Means mounted on the vehicle for supporting the
+                                    refuse receptacle in the tipping position </text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="true" not-allocatable="false"
+                            level="10" additional-only="true" sort-key="B65F3/0296"
+                            date-revised="2013-01-01">
+                            <classification-symbol>B65F2003/0296</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">the supporting means mounted on the
+                                        discharging means</text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="false" not-allocatable="true" level="8"
+                    additional-only="true" sort-key="B65F3/14" date-revised="2013-01-01">
+                    <classification-symbol>B65F2003/14</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">with devices for charging, distributing or
+                                compressing refuse in the interior of the tank of a refuse vehicle </text>
+                            <reference><text scheme="ipc"
+                                    ><class-ref scheme="cpc">B65F3/02</class-ref> takes
+                                    precedence</text></reference>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F3/146" date-revised="2013-01-01">
+                        <classification-symbol>B65F2003/146</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Sensors, e.g. pressure sensors </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+            </classification-item>
+        </classification-item>
+        <classification-item breakdown-code="false" not-allocatable="true" level="6"
+            additional-only="true" sort-key="B65F2210/00" date-revised="2013-01-01">
+            <classification-symbol>B65F2210/00</classification-symbol>
+            <classification-item breakdown-code="true" not-allocatable="false" level="7"
+                additional-only="true" sort-key="B65F210/00" date-revised="2013-09-03">
+                <classification-symbol>B65F2210/00</classification-symbol>
+                <class-title date-revised="2013-01-01">
+                    <title-part>
+                        <text scheme="ipc">Equipment of refuse receptacles</text>
+                    </title-part>
+                </class-title>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/102" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/102</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Absorbing means</text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1023" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1023</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">for liquids</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1026" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1026</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">for smelling substances</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/104" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/104</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Ashtrays </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/108" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/108</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Authorization means </text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1085" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1085</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Coins or tokens </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/112" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/112</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Coding means to aid in recycling </text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1121" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1121</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Apertures </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1123" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1123</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Bar-codes </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1125" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1125</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Colors </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1126" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1126</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Symbols </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1128" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1128</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Text </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/116" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/116</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Cooling means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/12" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/12</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Crushing means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/124" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/124</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Counting means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/126" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/126</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Cutting means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/128" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/128</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Data transmitting means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/129" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/129</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Deodorizing means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/13" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/13</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Double walls </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/132" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/132</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Draining means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/135" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/135</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Flower boxes </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/136" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/136</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Dustpan </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/137" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/137</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Fans </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/138" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/138</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Identification means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/139" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/139</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Illuminating means</text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/14" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/14</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Incinerating means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/144" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/144</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Level detecting means </text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1443" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1443</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Electrical </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1446" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1446</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Mechanical </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/148" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/148</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Locking means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/15" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/15</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Marking means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/152" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/152</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Material detecting means </text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1522" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1522</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">for glass </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1525" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1525</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">for metal </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1527" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1527</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">for plastics </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/156" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/156</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Mousetraps </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/16" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/16</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Music playing devices </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/162" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/162</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Pressing means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/164" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/164</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Printers </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/165" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/165</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Remote controls </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/167" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/167</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Sealing means</text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1675" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1675</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">by twisting, e.g. of a flexible tube </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/168" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/168</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Sensing means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/169" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/169</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Shredding means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/17" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/17</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Smoke detecting means</text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/172" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/172</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Solar cells </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/176" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/176</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Sorting means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/178" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/178</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Steps </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/179" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/179</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Suction means, e.g. for forcing a bag inside the
+                                receptacle</text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1795" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1795</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">for sucking off dust particles during insertion
+                                    of refuse in the receptacle </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/18" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/18</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Suspending means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/181" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/181</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Ventilating means, e.g. holes</text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                        additional-only="true" sort-key="B65F210/1815" date-revised="2013-09-03">
+                        <classification-symbol>B65F2210/1815</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">for assisting the removal of a liner</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/182" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/182</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Volume determining means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/183" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/183</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Volume reducing means, e.g. inserts </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/184" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/184</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Weighing means </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/188" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/188</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Vacuum drawing means</text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/196" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/196</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Tape dispensers </text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                    additional-only="true" sort-key="B65F210/20" date-revised="2013-09-03">
+                    <classification-symbol>B65F2210/20</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Temperature sensing means</text>
+                        </title-part>
+                    </class-title>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="7"
+                    additional-only="true" sort-key="B65F220/00" date-revised="2013-09-03">
+                    <classification-symbol>B65F2220/00</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Properties of refuse receptacles </text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F220/101" date-revised="2013-09-03">
+                        <classification-symbol>B65F2220/101</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">assembled from a plurality of panels</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F220/102" date-revised="2013-09-03">
+                        <classification-symbol>B65F2220/102</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">assembled from a blank</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F220/104" date-revised="2013-09-03">
+                        <classification-symbol>B65F2220/104</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Bomb resistant </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F220/106" date-revised="2013-09-03">
+                        <classification-symbol>B65F2220/106</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Collapsible </text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                            additional-only="true" sort-key="B65F220/1063" date-revised="2013-09-03">
+                            <classification-symbol>B65F2220/1063</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">foldable</text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                            additional-only="true" sort-key="B65F220/1066" date-revised="2013-09-03">
+                            <classification-symbol>B65F2220/1066</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">telescopic </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F220/108" date-revised="2013-09-03">
+                        <classification-symbol>B65F2220/108</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">connectable </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F220/112" date-revised="2013-09-03">
+                        <classification-symbol>B65F2220/112</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">floatable </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F220/116" date-revised="2013-09-03">
+                        <classification-symbol>B65F2220/116</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">inflatable </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F220/12" date-revised="2013-09-03">
+                        <classification-symbol>B65F2220/12</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">nestable </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F220/122" date-revised="2013-09-03">
+                        <classification-symbol>B65F2220/122</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Poster resistant surface </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F220/124" date-revised="2013-09-03">
+                        <classification-symbol>B65F2220/124</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">stackable </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F220/128" date-revised="2013-09-03">
+                        <classification-symbol>B65F2220/128</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">transparent </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="7"
+                    additional-only="true" sort-key="B65F230/00" date-revised="2013-09-03">
+                    <classification-symbol>B65F2230/00</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Shapes of refuse receptacles </text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/104" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/104</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Amphora </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/108" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/108</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Animal </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/112" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/112</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Bottle </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/116" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/116</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Can </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/12" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/12</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Fence </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/124" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/124</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Golf ball </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/126" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/126</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Hexagonal</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/127" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/127</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">House</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/128" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/128</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Human </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/132" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/132</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Mushroom </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/134" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/134</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Oval</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/135" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/135</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Potted plant</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/136" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/136</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Pyramide </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/14" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/14</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Robot </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/144" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/144</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Seat </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/148" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/148</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Sleeve </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/15" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/15</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Sleeve having a disconnectable bottom </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/152" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/152</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Triangular</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F230/156" date-revised="2013-09-03">
+                        <classification-symbol>B65F2230/156</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Wave-like </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="7"
+                    additional-only="true" sort-key="B65F240/00" date-revised="2013-09-03">
+                    <classification-symbol>B65F2240/00</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Types of refuse receptacles</text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/104" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/104</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Ashes </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/108" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/108</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Batteries </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/112" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/112</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Bottles </text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                            additional-only="true" sort-key="B65F240/1123" date-revised="2013-09-03">
+                            <classification-symbol>B65F2240/1123</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Glass </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                            additional-only="true" sort-key="B65F240/1126" date-revised="2013-09-03">
+                            <classification-symbol>B65F2240/1126</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Plastics </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/116" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/116</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Broken cutters </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/118" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/118</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Building waste</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/12" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/12</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Cans </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/121" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/121</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Carrions</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/122" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/122</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">CD&apos;s, DVD&apos;s </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/124" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/124</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Christmas trees </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/128" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/128</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Clothing </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/132" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/132</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Diapers </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/136" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/136</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Dog dirt </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/137" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/137</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Drilling dust</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/138" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/138</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Garden debris </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/14" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/14</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Gum </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/142" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/142</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Grease </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/143" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/143</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Ink cartridges </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/144" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/144</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Leather </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/145" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/145</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Medicine</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/146" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/146</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Nails </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/148" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/148</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Neon tubes </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/152" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/152</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Oil </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/156" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/156</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Paper </text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                            additional-only="true" sort-key="B65F240/1562" date-revised="2013-09-03">
+                            <classification-symbol>B65F2240/1562</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">confidential </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                            additional-only="true" sort-key="B65F240/1564" date-revised="2013-09-03">
+                            <classification-symbol>B65F2240/1564</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Carton </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                            additional-only="true" sort-key="B65F240/1566" date-revised="2013-09-03">
+                            <classification-symbol>B65F2240/1566</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">handkerchiefs </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                            additional-only="true" sort-key="B65F240/1568" date-revised="2013-09-03">
+                            <classification-symbol>B65F2240/1568</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Towels </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/16" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/16</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Pizza boxes </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/162" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/162</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Pressurized containers</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/164" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/164</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Sanitary towels </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/166" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/166</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Staples </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/168" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/168</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Telephone cards </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F240/172" date-revised="2013-09-03">
+                        <classification-symbol>B65F2240/172</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Vomit </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+                <classification-item breakdown-code="true" not-allocatable="false" level="7"
+                    additional-only="true" sort-key="B65F250/00" date-revised="2013-09-03">
+                    <classification-symbol>B65F2250/00</classification-symbol>
+                    <class-title date-revised="2013-01-01">
+                        <title-part>
+                            <text scheme="ipc">Materials of refuse receptacles</text>
+                        </title-part>
+                    </class-title>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F250/105" date-revised="2013-09-03">
+                        <classification-symbol>B65F2250/105</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Biodegradable </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F250/106" date-revised="2013-09-03">
+                        <classification-symbol>B65F2250/106</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Carton</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F250/107" date-revised="2013-09-03">
+                        <classification-symbol>B65F2250/107</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Glass</text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F250/108" date-revised="2013-09-03">
+                        <classification-symbol>B65F2250/108</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Paper </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F250/11" date-revised="2013-09-03">
+                        <classification-symbol>B65F2250/11</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Metal</text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                            additional-only="true" sort-key="B65F250/111" date-revised="2013-09-03">
+                            <classification-symbol>B65F2250/111</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Aluminum </text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                            additional-only="true" sort-key="B65F250/112" date-revised="2013-09-03">
+                            <classification-symbol>B65F2250/112</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Steel</text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F250/114" date-revised="2013-09-03">
+                        <classification-symbol>B65F2250/114</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Plastics</text>
+                            </title-part>
+                        </class-title>
+                        <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                            additional-only="true" sort-key="B65F250/1143" date-revised="2013-09-03">
+                            <classification-symbol>B65F2250/1143</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Polyethylene</text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                        <classification-item breakdown-code="true" not-allocatable="false" level="9"
+                            additional-only="true" sort-key="B65F250/1146" date-revised="2013-09-03">
+                            <classification-symbol>B65F2250/1146</classification-symbol>
+                            <class-title date-revised="2013-01-01">
+                                <title-part>
+                                    <text scheme="ipc">Polypropylene</text>
+                                </title-part>
+                            </class-title>
+                        </classification-item>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F250/116" date-revised="2013-09-03">
+                        <classification-symbol>B65F2250/116</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Recycled material </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F250/12" date-revised="2013-09-03">
+                        <classification-symbol>B65F2250/12</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Rubber </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                    <classification-item breakdown-code="true" not-allocatable="false" level="8"
+                        additional-only="true" sort-key="B65F250/128" date-revised="2013-09-03">
+                        <classification-symbol>B65F2250/128</classification-symbol>
+                        <class-title date-revised="2013-01-01">
+                            <title-part>
+                                <text scheme="ipc">Wood </text>
+                            </title-part>
+                        </class-title>
+                    </classification-item>
+                </classification-item>
+            </classification-item>
+        </classification-item>
+    </classification-item>
+</class-scheme>
