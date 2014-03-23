@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using PatentSpoiler.App.Import;
 using PatentSpoiler.App.Import.Config;
 using PatentSpoiler.Models;
@@ -18,9 +19,10 @@ namespace PatentSpoiler.App.Database
         private readonly Dictionary<string, List<Node>> nodesForTerm = new Dictionary<string, List<Node>>();
         private readonly Node root;
 
-        public DictionaryBasedPatentDatabase(IDefinitionImporter importer, ImporterSettings importerSettings)
+        public DictionaryBasedPatentDatabase(IDefinitionImporter importer, ImporterSettings importerSettings, HttpContextBase context)
         {
-            root = importer.Import(importerSettings.DocumentsPath, importerSettings.RootDocumentFileName);
+            var fullPath = context.Server.MapPath(importerSettings.DocumentsPath);
+            root = importer.Import(fullPath, importerSettings.RootDocumentFileName);
             SetupInverseIndexes(root);
         }
 
