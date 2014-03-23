@@ -6,9 +6,12 @@ namespace PatentSpoiler.Models
     public class Node
     {
         private List<Node> children = new List<Node>();
+        private readonly HashSet<string> titleParts = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
 
-        public string Title { get; set; }
         public int Level { get; set; }
+        public string ClassificationSymbol { get; set; }
+        public string SortKey { get; set; }
+        public IEnumerable<string> TitleParts { get { return titleParts; } } 
 
         public Node Parent { get; private set; }
 
@@ -26,19 +29,24 @@ namespace PatentSpoiler.Models
             child.Parent = this;
         }
 
-        public Node GetHead()
+        public Node GetRoot()
         {
             if (Parent == null)
             {
                 return this;
             }
 
-            return Parent.GetHead();
+            return Parent.GetRoot();
+        }
+
+        public void AddTitlePart(string part)
+        {
+            titleParts.Add(part.ToLower());
         }
 
         public void AssertHierrachy()
         {
-            var parent = GetHead();
+            var parent = GetRoot();
             parent.AssertDown();
         }
 
@@ -74,6 +82,4 @@ namespace PatentSpoiler.Models
             }
         }
     }
-
-
 }

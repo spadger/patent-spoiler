@@ -1,7 +1,9 @@
-﻿namespace PatentSpoiler.App.Import
+﻿using PatentSpoiler.Models;
+
+namespace PatentSpoiler.App.Import
 {
     public interface IDefinitionImporter
     {
-        void Import();
-    }
+        Node Import(string documentsPath, string rootDocumentFileName);
+    }   
 }

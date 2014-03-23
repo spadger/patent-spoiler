@@ -12,9 +12,7 @@ namespace PatentSpoiler.Controllers
 
         public ActionResult Index()
         {
-           
-
-            return View();
+            return Redirect("/admin/importdata");
         }
 
     }

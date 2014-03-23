@@ -143,8 +143,11 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\Import\ClassificationItem.cs" />
+    <Compile Include="App\Import\Config\ImporterSettings.cs" />
     <Compile Include="App\Import\IDefinitionImporter.cs" />
-    <Compile Include="App\Import\Importer.cs" />
+    <Compile Include="App\Import\DefinitionImporter.cs" />
+    <Compile Include="App\Import\XmlDocumentLoader.cs" />
     <Compile Include="App\NinjectModules\AppServicesNinjectModule.cs" />
     <Compile Include="App\NinjectModules\RavenDBNinjectModule.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -157,6 +160,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Node.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

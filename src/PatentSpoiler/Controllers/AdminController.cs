@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using PatentSpoiler.App.Import;
-
+using PatentSpoiler.App.Import.Config;
+using PatentSpoiler.Models;
+using System.Linq;
 namespace PatentSpoiler.Controllers
 {
     public class AdminController : Controller
     {
         private readonly IDefinitionImporter importer;
+        private readonly ImporterSettings importerSettings;
 
-        public AdminController(IDefinitionImporter importer)
+        public AdminController(IDefinitionImporter importer, ImporterSettings importerSettings)
         {
             this.importer = importer;
+            this.importerSettings = importerSettings;
         }
 
         public ActionResult Index()
@@ -23,9 +23,8 @@ namespace PatentSpoiler.Controllers
 
         public ActionResult ImportData()
         {
-            importer.Import();
+            var root = importer.Import(importerSettings.DocumentsPath, importerSettings.RootDocumentFileName);
             return Content("Done!");
         }
-
     }
 }
