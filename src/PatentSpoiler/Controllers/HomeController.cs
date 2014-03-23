@@ -1,18 +1,27 @@
-﻿using System;
-
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using PatentSpoiler.App.Database;
 
 namespace PatentSpoiler.Controllers
 {
     public class HomeController : Controller
     {
-        //
-        // GET: /Home/
+        private readonly IPatentDatabase patentDatabase;
+
+        public HomeController(IPatentDatabase patentDatabase)
+        {
+            this.patentDatabase = patentDatabase;
+        }
 
         public ActionResult Index()
         {
-            return Redirect("/admin/importdata");
+            return View();
+        }
+
+        public ActionResult SearchForTerm(string term)
+        {
+            var results = patentDatabase.NodesForTerm(term);
+            ViewBag.results = results;
+            return View("Index");
         }
 
     }

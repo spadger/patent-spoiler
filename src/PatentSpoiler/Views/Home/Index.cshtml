@@ -1,7 +1,21 @@
-﻿@model dynamic
+﻿@using PatentSpoiler.Models
+@model dynamic
 
 @{
   ViewBag.Title = "title";
 }
 
-<h2>title</h2>
+@if (Enumerable.Any(ViewBag.results))
+{
+    <ul>
+        @foreach (Node result in ViewBag.results)
+        {
+        <li>@result.ClassificationSymbol</li>
+        }
+    </ul>
+}
+
+<form action="/Home/SearchForTerm">
+    <input type="text" name="term"/>
+    <input type="submit" />
+</form>

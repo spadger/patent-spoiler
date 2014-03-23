@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Xml;
 using PatentSpoiler.Annotations;
 using PatentSpoiler.Models;
-using Raven.Abstractions.Data;
 
 namespace PatentSpoiler.App.Import
 {
+    public interface IDefinitionImporter
+    {
+        Node Import(string documentsPath, string rootDocumentFileName);
+    }
+
     [UsedImplicitly]
     public class DefinitionImporter : IDefinitionImporter
     {
-        static readonly HashSet<string> StopWords = new HashSet<string>(new[]{"a", "about", "above", "above", "across", "after", "afterwards", "again", "against", "all", "almost", "alone", "along", "already", "also","although","always","am","among", "amongst", "amoungst", "amount",  "an", "and", "another", "any","anyhow","anyone","anything","anyway", "anywhere", "are", "around", "as",  "at", "back","be","became", "because","become","becomes", "becoming", "been", "before", "beforehand", "behind", "being", "below", "beside", "besides", "between", "beyond", "bill", "both", "bottom","but", "by", "call", "can", "cannot", "cant", "co", "con", "could", "couldnt", "cry", "de", "describe", "detail", "do", "done", "down", "due", "during", "each", "eg", "eight", "either", "eleven","else", "elsewhere", "empty", "enough", "etc", "even", "ever", "every", "everyone", "everything", "everywhere", "except", "few", "fifteen", "fify", "fill", "find", "fire", "first", "five", "for", "former", "formerly", "forty", "found", "four", "from", "front", "full", "further", "get", "give", "go", "had", "has", "hasnt", "have", "he", "hence", "her", "here", "hereafter", "hereby", "herein", "hereupon", "hers", "herself", "him", "himself", "his", "how", "however", "hundred", "ie", "if", "in", "inc", "indeed", "interest", "into", "is", "it", "its", "itself", "keep", "last", "latter", "latterly", "least", "less", "ltd", "made", "many", "may", "me", "meanwhile", "might", "mill", "mine", "more", "moreover", "most", "mostly", "move", "much", "must", "my", "myself", "name", "namely", "neither", "never", "nevertheless", "next", "nine", "no", "nobody", "none", "noone", "nor", "not", "nothing", "now", "nowhere", "of", "off", "often", "on", "once", "one", "only", "onto", "or", "other", "others", "otherwise", "our", "ours", "ourselves", "out", "over", "own","part", "per", "perhaps", "please", "put", "rather", "re", "same", "see", "seem", "seemed", "seeming", "seems", "serious", "several", "she", "should", "show", "side", "since", "sincere", "six", "sixty", "so", "some", "somehow", "someone", "something", "sometime", "sometimes", "somewhere", "still", "such", "system", "take", "ten", "than", "that", "the", "their", "them", "themselves", "then", "thence", "there", "thereafter", "thereby", "therefore", "therein", "thereupon", "these", "they", "thickv", "thin", "third", "this", "those", "though", "three", "through", "throughout", "thru", "thus", "to", "together", "too", "top", "toward", "towards", "twelve", "twenty", "two", "un", "under", "until", "up", "upon", "us", "very", "via", "was", "we", "well", "were", "what", "whatever", "when", "whence", "whenever", "where", "whereafter", "whereas", "whereby", "wherein", "whereupon", "wherever", "whether", "which", "while", "whither", "who", "whoever", "whole", "whom", "whose", "why", "will", "with", "within", "without", "would", "yet", "you", "your", "yours", "yourself", "yourselves", "the"});
-
         private readonly IXmlDocumentLoader documentLoader;
         private string documentsPath;
         private bool run = false;
@@ -39,9 +40,7 @@ namespace PatentSpoiler.App.Import
             }
             this.documentsPath = documentsPath;
 
-            var fullPath = Path.Combine(documentsPath, rootDocumentFileName);
-
-            var subNodes = ImportClassificationFile(fullPath);
+            var subNodes = ImportClassificationFile(rootDocumentFileName);
 
             foreach (var subNode in subNodes)
             {
@@ -51,48 +50,49 @@ namespace PatentSpoiler.App.Import
             return root;
         }
 
-        public IEnumerable<Node> ImportClassificationFile(string fullPath)
+        public IEnumerable<Node> ImportClassificationFile(string fileName)
         {
-            var doc = new XmlDocument();
-            doc.Load(fullPath);
-
+            var doc = documentLoader.Load(documentsPath, fileName);
             var subNodes = new List<Node>();
 
             foreach (XmlElement element in doc.SelectNodes("class-scheme/classification-item"))
             {
                 //yield is a PITA for debugging...
                 var subNode = ImportClassificationItemNode(element);
-                subNodes.Add(subNode);
+                subNodes.AddRange(subNode);
             }
 
             return subNodes;
         }
 
-        public Node ImportClassificationItemNode(XmlElement importScope)
+        public IEnumerable<Node> ImportClassificationItemNode(XmlElement importScope)
         {
-            var result = CreateNodeFromCurrentElement(importScope);
+            var results = new List<Node>();
 
             if (importScope.HasAttribute("link-file"))
             {
                 var sortKey = importScope.Attributes["sort-key"].Value;
-                var linkedFileName = Path.Combine(documentsPath, string.Concat("scheme-", sortKey, ".xml"));
+                var linkedFileName = string.Concat("scheme-", sortKey, ".xml");
                 var linkedSubNodes = ImportClassificationFile(linkedFileName);
 
                 foreach (var linkedSubNode in linkedSubNodes)
                 {
-                    result.AddChild(linkedSubNode);
+                    results.Add(linkedSubNode);
                 }
+
+                return results;
             }
             else
             {
+                var result = CreateNodeFromCurrentElement(importScope);
                 foreach (XmlElement subItemNode in importScope.SelectNodes("classification-item"))
                 {
-                    var subNode = ImportClassificationItemNode(subItemNode);
-                    result.AddChild(subNode);
+                    var subNodes = ImportClassificationItemNode(subItemNode);
+                    result.AddChildren(subNodes);
                 }
+
+                return new[] {result};
             }
-            
-            return result;
         }
 
         public Node CreateNodeFromCurrentElement(XmlElement element)
@@ -108,7 +108,7 @@ namespace PatentSpoiler.App.Import
 
             foreach (var part in titleParts)
             {
-                result.AddTitlePart(part);
+                result.AddTitlePart(part.Trim());
             }
 
             return result;
