@@ -144,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App\Database\DictionaryBasedPatentDatabase.cs" />
+    <Compile Include="App\Database\RavenDB\DocumentStoreManager.cs" />
     <Compile Include="App\Import\Config\ImporterSettings.cs" />
     <Compile Include="App\Import\DefinitionImporter.cs" />
     <Compile Include="App\Import\XmlDocumentLoader.cs" />

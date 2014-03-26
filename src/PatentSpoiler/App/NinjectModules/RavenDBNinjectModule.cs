@@ -1,8 +1,9 @@
 ﻿using Ninject;
 using Ninject.Modules;
 using Ninject.Web.Common;
+using PatentSpoiler.App.Database.RavenDB;
 using Raven.Client;
-using Raven.Client.Document;
+
 
 namespace PatentSpoiler.App.NinjectModules
 {
@@ -10,11 +11,12 @@ namespace PatentSpoiler.App.NinjectModules
     {
         public override void Load()
         { 
-            Bind<IDocumentStore>()
-           .ToMethod(context =>
+            Bind<IDocumentStore>().ToMethod(context =>
            {
-               var documentStore = new DocumentStore { ConnectionStringName = "PatentSpoiler", };
-               return documentStore.Initialize();
+               var manager = new DocumentStoreManager("PatentSpoilerRavenDB");
+               var documentStore = manager.GetDocumentStore();
+
+               return documentStore;
            })
            .InSingletonScope();
 
