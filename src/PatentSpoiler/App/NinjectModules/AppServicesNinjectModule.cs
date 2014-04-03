@@ -15,7 +15,8 @@ namespace PatentSpoiler.App.NinjectModules
             Bind<IDefinitionImporter>().To<DefinitionImporter>().InTransientScope();
             Bind<IXmlDocumentLoader>().To<XmlDocumentLoader>().InSingletonScope();
             Bind<ImporterSettings>().ToMethod(x => (ImporterSettings) (dynamic) ConfigurationManager.GetSection("importerSettings")).InTransientScope();
-            Bind<IPatentDatabase>().To<DictionaryBasedPatentDatabase>().InSingletonScope();
+            Bind<IPatentStoreHierrachy>().To<DictionaryBasedPatentStoreHierrachy>().InSingletonScope();
+            Bind<IPatentDatabaseLoader>().To<RavenDBBasedPatentDatabaseLoader>().InSingletonScope();
         }
     }
 }

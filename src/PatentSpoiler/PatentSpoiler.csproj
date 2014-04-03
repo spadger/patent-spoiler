@@ -142,10 +142,13 @@
   <ItemGroup />
   <ItemGroup>
     <Compile Include="App\Database\DictionaryBasedPatentDatabase.cs" />
-    <Compile Include="App\Database\RavenDB\DocumentStoreManager.cs" />
+    <Compile Include="App\Database\RavenDbBasedPatentDatabase.cs" />
+    <Compile Include="App\Database\DocumentStoreManager.cs" />
+    <Compile Include="App\Domain\PatentClassification.cs" />
     <Compile Include="App\Import\Config\ImporterSettings.cs" />
     <Compile Include="App\Import\DefinitionImporter.cs" />
     <Compile Include="App\Import\XmlDocumentLoader.cs" />
+    <Compile Include="App\Initialisation\InitialisationManager.cs" />
     <Compile Include="App\NinjectModules\AppServicesNinjectModule.cs" />
     <Compile Include="App\NinjectModules\RavenDBNinjectModule.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -157,7 +160,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Node.cs" />
+    <Compile Include="Models\PatentHierrachyNode.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -843,7 +846,9 @@
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />
     <Content Include="Scripts\modernizr-2.7.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PatentSpoiler.App.Import;
@@ -7,64 +8,45 @@ using PatentSpoiler.Models;
 
 namespace PatentSpoiler.App.Database
 {
-    public interface IPatentDatabase
+    public interface IPatentStoreHierrachy
     {
-        IEnumerable<Node> NodesForCategory(string category);
-        IEnumerable<Node> NodesForTerm(string term);
+        PatentHierrachyNode GetDefinitionFor(string id);
+        PatentHierrachyNode Root { get; }
     }
 
-    public class DictionaryBasedPatentDatabase : IPatentDatabase
+    public class DictionaryBasedPatentStoreHierrachy : IPatentStoreHierrachy
     {
-        private readonly Dictionary<string, List<Node>> nodesForCategory = new Dictionary<string, List<Node>>();
-        private readonly Dictionary<string, List<Node>> nodesForTerm = new Dictionary<string, List<Node>>();
-        private readonly Node root;
+        private readonly Dictionary<string, PatentHierrachyNode> nodesForCategory = new Dictionary<string, PatentHierrachyNode>(StringComparer.InvariantCultureIgnoreCase);
+        private readonly PatentHierrachyNode root;
 
-        public DictionaryBasedPatentDatabase(IDefinitionImporter importer, ImporterSettings importerSettings, HttpContextBase context)
+        public DictionaryBasedPatentStoreHierrachy(IDefinitionImporter importer, ImporterSettings importerSettings, HttpContextBase context)
         {
             var fullPath = context.Server.MapPath(importerSettings.DocumentsPath);
             root = importer.Import(fullPath, importerSettings.RootDocumentFileName);
             SetupInverseIndexes(root);
         }
 
-        public IEnumerable<Node> NodesForCategory(string category)
+        public PatentHierrachyNode Root
         {
-            List<Node> result;
+            get { return root; }
+        }
 
-            if (nodesForCategory.TryGetValue(category.Trim().ToLower(), out result))
+        public PatentHierrachyNode GetDefinitionFor(string category)
+        {
+            PatentHierrachyNode result;
+            if (nodesForCategory.TryGetValue(category.Trim(), out result))
             {
                 return result;
             }
 
-            return Enumerable.Empty<Node>();
+            return null;
         }
 
-        public IEnumerable<Node> NodesForTerm(string term)
+        public void SetupInverseIndexes(PatentHierrachyNode patentHierrachyNode)
         {
-            List<Node> result;
-
-            if (nodesForTerm.TryGetValue(term.Trim().ToLower(), out result))
+            if (!string.IsNullOrEmpty(patentHierrachyNode.ClassificationSymbol))
             {
-                return result;
-            }
-
-            return Enumerable.Empty<Node>();
-        }
-
-        public void SetupInverseIndexes(Node node)
-        {
-            foreach (var term in node.TitlePartTerms)
-            {
-                nodesForTerm.AddNodeForKey(term, node);
-            }
-
-            if (!string.IsNullOrEmpty(node.ClassificationSymbol))
-            {
-                nodesForCategory.AddNodeForKey(node.ClassificationSymbol, node);
-            }
-
-            foreach (var child in node.Children)
-            {
-                SetupInverseIndexes(child);
+                nodesForCategory.Add(patentHierrachyNode.ClassificationSymbol, patentHierrachyNode);
             }
         }
     }

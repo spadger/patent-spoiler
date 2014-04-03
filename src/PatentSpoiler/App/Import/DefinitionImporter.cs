@@ -9,7 +9,7 @@ namespace PatentSpoiler.App.Import
 {
     public interface IDefinitionImporter
     {
-        Node Import(string documentsPath, string rootDocumentFileName);
+        PatentHierrachyNode Import(string documentsPath, string rootDocumentFileName);
     }
 
     [UsedImplicitly]
@@ -25,9 +25,9 @@ namespace PatentSpoiler.App.Import
             this.documentLoader = documentLoader;
         }
 
-        public Node Import(string documentsPath, string rootDocumentFileName)
+        public PatentHierrachyNode Import(string documentsPath, string rootDocumentFileName)
         {
-            var root = new Node();
+            var root = new PatentHierrachyNode();
 
             lock (syncRoot)
             {
@@ -50,10 +50,10 @@ namespace PatentSpoiler.App.Import
             return root;
         }
 
-        public IEnumerable<Node> ImportClassificationFile(string fileName)
+        public IEnumerable<PatentHierrachyNode> ImportClassificationFile(string fileName)
         {
             var doc = documentLoader.Load(documentsPath, fileName);
-            var subNodes = new List<Node>();
+            var subNodes = new List<PatentHierrachyNode>();
 
             foreach (XmlElement element in doc.SelectNodes("class-scheme/classification-item"))
             {
@@ -65,9 +65,9 @@ namespace PatentSpoiler.App.Import
             return subNodes;
         }
 
-        public IEnumerable<Node> ImportClassificationItemNode(XmlElement importScope)
+        public IEnumerable<PatentHierrachyNode> ImportClassificationItemNode(XmlElement importScope)
         {
-            var results = new List<Node>();
+            var results = new List<PatentHierrachyNode>();
 
             if (importScope.HasAttribute("link-file"))
             {
@@ -95,12 +95,11 @@ namespace PatentSpoiler.App.Import
             }
         }
 
-        public Node CreateNodeFromCurrentElement(XmlElement element)
+        public PatentHierrachyNode CreateNodeFromCurrentElement(XmlElement element)
         {
-            var result = new Node
+            var result = new PatentHierrachyNode
             {
                 Level = int.Parse(element.Attributes["level"].Value),
-                SortKey = element.Attributes["sort-key"].Value,
                 ClassificationSymbol = element.SelectSingleNode("classification-symbol").InnerText
             };
 

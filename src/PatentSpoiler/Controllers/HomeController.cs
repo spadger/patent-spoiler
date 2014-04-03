@@ -6,12 +6,12 @@ namespace PatentSpoiler.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IPatentDatabase patentDatabase;
+        private readonly IPatentDatabaseLoader patentDatabaseLoader;
         private readonly IDocumentStore documentStore;
 
-        public HomeController(IPatentDatabase patentDatabase, IDocumentStore documentStore)
+        public HomeController(IPatentDatabaseLoader patentDatabaseLoader, IDocumentStore documentStore)
         {
-            this.patentDatabase = patentDatabase;
+            this.patentDatabaseLoader = patentDatabaseLoader;
             this.documentStore = documentStore;
         }
 
@@ -22,8 +22,8 @@ namespace PatentSpoiler.Controllers
 
         public ActionResult SearchForTerm(string term)
         {
-            var results = patentDatabase.NodesForTerm(term);
-            ViewBag.results = results;
+            //var results = patentDatabase.(term);
+            //ViewBag.results = results;
             return View("Index");
         }
 

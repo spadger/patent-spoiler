@@ -8,7 +8,7 @@
 @if (ViewBag.results!=null && Enumerable.Any(ViewBag.results))
 {
     <ul>
-        @foreach (Node result in ViewBag.results)
+        @foreach (PatentHierrachyNode result in ViewBag.results)
         {
         <li>@result.ClassificationSymbol</li>
         }
