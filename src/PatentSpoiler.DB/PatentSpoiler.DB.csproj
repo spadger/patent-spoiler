@@ -68,15 +68,15 @@
     </Reference>
     <Reference Include="Raven.Abstractions, Version=2.5.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\RavenDB.Database.2.5.2851\lib\net45\Raven.Abstractions.dll</HintPath>
+      <HintPath>..\packages\RavenDB.Database.2.5.2865-Unstable\lib\net45\Raven.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Raven.Database, Version=2.5.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\RavenDB.Database.2.5.2851\lib\net45\Raven.Database.dll</HintPath>
+      <HintPath>..\packages\RavenDB.Database.2.5.2865-Unstable\lib\net45\Raven.Database.dll</HintPath>
     </Reference>
     <Reference Include="Raven.Web, Version=2.5.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\RavenDB.AspNetHost.2.5.2851\lib\net45\Raven.Web.dll</HintPath>
+      <HintPath>..\packages\RavenDB.AspNetHost.2.5.2865-Unstable\lib\net45\Raven.Web.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
@@ -102,7 +102,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

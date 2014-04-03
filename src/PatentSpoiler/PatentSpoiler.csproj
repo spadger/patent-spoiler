@@ -52,27 +52,27 @@
     </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+      <HintPath>..\packages\Ninject.3.2.2-unstable-003\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <HintPath>..\packages\Ninject.Web.Common.3.2.1-unstable-001\lib\net45-full\Ninject.Web.Common.dll</HintPath>
     </Reference>
     <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ninject.MVC3.3.2.0.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+      <HintPath>..\packages\Ninject.MVC3.3.2.1-unstable-000\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Raven.Abstractions, Version=2.5.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\RavenDB.Client.2.5.2851\lib\net45\Raven.Abstractions.dll</HintPath>
+      <HintPath>..\packages\RavenDB.Client.2.5.2865-Unstable\lib\net45\Raven.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Raven.Client.Lightweight, Version=2.5.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\RavenDB.Client.2.5.2851\lib\net45\Raven.Client.Lightweight.dll</HintPath>
+      <HintPath>..\packages\RavenDB.Client.2.5.2865-Unstable\lib\net45\Raven.Client.Lightweight.dll</HintPath>
     </Reference>
     <Reference Include="Raven.Client.MvcIntegration, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\RavenDB.Client.MvcIntegration.2.5.2851\lib\net45\Raven.Client.MvcIntegration.dll</HintPath>
+      <HintPath>..\packages\RavenDB.Client.MvcIntegration.2.5.2865-Unstable\lib\net45\Raven.Client.MvcIntegration.dll</HintPath>
     </Reference>
     <Reference Include="SimpleConfig">
       <HintPath>..\packages\simple-config.0.1.1\lib\net40\SimpleConfig.dll</HintPath>
@@ -139,9 +139,7 @@
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="App\Database\DictionaryBasedPatentDatabase.cs" />
     <Compile Include="App\Database\RavenDB\DocumentStoreManager.cs" />
