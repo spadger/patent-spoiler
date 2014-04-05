@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using PatentSpoiler.App.Domain;
 
 namespace PatentSpoiler.Models
@@ -14,6 +16,16 @@ namespace PatentSpoiler.Models
         public int Level { get; set; }
         public string ClassificationSymbol { get; set; }
         public IEnumerable<string> TitleParts { get { return titleParts; } }
+
+        public string[] AllTitleWords()
+        {
+            var words = new HashSet<string>();
+
+            var flatWordList = titleParts.SelectMany(x => x.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries))
+                                                            .Select(x=>x.Trim())
+                                                            .Distinct(StringComparer.InvariantCultureIgnoreCase);
+            return flatWordList.ToArray();
+        }
 
         public PatentHierrachyNode Parent { get; private set; }
 
@@ -58,7 +70,7 @@ namespace PatentSpoiler.Models
             return new PatentClassification
             {
                 Id = ClassificationSymbol,
-                TitleParts = titleParts,
+                Keywords = AllTitleWords(),
                 ParentId = Parent==null?null:Parent.ClassificationSymbol
             };
         }

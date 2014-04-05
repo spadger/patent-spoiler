@@ -142,6 +142,7 @@
   <ItemGroup />
   <ItemGroup>
     <Compile Include="App\Database\DictionaryBasedPatentDatabase.cs" />
+    <Compile Include="App\Database\Indexes\DocumentsByTitlePartIndex.cs" />
     <Compile Include="App\Database\RavenDbBasedPatentDatabase.cs" />
     <Compile Include="App\Database\DocumentStoreManager.cs" />
     <Compile Include="App\Domain\PatentClassification.cs" />

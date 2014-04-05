@@ -7,14 +7,13 @@ namespace PatentSpoiler.App.Domain
         public PatentClassification()
         {
             PatentableEntities = new HashSet<PatentableEntity>();
-            TitleParts = new HashSet<string>();
         }
 
         public string Id { get; set; }
         
         public string ParentId { get; set; }
 
-        public ISet<string> TitleParts { get; set; }
+        public string[] Keywords { get; set; }
 
         public ICollection<PatentableEntity> PatentableEntities { get; set; }
     }

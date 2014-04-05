@@ -1,17 +1,23 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using System.Web.Mvc;
+using Microsoft.Ajax.Utilities;
 using PatentSpoiler.App.Database;
+using PatentSpoiler.App.Database.Indexes;
+using PatentSpoiler.App.Domain;
+using Raven.Abstractions.Util;
 using Raven.Client;
 
 namespace PatentSpoiler.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IPatentDatabaseLoader patentDatabaseLoader;
         private readonly IDocumentStore documentStore;
+        private readonly IPatentStoreHierrachy patentStoreHierrachy;
 
-        public HomeController(IPatentDatabaseLoader patentDatabaseLoader, IDocumentStore documentStore)
+        public HomeController(IPatentStoreHierrachy patentStoreHierrachy, IDocumentStore documentStore)
         {
-            this.patentDatabaseLoader = patentDatabaseLoader;
+            this.patentStoreHierrachy = patentStoreHierrachy;
             this.documentStore = documentStore;
         }
 
@@ -22,8 +28,20 @@ namespace PatentSpoiler.Controllers
 
         public ActionResult SearchForTerm(string term)
         {
-            //var results = patentDatabase.(term);
-            //ViewBag.results = results;
+            using (var session = documentStore.OpenSession())
+            {
+                var query = session.Query<PatentClassification, DocumentsByTitlePartIndex>();
+
+                query = query.Search(x => x.Keywords, RavenQuery.Escape(term, false, true));
+
+                var results = query.Take(10).ToList();
+
+                var viewBagResults = results.Select(x => patentStoreHierrachy.GetDefinitionFor(x.Id));
+
+                ViewBag.results = viewBagResults.ToList();
+            }
+            
+            
             return View("Index");
         }
 
