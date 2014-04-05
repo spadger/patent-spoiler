@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using PatentSpoiler.App.Import;
 using PatentSpoiler.App.Import.Config;
@@ -23,6 +22,8 @@ namespace PatentSpoiler.App.Database
         {
             var fullPath = context.Server.MapPath(importerSettings.DocumentsPath);
             root = importer.Import(fullPath, importerSettings.RootDocumentFileName);
+
+            FlattenHierrachy(root);
             SetupInverseIndexes(root);
         }
 
@@ -42,11 +43,57 @@ namespace PatentSpoiler.App.Database
             return null;
         }
 
-        public void SetupInverseIndexes(PatentHierrachyNode patentHierrachyNode)
+        private void FlattenHierrachy(PatentHierrachyNode node)
         {
-            if (!string.IsNullOrEmpty(patentHierrachyNode.ClassificationSymbol))
+            var toFlatten = new List<Tuple<PatentHierrachyNode, PatentHierrachyNode>>();
+            ProduceFlattenList(node, toFlatten);
+
+            foreach (var pair in toFlatten)
             {
-                nodesForCategory.Add(patentHierrachyNode.ClassificationSymbol, patentHierrachyNode);
+                SquashNodes(pair.Item1, pair.Item2);
+            }
+        }
+
+        private void ProduceFlattenList(PatentHierrachyNode node, List<Tuple<PatentHierrachyNode, PatentHierrachyNode>> removals)
+        {
+            foreach (var child in node.Children)
+            {
+                ProduceFlattenList(child, removals);
+            }
+
+            var parent = node.Parent;
+            if (parent != null && parent.ClassificationSymbol == node.ClassificationSymbol)
+            {
+                removals.Add(Tuple.Create(parent, node));
+            }
+        }
+
+        private void SquashNodes(PatentHierrachyNode parent, PatentHierrachyNode node)
+        {
+            foreach (var child in node.Children)
+            {
+                parent.AddChild(child);
+            }
+
+            parent.Remove(node);
+
+            foreach (var nodePart in node.TitleParts)
+            {
+                parent.AddTitlePart(nodePart);
+            }
+        }
+
+        public void SetupInverseIndexes(PatentHierrachyNode node)
+        {
+            
+            if (!string.IsNullOrEmpty(node.ClassificationSymbol))
+            {
+                nodesForCategory.Add(node.ClassificationSymbol, node);
+            }
+
+            foreach (var childNode in node.Children)
+            {
+                SetupInverseIndexes(childNode);
             }
         }
     }

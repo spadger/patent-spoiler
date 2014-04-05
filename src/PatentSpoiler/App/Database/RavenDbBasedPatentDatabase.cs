@@ -27,8 +27,6 @@ namespace PatentSpoiler.App.Database
 
         public void StoreNodes(PatentHierrachyNode root)
         {
-
-            FlattenHierrachy(root);
             Check(root, new HashSet<string>(), new List<PatentHierrachyNode>());
 
             using (var bulkInsertOperation = documentStore.BulkInsert())
@@ -53,46 +51,6 @@ namespace PatentSpoiler.App.Database
             foreach (var child in node.Children)
             {
                 StoreNodesInternal(child, bulkInsertOperation);
-            }
-        }
-
-        private void FlattenHierrachy(PatentHierrachyNode node)
-        {
-            var toFlatten = new List<Tuple<PatentHierrachyNode, PatentHierrachyNode>>();
-            ProduceFlattenList(node, toFlatten);
-
-            foreach (var pair in toFlatten)
-            {
-                SquashNodes(pair.Item1, pair.Item2);
-            }
-        }
-
-        private void SquashNodes(PatentHierrachyNode parent, PatentHierrachyNode node)
-        {
-            foreach (var child in node.Children)
-            {
-                parent.AddChild(child);
-            }
-
-            parent.Remove(node);
-
-            foreach (var nodePart in node.TitleParts)
-            {
-                parent.AddTitlePart(nodePart);
-            }
-        }
-
-        private void ProduceFlattenList(PatentHierrachyNode node, List<Tuple<PatentHierrachyNode, PatentHierrachyNode>> removals)
-        {
-            foreach (var child in node.Children)
-            {
-                ProduceFlattenList(child, removals);
-            }
-
-            var parent = node.Parent;
-            if (parent != null && parent.ClassificationSymbol == node.ClassificationSymbol)
-            {
-                removals.Add(Tuple.Create(parent, node));
             }
         }
 
