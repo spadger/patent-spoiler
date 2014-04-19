@@ -1,7 +1,7 @@
 ﻿using Ninject;
 using Ninject.Modules;
 using Ninject.Web.Common;
-using PatentSpoiler.App.Database;
+using PatentSpoiler.App.Data;
 using Raven.Client;
 
 

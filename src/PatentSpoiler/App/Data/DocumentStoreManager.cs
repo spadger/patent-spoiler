@@ -4,7 +4,7 @@ using Raven.Client;
 using Raven.Client.Document;
 using Raven.Client.Indexes;
 
-namespace PatentSpoiler.App.Database
+namespace PatentSpoiler.App.Data
 {
     public class RavenDBDocumentStoreManager : IDisposable
     {

@@ -1,9 +1,8 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Microsoft.Ajax.Utilities;
-using PatentSpoiler.App.Database;
-using PatentSpoiler.App.Database.Indexes;
+using PatentSpoiler.App.Data;
+using PatentSpoiler.App.Data.Indexes;
 using PatentSpoiler.App.Domain;
 using Raven.Abstractions.Util;
 using Raven.Client;

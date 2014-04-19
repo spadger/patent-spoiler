@@ -5,7 +5,7 @@ using PatentSpoiler.App.Import;
 using PatentSpoiler.App.Import.Config;
 using PatentSpoiler.Models;
 
-namespace PatentSpoiler.App.Database
+namespace PatentSpoiler.App.Data
 {
     public interface IPatentStoreHierrachy
     {

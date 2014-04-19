@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using PatentSpoiler.App.Database;
+using PatentSpoiler.App.Data;
 
 namespace PatentSpoiler.Controllers
 {

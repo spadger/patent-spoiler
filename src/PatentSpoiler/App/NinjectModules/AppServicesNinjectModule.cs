@@ -1,7 +1,7 @@
 ﻿using System.Configuration;
 using Ninject.Modules;
 using PatentSpoiler.Annotations;
-using PatentSpoiler.App.Database;
+using PatentSpoiler.App.Data;
 using PatentSpoiler.App.Import;
 using PatentSpoiler.App.Import.Config;
 

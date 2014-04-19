@@ -141,10 +141,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Compile Include="App\Database\DictionaryBasedPatentDatabase.cs" />
-    <Compile Include="App\Database\Indexes\DocumentsByTitlePartIndex.cs" />
-    <Compile Include="App\Database\RavenDbBasedPatentDatabase.cs" />
-    <Compile Include="App\Database\DocumentStoreManager.cs" />
+    <Compile Include="App\Data\DictionaryBasedPatentDatabase.cs" />
+    <Compile Include="App\Data\Indexes\DocumentsByTitlePartIndex.cs" />
+    <Compile Include="App\Data\RavenDbBasedPatentDatabase.cs" />
+    <Compile Include="App\Data\DocumentStoreManager.cs" />
     <Compile Include="App\Domain\PatentClassification.cs" />
     <Compile Include="App\Import\Config\ImporterSettings.cs" />
     <Compile Include="App\Import\DefinitionImporter.cs" />

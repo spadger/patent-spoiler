@@ -4,7 +4,7 @@ using PatentSpoiler.Models;
 using Raven.Client;
 using Raven.Client.Document;
 
-namespace PatentSpoiler.App.Database
+namespace PatentSpoiler.App.Data
 {
     public interface IPatentDatabaseLoader
     {
