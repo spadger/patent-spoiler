@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 using PatentSpoiler.App.Data;
 using PatentSpoiler.App.Data.Indexes;
@@ -29,10 +28,10 @@ namespace PatentSpoiler.Controllers
         {
             using (var session = documentStore.OpenSession())
             {
-                var query = session.Query<PatentClassification, DocumentsByTitlePartIndex>();
+                var query = session.Advanced.LuceneQuery<PatentClassification, DocumentsByTitlePartIndex>();
 
-                query = query.Search(x => x.Keywords, RavenQuery.Escape(term, false, true));
-
+                query = query.Search(x => x.Keywords, RavenQuery.Escape(term, true, true) + "~0.8");
+                
                 var results = query.Take(10).ToList();
 
                 var viewBagResults = results.Select(x => patentStoreHierrachy.GetDefinitionFor(x.Id));
@@ -40,9 +39,7 @@ namespace PatentSpoiler.Controllers
                 ViewBag.results = viewBagResults.ToList();
             }
             
-            
             return View("Index");
         }
-
     }
 }
