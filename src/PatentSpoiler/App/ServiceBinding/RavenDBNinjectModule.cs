@@ -5,7 +5,7 @@ using PatentSpoiler.App.Data;
 using Raven.Client;
 
 
-namespace PatentSpoiler.App.NinjectModules
+namespace PatentSpoiler.App.ServiceBinding
 {
     public class RavenDBNinjectModule : NinjectModule
     {

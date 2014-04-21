@@ -54,6 +54,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Ninject.3.2.2-unstable-003\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject.Extensions.Conventions">
+      <HintPath>..\packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Ninject.Web.Common.3.2.1-unstable-001\lib\net45-full\Ninject.Web.Common.dll</HintPath>
@@ -150,8 +153,11 @@
     <Compile Include="App\Import\DefinitionImporter.cs" />
     <Compile Include="App\Import\XmlDocumentLoader.cs" />
     <Compile Include="App\Initialisation\InitialisationManager.cs" />
-    <Compile Include="App\NinjectModules\AppServicesNinjectModule.cs" />
-    <Compile Include="App\NinjectModules\RavenDBNinjectModule.cs" />
+    <Compile Include="App\ServiceBinding\AppServicesNinjectModule.cs" />
+    <Compile Include="App\ServiceBinding\BindAsASingletonAttribute.cs" />
+    <Compile Include="App\ServiceBinding\BindInRequestScopeAttribute.cs" />
+    <Compile Include="App\ServiceBinding\RavenDBNinjectModule.cs" />
+    <Compile Include="App\Data\Queries\SearchForClassificationQuery.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />

@@ -1,5 +1,6 @@
 using System.Linq;
 using PatentSpoiler.App.Domain;
+using PatentSpoiler.App.ServiceBinding;
 using Raven.Abstractions.Indexing;
 using Raven.Client.Indexes;
 
@@ -15,4 +16,31 @@ namespace PatentSpoiler.App.Data.Indexes
             Indexes.Add(x => x.Keywords, FieldIndexing.Analyzed);
         }
     }
+
+
+    public abstract class Base
+    {
+        private static int seed = 1;
+        public int value;
+        protected Base()
+        {
+            value = seed++;
+        }
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+    }
+
+    public interface ISingleton { }
+    [BindAsASingleton]
+    public class Singleton : Base, ISingleton { }
+
+    public interface IWeb { }
+    [BindInRequestScope]
+    public class Web : Base, IWeb { }
+
+    public interface ITransient { }
+    public class Transient : Base, ITransient { }
 }

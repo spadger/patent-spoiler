@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using PatentSpoiler.Annotations;
+using PatentSpoiler.App.ServiceBinding;
 using PatentSpoiler.Models;
 
 namespace PatentSpoiler.App.Import
@@ -12,7 +13,7 @@ namespace PatentSpoiler.App.Import
         PatentHierrachyNode Import(string documentsPath, string rootDocumentFileName);
     }
 
-    [UsedImplicitly]
+    [UsedImplicitly, BindInRequestScope]
     public class DefinitionImporter : IDefinitionImporter
     {
         private readonly IXmlDocumentLoader documentLoader;
