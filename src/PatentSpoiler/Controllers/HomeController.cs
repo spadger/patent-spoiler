@@ -7,6 +7,7 @@ using PatentSpoiler.App.Data;
 using PatentSpoiler.App.Data.Indexes;
 using PatentSpoiler.App.Data.Queries;
 using PatentSpoiler.App.Domain;
+using PatentSpoiler.App.DTOs;
 using Raven.Abstractions.Util;
 using Raven.Client;
 
@@ -47,8 +48,9 @@ namespace PatentSpoiler.Controllers
 
         public JsonResult SearchForTerm(string term)
         {
-            throw new NotImplementedException();
-            //return Json(searchForClassificationQuery.Execute(term, 0, 10), JsonRequestBehavior.AllowGet);
+            var result = searchForClassificationQuery.Execute(term, 0, 10);
+
+            return Json(result.Select(SearchResultTree.From), JsonRequestBehavior.AllowGet);
         }
     }
 }
