@@ -1,21 +1,16 @@
-﻿@using PatentSpoiler.Models
-@model dynamic
+﻿@model dynamic
 
 @{
-  ViewBag.Title = "title";
+  ViewBag.Title = "Welcome";
+  Bundles.Reference("scripts/custom/home", "end");
 }
 
-@if (ViewBag.results != null && Enumerable.Any(ViewBag.results))
-{
-    <ul>
-        @foreach (PatentHierrachyNode result in ViewBag.results)
-        {
-            <li>@result.ClassificationSymbol</li>
-        }
-    </ul>
-}
+<div ng-app="home">
+    
+    <form action="/Home/SearchForTerm">
+        @Html.TextBox("term")
+        <input type="submit" />
+    </form>
 
-<form action="/Home/SearchForTerm">
-    @Html.TextBox("term")
-    <input type="submit" />
-</form>
+</div>
+
