@@ -50,8 +50,14 @@
     <Reference Include="Cassette.Aspnet">
       <HintPath>..\packages\Cassette.Aspnet.2.4.1\lib\net40\Cassette.Aspnet.dll</HintPath>
     </Reference>
+    <Reference Include="Cassette.Less">
+      <HintPath>..\packages\Cassette.Less.2.4.1\lib\net40-client\Cassette.Less.dll</HintPath>
+    </Reference>
     <Reference Include="Cassette.Views">
       <HintPath>..\packages\Cassette.Views.2.4.1\lib\net40\Cassette.Views.dll</HintPath>
+    </Reference>
+    <Reference Include="dotless.ClientOnly">
+      <HintPath>..\packages\DotlessClientOnly.1.4.0.0\lib\dotless.ClientOnly.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -856,7 +862,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\Site.less" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
