@@ -1,16 +1,24 @@
 ﻿@model dynamic
 
 @{
-  ViewBag.Title = "Welcome";
-  Bundles.Reference("scripts/custom/home", "end");
+    ViewBag.Title = "Welcome";
+    Bundles.Reference("scripts/custom/home", "end");
 }
 
 <div ng-app="home">
-    
-    <form action="/Home/SearchForTerm">
-        @Html.TextBox("term")
-        <input type="submit" />
-    </form>
+    <div ng-controller="HomeController">
+
+        <form ng-submit="performSearch()">
+            <input type="text" ng-model="term" />
+            <input type="submit" />
+        </form>
+        
+        <div ng-repeat="result in searchResults">
+            
+            <hierrachy-view tree="result"></hierrachy-view>
+        </div>
+        
+    </div>
 
 </div>
 

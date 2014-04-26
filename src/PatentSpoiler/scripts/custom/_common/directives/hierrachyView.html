@@ -1,0 +1,9 @@
+﻿<ul class="search-item">
+    <li>
+        <span ng-click="za()">{{symbol}}</span>
+        <strong><a ng-href="/category/{{tree.Id}}">{{tree.Id}}</a></strong> - {{tree.Description}}
+    </li>
+    <li ng-if="tree.Child!=null && show">
+        <hierrachy-view tree="tree.Child"></hierrachy-view>
+    </li>
+</ul>

@@ -2,22 +2,36 @@
 
 namespace PatentSpoiler.App.DTOs
 {
-    public class SearchResultTree
+    public class SearchResult
     {
-        public SearchResultTree Parent { get; set; }
+        public SearchResult Child { get; set; }
         public string Id { get; set; }
         public string Description { get; set; }
-        
-        public static SearchResultTree From(PatentHierrachyNode hierrachyNode)
+
+        public static SearchResult From(PatentHierrachyNode currentNode)
         {
-            var current = new SearchResultTree
+            return From(currentNode, null);
+
+        }
+        private static SearchResult From(PatentHierrachyNode currentNode, SearchResult child)
+        {
+            var current = new SearchResult
             {
-                Id = hierrachyNode.ClassificationSymbol,
-                Description = string.Join(" ", hierrachyNode.TitleParts),
-                Parent = hierrachyNode.Parent == null ? null : From(hierrachyNode.Parent)
+                Id = currentNode.ClassificationSymbol,
+                Description = string.Join(" ", currentNode.TitleParts),
             };
 
-            return current;
+            if (child != null)
+            {
+                current.Child = child;
+            }
+
+            if (currentNode.Parent.Parent == null)
+            {
+                return current;
+            }
+
+            return From(currentNode.Parent, current);
         }
     }
 }

@@ -1,4 +1,5 @@
 using Cassette;
+using Cassette.BundleProcessing;
 using Cassette.Scripts;
 using Cassette.Stylesheets;
 
@@ -30,6 +31,19 @@ namespace PatentSpoiler
             //   bundles.AddPerSubDirectory<ScriptBundle>("Scripts");
             // Each immediate sub-directory of ~/Scripts will be combined into its own bundle.
             // This is useful when there are lots of scripts for different areas of the website.
+        }
+    }
+
+    public class GlobalScriptPipelineModifier : IBundlePipelineModifier<ScriptBundle>
+    {
+        public IBundlePipeline<ScriptBundle> Modify(IBundlePipeline<ScriptBundle> pipeline)
+        {
+            var index = pipeline.IndexOf<MinifyAssets>();
+            if (index >= 0)
+            {
+                pipeline.RemoveAt(index);
+            }
+            return pipeline;
         }
     }
 }

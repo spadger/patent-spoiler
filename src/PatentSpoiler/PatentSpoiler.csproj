@@ -173,6 +173,7 @@
     <Compile Include="CassetteConfiguration.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -849,10 +850,13 @@
     <Content Include="scripts\angular.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="scripts\custom\_common\directives\hierrachyView.html" />
     <Content Include="scripts\custom\home\searchService.js" />
     <Content Include="scripts\custom\home\homeController.js" />
     <Content Include="scripts\custom\home\app.js" />
+    <Content Include="scripts\custom\_common\factories\recursionHelper.js" />
     <Content Include="scripts\modernizr-2.7.2.js" />
+    <Content Include="scripts\custom\_common\directives\hierrachyView.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -870,7 +874,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

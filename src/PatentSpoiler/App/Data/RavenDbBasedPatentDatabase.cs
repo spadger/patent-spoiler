@@ -20,11 +20,6 @@ namespace PatentSpoiler.App.Data
             this.documentStore = documentStore;
         }
 
-        public IEnumerable<PatentHierrachyNode> NodesForTerm(string term)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void StoreNodes(PatentHierrachyNode root)
         {
             Check(root, new HashSet<string>(), new List<PatentHierrachyNode>());
