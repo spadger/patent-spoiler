@@ -1,5 +1,5 @@
 using System.Linq;
-using PatentSpoiler.App.Domain;
+using PatentSpoiler.App.Domain.Patents;
 using PatentSpoiler.App.ServiceBinding;
 using Raven.Abstractions.Indexing;
 using Raven.Client.Indexes;

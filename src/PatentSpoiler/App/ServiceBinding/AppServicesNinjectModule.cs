@@ -1,4 +1,7 @@
 ﻿using System.Configuration;
+using System.Web;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using Ninject.Infrastructure.Language;
 using Ninject.Modules;
 using Ninject.Extensions.Conventions;
@@ -6,6 +9,7 @@ using Ninject.Web.Common;
 using PatentSpoiler.Annotations;
 using PatentSpoiler.App.Data;
 using PatentSpoiler.App.Import.Config;
+using PatentSpoiler.App.Security;
 
 namespace PatentSpoiler.App.ServiceBinding
 {
@@ -30,6 +34,12 @@ namespace PatentSpoiler.App.ServiceBinding
                     else
                         cfg.InTransientScope();
                 }));
+
+            Bind<IAuthenticationManager>().ToMethod(c => HttpContext.Current.GetOwinContext().Authentication).InRequestScope();
+            Bind<PatentSpoilerUserManager>().ToMethod(c =>
+            {
+                return HttpContext.Current.GetOwinContext().Get<PatentSpoilerUserManager>();
+            }).InRequestScope();
         }
     }
 }

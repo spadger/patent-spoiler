@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using PatentSpoiler.App.Domain;
+using PatentSpoiler.App.Domain.Patents;
 
 namespace PatentSpoiler.Models
 {

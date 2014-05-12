@@ -21,6 +21,7 @@ namespace PatentSpoiler.App.ServiceBinding
            .InSingletonScope();
 
             Bind<IDocumentSession>().ToMethod(context => context.Kernel.Get<IDocumentStore>().OpenSession()).InRequestScope();
+            Bind<IAsyncDocumentSession>().ToMethod(context => context.Kernel.Get<IDocumentStore>().OpenAsyncSession()).InRequestScope();
         }
     }
 }

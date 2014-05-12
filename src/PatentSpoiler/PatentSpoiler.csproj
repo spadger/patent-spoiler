@@ -186,17 +186,27 @@
     <Compile Include="App\Data\Indexes\DocumentsByTitlePartIndex.cs" />
     <Compile Include="App\Data\RavenDbBasedPatentDatabase.cs" />
     <Compile Include="App\Data\DocumentStoreManager.cs" />
-    <Compile Include="App\Domain\PatentClassification.cs" />
+    <Compile Include="App\Domain\Patents\PatentableEntity.cs" />
+    <Compile Include="App\Domain\Patents\PatentClassification.cs" />
+    <Compile Include="App\Domain\Security\PatentSpoilerUser.cs" />
+    <Compile Include="App\Domain\Security\UserRole.cs" />
+    <Compile Include="App\DTOs\LoginVIewModel.cs" />
+    <Compile Include="App\DTOs\RegistrationViewModel.cs" />
     <Compile Include="App\DTOs\SearchResultTree.cs" />
     <Compile Include="App\Import\Config\ImporterSettings.cs" />
     <Compile Include="App\Import\DefinitionImporter.cs" />
     <Compile Include="App\Import\XmlDocumentLoader.cs" />
     <Compile Include="App\Initialisation\InitialisationManager.cs" />
+    <Compile Include="App\Security\PatentSpoilerUserManager.cs" />
+    <Compile Include="App\Security\BCryptPasswordHasher.cs" />
+    <Compile Include="App\Security\EmailService.cs" />
+    <Compile Include="App\Security\UserStore.cs" />
     <Compile Include="App\ServiceBinding\AppServicesNinjectModule.cs" />
     <Compile Include="App\ServiceBinding\BindAsASingletonAttribute.cs" />
     <Compile Include="App\ServiceBinding\BindInRequestScopeAttribute.cs" />
     <Compile Include="App\ServiceBinding\RavenDBNinjectModule.cs" />
     <Compile Include="App\Data\Queries\SearchForClassificationQuery.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -204,6 +214,8 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -906,6 +918,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

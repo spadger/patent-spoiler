@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PatentSpoiler.App.Domain
+namespace PatentSpoiler.App.Domain.Patents
 {
     public class PatentClassification
     {
@@ -16,11 +16,5 @@ namespace PatentSpoiler.App.Domain
         public string[] Keywords { get; set; }
 
         public ICollection<PatentableEntity> PatentableEntities { get; set; }
-    }
-
-    public class PatentableEntity
-    {
-        public int Id { get; set; }
-        public string Title { get; set; }
     }
 }

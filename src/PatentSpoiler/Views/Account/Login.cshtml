@@ -1,0 +1,15 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "login";
+}
+
+<h2>Log in!</h2>
+
+<form method="POST">
+    @Html.AntiForgeryToken()
+    Email: @Html.TextBox("Email")<br/>
+    Password: @Html.TextBox("Password")<br/>
+    Remember me @Html.CheckBox("RememberMe")<br />
+    <input type="submit" value="Log in"/>
+</form>
