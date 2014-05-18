@@ -1,15 +1,18 @@
 ﻿///<reference path="~/scripts/angular.js" />
 ///<reference path="app.js" />
 ///<reference path="homeController.js" />
-
-window.homeApp.factory('searchService', ['$http', function($http) {
+'use strict';
+window.homeApp.factory('searchService', ['$http', '$q', function($http, $q) {
 
     return {
-        performSearch: function (term, onSuccess, onError) {
-            $http({ method: 'GET', url: '/search', params:{term:term} })
-            .success(onSuccess)
-            .error(onError);
+        performSearch: function (term) {
+
+            var deferred = $q.defer();
+            $http({ method: 'GET', url: '/search', params: { term: term } })
+                .success(deferred.resolve)
+                .error(deferred.reject);
+
+            return deferred.promise;
         }
     }
-    
 }]);
