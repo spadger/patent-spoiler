@@ -188,6 +188,8 @@
   <ItemGroup>
     <Compile Include="App\Data\DictionaryBasedPatentDatabase.cs" />
     <Compile Include="App\Data\Indexes\DocumentsByTitlePartIndex.cs" />
+    <Compile Include="App\Data\Indexes\PatentableEntitiesByIdIndex.cs" />
+    <Compile Include="App\Data\Queries\RetrivePatentsForClassificationQuery.cs" />
     <Compile Include="App\Data\RavenDbBasedPatentDatabase.cs" />
     <Compile Include="App\Data\DocumentStoreManager.cs" />
     <Compile Include="App\Domain\Patents\PatentableEntity.cs" />

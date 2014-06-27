@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using PatentSpoiler.App.Data;
 using PatentSpoiler.App.Data.Indexes;
-using PatentSpoiler.App.Domain;
 using PatentSpoiler.App.Domain.Patents;
 using PatentSpoiler.Models;
 using Raven.Abstractions.Util;
