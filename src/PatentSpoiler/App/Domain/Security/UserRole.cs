@@ -3,6 +3,8 @@
     public enum UserRole
     {
         Admin,
-        PaidMember
+        PaidMember,
+        Member,
+        VerifiedMember
     }
 }

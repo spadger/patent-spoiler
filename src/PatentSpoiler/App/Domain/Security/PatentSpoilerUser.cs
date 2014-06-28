@@ -8,6 +8,11 @@ namespace PatentSpoiler.App.Domain.Security
 {
     public class PatentSpoilerUser : IUser
     {
+        public PatentSpoilerUser()
+        {
+            Roles = new HashSet<UserRole>();
+        }
+
         public string Id { get; set; }
         string IUser<string>.UserName { get { return Id; } set { Id = value; } }
         

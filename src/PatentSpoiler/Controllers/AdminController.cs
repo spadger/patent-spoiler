@@ -1,5 +1,7 @@
 ﻿using System.Web.Mvc;
 using PatentSpoiler.App.Data;
+using PatentSpoiler.App.Domain.Security;
+using PatentSpoiler.App.Security;
 
 namespace PatentSpoiler.Controllers
 {
@@ -14,7 +16,7 @@ namespace PatentSpoiler.Controllers
             this.patentStoreHierrachy = patentStoreHierrachy;
         }
 
-
+        [AuthoriseRoles(UserRole.Admin)]
         public ActionResult Index()
         {
             return View();

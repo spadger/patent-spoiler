@@ -205,6 +205,7 @@
     <Compile Include="App\Import\XmlDocumentLoader.cs" />
     <Compile Include="App\Initialisation\InitialisationManager.cs" />
     <Compile Include="App\JsonNetResult.cs" />
+    <Compile Include="App\Security\AuthoriseRolesAttribute.cs" />
     <Compile Include="App\Security\PatentSpoilerUserManager.cs" />
     <Compile Include="App\Security\BCryptPasswordHasher.cs" />
     <Compile Include="App\Security\EmailService.cs" />
