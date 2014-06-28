@@ -1,6 +1,6 @@
 ﻿///<reference path="app.js" />
 'use strict';
-window.homeApp.controller('HomeController', ['$scope', 'searchService', function($scope, searchService) {
+angular.module('home').controller('HomeController', ['$scope', 'searchService', function($scope, searchService) {
 
     var searchSuccess = function (results) {
         $scope.searchResults = results;

@@ -37,7 +37,7 @@ namespace PatentSpoiler.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await userManager.FindAsync(model.Email, model.Password);
+                var user = await userManager.FindAsync(model.Username, model.Password);
                 if (user != null)
                 {
                     await SignInAsync(user, model.RememberMe);

@@ -2,7 +2,7 @@
 ///<reference path="app.js" />
 ///<reference path="homeController.js" />
 'use strict';
-window.homeApp.factory('searchService', ['$http', '$q', function($http, $q) {
+angular.module('home').factory('searchService', ['$http', '$q', function($http, $q) {
 
     return {
         performSearch: function (term) {
