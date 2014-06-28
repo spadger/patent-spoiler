@@ -1,0 +1,24 @@
+﻿@model PatentSpoiler.App.DTOs.CategoryListDisplayViewModel
+@{
+    ViewBag.Title = string.Format("Patents for {0}", Model.Category);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Bundles.Reference("scripts/custom/category", "end");
+}
+
+@section head{
+    <script>
+        window.category = '@Model.Category';
+    </script>
+}
+
+<div ng-app="category" ng-controller="CategoryListController">
+
+    <h2>Patents registerred under @Model.Category</h2>
+    
+    <span ng-if="noItems()">No items have been registered under {{category}}</span>
+
+    <ul>
+        <li ng-repeat="item in items">{{item.title}}</li>
+    </ul>
+    <button type="button" ng-disable="working" ng-click="moreItems()" ng-if="moreItemsAllowed()">Showing {{items.length}} of {{itemCount}}</button>
+</div>

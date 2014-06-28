@@ -196,6 +196,7 @@
     <Compile Include="App\Domain\Patents\PatentClassification.cs" />
     <Compile Include="App\Domain\Security\PatentSpoilerUser.cs" />
     <Compile Include="App\Domain\Security\UserRole.cs" />
+    <Compile Include="App\DTOs\CategoryListDisplayViewModel.cs" />
     <Compile Include="App\DTOs\LoginVIewModel.cs" />
     <Compile Include="App\DTOs\RegistrationViewModel.cs" />
     <Compile Include="App\DTOs\SearchResultTree.cs" />
@@ -203,6 +204,7 @@
     <Compile Include="App\Import\DefinitionImporter.cs" />
     <Compile Include="App\Import\XmlDocumentLoader.cs" />
     <Compile Include="App\Initialisation\InitialisationManager.cs" />
+    <Compile Include="App\JsonNetResult.cs" />
     <Compile Include="App\Security\PatentSpoilerUserManager.cs" />
     <Compile Include="App\Security\BCryptPasswordHasher.cs" />
     <Compile Include="App\Security\EmailService.cs" />
@@ -898,6 +900,9 @@
     <Content Include="scripts\angular.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="scripts\custom\category\categoryListController.js" />
+    <Content Include="scripts\custom\category\module.js" />
+    <Content Include="scripts\custom\category\categoryListingService.js" />
     <Content Include="scripts\custom\_common\directives\hierrachyView.html" />
     <Content Include="scripts\custom\home\searchService.js" />
     <Content Include="scripts\custom\home\homeController.js" />
@@ -932,6 +937,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\Category\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

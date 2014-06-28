@@ -1,9 +1,9 @@
-using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using PatentSpoiler.App.Data.Indexes;
+using PatentSpoiler.App;
 using PatentSpoiler.App.Data.Queries;
 using PatentSpoiler.App.Domain.Patents;
+using PatentSpoiler.App.DTOs;
 using Raven.Client;
 
 namespace PatentSpoiler.Controllers
@@ -20,19 +20,26 @@ namespace PatentSpoiler.Controllers
         }
 
         [Route("category/{*category}")]
-        public async Task<ActionResult> Index(string category, int page = 1, int pageSize = 10)
+        public async Task<ActionResult> Index(string category)
+        {
+            return View(new CategoryListDisplayViewModel(){Category = category});
+        }
+
+        [Route("category/list/{*category}")]
+        public async Task<ActionResult> List(string category, int page = 1, int pageSize = 10)
         {
             var results = await patentsForClassificationQuery.ExecuteAsync(category, page, pageSize);
 
-            return Json(results, JsonRequestBehavior.AllowGet);
+            return this.JsonNetResult(results, JsonRequestBehavior.AllowGet);
         }
 
-        [Route("category/poo/{*category}")]
-        public async Task<ActionResult> Index(string category)
+        private static int x;
+        [Route("category/add/{*category}")]
+        public async Task<ActionResult> Add(string category)
         {
             using (var session = documentStore.OpenAsyncSession())
             {
-                await session.StoreAsync(new PatentableEntity {Category = category, Title = Guid.NewGuid().ToString()});
+                await session.StoreAsync(new PatentableEntity {Category = category, Title = x++.ToString()});
                 await session.SaveChangesAsync();
             }
 
