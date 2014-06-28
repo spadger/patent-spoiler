@@ -32,6 +32,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -196,6 +197,7 @@
     <Compile Include="App\Domain\Patents\PatentClassification.cs" />
     <Compile Include="App\Domain\Security\PatentSpoilerUser.cs" />
     <Compile Include="App\Domain\Security\UserRole.cs" />
+    <Compile Include="App\DTOs\AddItemViewModel.cs" />
     <Compile Include="App\DTOs\CategoryListDisplayViewModel.cs" />
     <Compile Include="App\DTOs\LoginVIewModel.cs" />
     <Compile Include="App\DTOs\PatentableEntityViewModel.cs" />
@@ -223,6 +225,7 @@
     <Compile Include="CassetteConfiguration.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
@@ -902,9 +905,12 @@
     <Content Include="scripts\angular.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="scripts\custom\item\addItemController.js" />
+    <Content Include="scripts\custom\item\module.js" />
     <Content Include="scripts\custom\category\categoryListController.js" />
     <Content Include="scripts\custom\category\module.js" />
     <Content Include="scripts\custom\category\categoryListingService.js" />
+    <Content Include="scripts\custom\item\addItemService.js" />
     <Content Include="scripts\custom\_common\directives\hierrachyView.html" />
     <Content Include="scripts\custom\home\searchService.js" />
     <Content Include="scripts\custom\home\homeController.js" />
@@ -940,7 +946,9 @@
   <ItemGroup>
     <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\Item\Add.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Category\Index.cshtml" />
   </ItemGroup>
