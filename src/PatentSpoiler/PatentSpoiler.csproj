@@ -198,6 +198,7 @@
     <Compile Include="App\Domain\Security\UserRole.cs" />
     <Compile Include="App\DTOs\CategoryListDisplayViewModel.cs" />
     <Compile Include="App\DTOs\LoginVIewModel.cs" />
+    <Compile Include="App\DTOs\PatentableEntityViewModel.cs" />
     <Compile Include="App\DTOs\RegistrationViewModel.cs" />
     <Compile Include="App\DTOs\SearchResultTree.cs" />
     <Compile Include="App\Import\Config\ImporterSettings.cs" />

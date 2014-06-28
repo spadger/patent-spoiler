@@ -3,13 +3,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using PatentSpoiler.App.Data.Indexes;
 using PatentSpoiler.App.Domain.Patents;
+using PatentSpoiler.App.DTOs;
 using Raven.Client;
 
 namespace PatentSpoiler.App.Data.Queries
 {
     public interface IRetrivePatentsForClassificationQuery
     {
-        Task<PageOf<PatentableEntity>> ExecuteAsync(string category, int page, int pageSize);
+        Task<PageOf<PatentableEntityViewModel>> ExecuteAsync(string category, int page, int pageSize);
     }
 
     public class PageOf<T>
@@ -41,7 +42,7 @@ namespace PatentSpoiler.App.Data.Queries
             this.documentStore = documentStore;
         }
 
-        public async Task<PageOf<PatentableEntity>> ExecuteAsync(string category, int page, int pageSize)
+        public async Task<PageOf<PatentableEntityViewModel>> ExecuteAsync(string category, int page, int pageSize)
         {
             using (var session = documentStore.OpenAsyncSession())
             {
@@ -54,7 +55,7 @@ namespace PatentSpoiler.App.Data.Queries
                     .OrderByDescending(x => x.Id)
                     .ToListAsync();
 
-                return Page.Of(items, stats.TotalResults);
+                return Page.Of(items.Select(PatentableEntityViewModel.FromDomainModel), stats.TotalResults);
             }
         }
     }

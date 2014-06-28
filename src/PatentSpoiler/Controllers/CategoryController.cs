@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using PatentSpoiler.App;
@@ -22,7 +24,7 @@ namespace PatentSpoiler.Controllers
         [Route("category/{*category}")]
         public async Task<ActionResult> Index(string category)
         {
-            return View(new CategoryListDisplayViewModel(){Category = category});
+            return View(new CategoryListDisplayViewModel{Category = category});
         }
 
         [Route("category/list/{*category}")]
@@ -39,11 +41,26 @@ namespace PatentSpoiler.Controllers
         {
             using (var session = documentStore.OpenAsyncSession())
             {
-                await session.StoreAsync(new PatentableEntity {Category = category, Title = x++.ToString()});
+                await session.StoreAsync(new PatentableEntity {Category = category, Name = x++.ToString(), Description = "Tis is a description of " + x, Owner = "spadger", Attachments = GetAttachments()});
                 await session.SaveChangesAsync();
             }
 
             return Content("Stored: " + category);
+        }
+
+        static Random r = new Random();
+        private List<Attachment> GetAttachments()
+        {
+            var count = r.Next(0, 3);
+
+            var results = new List<Attachment>();
+
+            for (int i = 0; i < count; i++)
+            {
+                results.Add(new Attachment {Name = Guid.NewGuid().ToString()});
+            }
+
+            return results;
         }
     }
 }
