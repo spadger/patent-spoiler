@@ -11,6 +11,7 @@ namespace PatentSpoiler.App.Data
     {
         PatentHierrachyNode GetDefinitionFor(string id);
         PatentHierrachyNode Root { get; }
+        bool ContainsCategory(string id);
     }
 
     public class DictionaryBasedPatentStoreHierrachy : IPatentStoreHierrachy
@@ -95,6 +96,11 @@ namespace PatentSpoiler.App.Data
             {
                 SetupInverseIndexes(childNode);
             }
+        }
+
+        public bool ContainsCategory(string id)
+        {
+            return nodesForCategory.ContainsKey((id??"").Trim());
         }
     }
 

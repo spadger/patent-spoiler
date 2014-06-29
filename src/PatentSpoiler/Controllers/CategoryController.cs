@@ -6,6 +6,7 @@ using PatentSpoiler.App;
 using PatentSpoiler.App.Data.Queries;
 using PatentSpoiler.App.Domain.Patents;
 using PatentSpoiler.App.DTOs;
+using PatentSpoiler.App.Filters;
 using Raven.Client;
 
 namespace PatentSpoiler.Controllers
@@ -22,12 +23,14 @@ namespace PatentSpoiler.Controllers
         }
 
         [Route("category/{*category}")]
+        [PatentCategoryMustExist("category")]
         public async Task<ActionResult> Index(string category)
         {
             return View(new CategoryListDisplayViewModel{Category = category});
         }
 
         [Route("category/list/{*category}")]
+        [PatentCategoryMustExist("category")]
         public async Task<ActionResult> List(string category, int page = 1, int pageSize = 10)
         {
             var results = await patentsForClassificationQuery.ExecuteAsync(category, page, pageSize);
@@ -37,6 +40,7 @@ namespace PatentSpoiler.Controllers
 
         private static int x;
         [Route("category/add/{*category}")]
+        [PatentCategoryMustExist("category")]
         public async Task<ActionResult> Add(string category)
         {
             using (var session = documentStore.OpenAsyncSession())

@@ -1,6 +1,7 @@
 using System.Web.Mvc;
 using PatentSpoiler.App.Domain.Security;
 using PatentSpoiler.App.DTOs;
+using PatentSpoiler.App.Filters;
 using PatentSpoiler.App.Security;
 
 namespace PatentSpoiler.Controllers
@@ -9,6 +10,7 @@ namespace PatentSpoiler.Controllers
     {
         [HttpGet]
         [AuthoriseRoles(UserRole.PaidMember)]
+        [PatentCategoryMustExist("category")]
         [Route("item/add/{*category}")]
         public ActionResult Add(string category)
         {
@@ -17,6 +19,7 @@ namespace PatentSpoiler.Controllers
 
         [HttpPost]
         [AuthoriseRoles(UserRole.PaidMember)]
+        [PatentCategoryMustExist("category")]
         [Route("item/add/{*category}")]
         public ActionResult Add(string category, AddItemRequestViewModel item)
         {

@@ -1,13 +1,16 @@
 ﻿using System.Configuration;
 using System.Web;
+using System.Web.Mvc;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Ninject.Infrastructure.Language;
 using Ninject.Modules;
 using Ninject.Extensions.Conventions;
 using Ninject.Web.Common;
+using Ninject.Web.Mvc.FilterBindingSyntax;
 using PatentSpoiler.Annotations;
 using PatentSpoiler.App.Data;
+using PatentSpoiler.App.Filters;
 using PatentSpoiler.App.Import.Config;
 using PatentSpoiler.App.Security;
 
@@ -40,6 +43,10 @@ namespace PatentSpoiler.App.ServiceBinding
             {
                 return HttpContext.Current.GetOwinContext().Get<PatentSpoilerUserManager>();
             }).InRequestScope();
+
+            this.BindFilter<PatentCategoryMustExistFilter>(FilterScope.Action, int.MaxValue)
+                .WhenActionMethodHas<PatentCategoryMustExistAttribute>()
+                .WithConstructorArgumentFromActionAttribute<PatentCategoryMustExistAttribute>("categoryPath", x => x.CategoryPath);
         }
     }
 }
