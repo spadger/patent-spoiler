@@ -16,18 +16,18 @@
     <h2>Add a new item to @Model.Category</h2>
     <form name="addForm" novalidate role="form" ng-submit="add()">
 
-        <div class="form-group" ng-class="{'has-error': addForm.name.$invalid && addForm.name.$dirty}">
+        <div class="form-group" ng-class="{'has-error': addForm.name.$invalid && addForm.name.$pristine && submitted}">
             <label for="name">Name</label>
             <input type="text" required class="form-control" ng-model="item.name" id="name" name="name" placeholder="name" />
-            <span class="help-block" ng-show="addForm.name.$error.required && addForm.name..$dirty">Required</span>
+            <span class="help-block" ng-show="addForm.name.$error.required && addForm.name.$pristine && submitted">Required</span>
         </div>
 
-        <div class="form-group" ng-class="{'has-error': addForm.description.$invalid && addForm.description.$dirty}">
+        <div class="form-group" ng-class="{'has-error': addForm.description.$invalid && addForm.description.$pristine && submitted}">
             <label for="description">Description</label>
             <input type="text" required class="form-control" ng-model="item.description" id="description" name="description" placeholder="description" />
-            <span class="help-block" ng-show="addForm.description.$error.required && addForm.description.$dirty">Required</span>
+            <span class="help-block" ng-show="addForm.description.$error.required && addForm.description.$pristine && submitted">Required</span>
         </div>
-        <button type="submit" ng-disable="working" class="btn btn-default">Save your item</button>
+        <button type="submit" ng-disabled="working" class="btn btn-default">Save your item</button>
 
     </form>
 </div>

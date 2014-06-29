@@ -49,10 +49,9 @@ namespace PatentSpoiler.App.Filters
                 throw new InvalidOperationException("Could not find the category id.");
             }
 
-
             if (!patentStoreHierrachy.ContainsCategory(categoryObject.ToString()))
             {
-                filterContext.Result = new HttpNotFoundResult("Category not found");
+                filterContext.Result = new HttpNotFoundResult("Category not found: " + categoryObject);
             }
         }
 

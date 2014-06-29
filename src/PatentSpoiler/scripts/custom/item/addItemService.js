@@ -5,10 +5,10 @@
 angular.module('item').factory('addItemService', ['$http', '$q', function($http, $q) {
 
     return {
-        AddItem: function (item) {
+        addItem: function (item, category) {
 
             var deferred = $q.defer();
-            $http({ method: 'POST', url: '/item/add', params: { item: item } })
+            $http({ method: 'POST', url: '/item/add/' + category, data: { item: item } })
                 .success(deferred.resolve)
                 .error(deferred.reject);
 
