@@ -1,7 +1,7 @@
-﻿///<reference path="~/scripts/custom/_common/factories/recursionHelper.js" />
-///<reference path="~/scripts/custom/_common/filters/escapedURI.js" />
+﻿///<reference path="../module.js" />
+///<reference path="~/scripts/custom/_common/factories/recursionHelper.js" />
 'use strict';
-window.utilsModule.directive('hierrachyView', ['recursionHelper', function (recursionHelper) {
+angular.module('utils').directive('hierrachyView', ['recursionHelper', function (recursionHelper) {
     return {
         restrict: 'AE',
         scope: {

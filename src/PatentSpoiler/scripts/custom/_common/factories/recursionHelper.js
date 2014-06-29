@@ -1,6 +1,6 @@
-﻿///<reference path="~/scripts/custom/_common/UtilsModule.js"/>
+﻿///<reference path="../module.js"/>
 'use strict';
-window.utilsModule.factory('recursionHelper', ['$compile', function($compile) {
+angular.module('utils').factory('recursionHelper', ['$compile', function ($compile) {
     return {
         /**
         * Manually compiles the element, fixing the recursion loop.

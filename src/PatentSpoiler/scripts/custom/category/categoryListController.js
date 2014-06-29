@@ -1,14 +1,14 @@
 ﻿///<reference path="module.js" />
 ///<reference path="categoryListingService.js" />
 'use strict';
-angular.module('category').controller('CategoryListController', ['$scope', 'categoryListingService', function ($scope, categoryListingService) {
+angular.module('category').controller('CategoryListController', ['$scope', '$window', 'categoryListingService', function ($scope, $window, categoryListingService) {
 
 
     $scope.page = 1;
     $scope.items = [];
     $scope.itemCount = null;
     $scope.working = false;
-    $scope.category = window.category;
+    $scope.category = $window.category;
 
     //$scope.moreItemsAllowed = false;
     

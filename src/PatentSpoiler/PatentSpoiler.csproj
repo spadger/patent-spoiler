@@ -918,7 +918,7 @@
     <Content Include="scripts\custom\home\app.js" />
     <Content Include="scripts\custom\_common\factories\recursionHelper.js" />
     <Content Include="scripts\custom\_common\filters\escapedURI.js" />
-    <Content Include="scripts\custom\_common\UtilsModule.js" />
+    <Content Include="scripts\custom\_common\module.js" />
     <Content Include="scripts\modernizr-2.7.2.js" />
     <Content Include="scripts\custom\_common\directives\hierrachyView.js" />
     <Content Include="Web.config">

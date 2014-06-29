@@ -1,6 +1,6 @@
-﻿///<reference path="~/scripts/custom/_common/UtilsModule.js"/>
+﻿///<reference path="../module.js"/>
 'use strict';
-window.utilsModule.filter('escapedURI', ['$window', function($window) {
+angular.module('utils').filter('escapedURI', ['$window', function ($window) {
     return $window.encodeURIComponent;
 }]);
  
