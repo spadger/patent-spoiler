@@ -8,6 +8,7 @@ using PatentSpoiler.App.Security;
 
 namespace PatentSpoiler.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
         private IAuthenticationManager authenticationManager;
@@ -19,8 +20,11 @@ namespace PatentSpoiler.Controllers
             this.userManager = userManager;
         }
 
-        //
-        // GET: /Account/Login
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
@@ -53,12 +57,14 @@ namespace PatentSpoiler.Controllers
             return View(model);
         }
 
+        [AllowAnonymous]
         public ActionResult Register()
         {
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegistrationViewModel model)
         {
@@ -109,10 +115,11 @@ namespace PatentSpoiler.Controllers
                }, identity);
         }
 
+        [AllowAnonymous]
         public ActionResult Logout()
         {
             DoLogout();
-            return Content("Logged Out");
+            return View();
         }
 
         private void DoLogout()

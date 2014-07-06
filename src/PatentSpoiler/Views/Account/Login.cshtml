@@ -9,7 +9,7 @@
 <form method="POST">
     @Html.AntiForgeryToken()
     Username: @Html.TextBox("Username")<br/>
-    Password: @Html.TextBox("Password")<br/>
+    Password: @Html.Password("Password")<br/>
     Remember me @Html.CheckBox("RememberMe")<br />
     <input type="submit" value="Log in"/>
 </form>

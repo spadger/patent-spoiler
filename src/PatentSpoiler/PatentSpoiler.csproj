@@ -204,6 +204,7 @@
     <Compile Include="App\DTOs\RegistrationViewModel.cs" />
     <Compile Include="App\DTOs\SearchResultTree.cs" />
     <Compile Include="App\Filters\PatentCategoryMustExist.cs" />
+    <Compile Include="App\HtmlHelperExtnesions.cs" />
     <Compile Include="App\Import\Config\ImporterSettings.cs" />
     <Compile Include="App\Import\DefinitionImporter.cs" />
     <Compile Include="App\Import\XmlDocumentLoader.cs" />
@@ -952,6 +953,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Category\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Logout.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
