@@ -14,7 +14,13 @@ namespace PatentSpoiler.Controllers
             this.searchForClassificationQuery = searchForClassificationQuery;
         }
 
-        public JsonResult Index(string term)
+        public ActionResult Index(string term)
+        {
+            var vm = new SearchViewModel {Term = term};
+            return View(vm);
+        }
+
+        public JsonResult For(string term)
         {
             var result = searchForClassificationQuery.Execute(term, 0, 10);
 

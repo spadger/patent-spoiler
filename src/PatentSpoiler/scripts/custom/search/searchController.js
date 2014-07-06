@@ -1,6 +1,6 @@
 ﻿///<reference path="app.js" />
 'use strict';
-angular.module('home').controller('HomeController', ['$scope', 'searchService', function($scope, searchService) {
+angular.module('search').controller('SearchController', ['$scope', '$window', 'searchService', function($scope, $window, searchService) {
 
     var searchSuccess = function (results) {
         $scope.searchResults = results;
@@ -10,9 +10,12 @@ angular.module('home').controller('HomeController', ['$scope', 'searchService', 
         alert('ruh-ro');
     }
 
-    $scope.term = 'garden';
+    $scope.term = $window.term || 'garden';
     $scope.performSearch = function() {
         searchService.performSearch($scope.term).then(searchSuccess, searchFailed);
     }
 
+    if (!!window.term) {
+        $scope.performSearch();
+    }
 }]);

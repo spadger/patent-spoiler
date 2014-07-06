@@ -1,0 +1,29 @@
+﻿@model PatentSpoiler.App.DTOs.SearchViewModel
+
+@{
+    ViewBag.Title = "Your Results";
+    Bundles.Reference("scripts/custom/search", "end");
+}
+@section head
+{
+    <script>
+        'use strict';
+        window.term = '@Model.Term';
+    </script>
+}
+
+<div ng-app="search">
+    <div ng-controller="SearchController">
+
+        <form ng-submit="performSearch()">
+            <input type="text" ng-model="term" />
+            <input type="submit" />
+        </form>
+
+        <div ng-repeat="result in searchResults">
+
+            <hierrachy-view tree="result"></hierrachy-view>
+        </div>
+
+    </div>
+</div>

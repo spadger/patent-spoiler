@@ -203,6 +203,7 @@
     <Compile Include="App\DTOs\PatentableEntityViewModel.cs" />
     <Compile Include="App\DTOs\RegistrationViewModel.cs" />
     <Compile Include="App\DTOs\SearchResultTree.cs" />
+    <Compile Include="App\DTOs\SearchViewModel.cs" />
     <Compile Include="App\Filters\PatentCategoryMustExist.cs" />
     <Compile Include="App\HtmlHelperExtnesions.cs" />
     <Compile Include="App\Import\Config\ImporterSettings.cs" />
@@ -914,14 +915,15 @@
     <Content Include="scripts\custom\category\categoryListingService.js" />
     <Content Include="scripts\custom\item\addItemService.js" />
     <Content Include="scripts\custom\_common\directives\hierrachyView.html" />
-    <Content Include="scripts\custom\home\searchService.js" />
-    <Content Include="scripts\custom\home\homeController.js" />
-    <Content Include="scripts\custom\home\app.js" />
+    <Content Include="scripts\custom\search\searchService.js" />
+    <Content Include="scripts\custom\search\searchController.js" />
+    <Content Include="scripts\custom\search\app.js" />
     <Content Include="scripts\custom\_common\factories\recursionHelper.js" />
     <Content Include="scripts\custom\_common\filters\escapedURI.js" />
     <Content Include="scripts\custom\_common\module.js" />
     <Content Include="scripts\modernizr-2.7.2.js" />
     <Content Include="scripts\custom\_common\directives\hierrachyView.js" />
+    <Content Include="scripts\ui-bootstrap.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -959,6 +961,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\Logout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,14 +1,14 @@
 ﻿///<reference path="~/scripts/angular.js" />
 ///<reference path="app.js" />
-///<reference path="homeController.js" />
+///<reference path="searchController.js" />
 'use strict';
-angular.module('home').factory('searchService', ['$http', '$q', function($http, $q) {
+angular.module('search').factory('searchService', ['$http', '$q', function($http, $q) {
 
     return {
         performSearch: function (term) {
 
             var deferred = $q.defer();
-            $http({ method: 'GET', url: '/search', params: { term: term } })
+            $http({ method: 'GET', url: '/search/for', params: { term: term } })
                 .success(deferred.resolve)
                 .error(deferred.reject);
 
