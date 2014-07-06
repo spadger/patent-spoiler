@@ -1,0 +1,9 @@
+﻿<ul class="search-item">
+    <li>
+        <span ng-click="toggleExpansion()">{{symbol}}</span>
+        <strong><input type="checkbox" ng-if="mode=='select'" ng-model="selected" ng-change="itemChecked(selected)"/><a ng-href="/category/{{tree.Id}}">{{tree.Id}}</a></strong> - {{tree.Description}} ** {{mode}} ** {{topic}} **
+    </li>
+    <li ng-if="tree.Child!=null && show">
+        <category-hierrachy-view tree="tree.Child" mode="{{mode}}" topic="{{topic}}" template-url="/scripts/custom/_common/directives/categoryHierrachyView.html"></category-hierrachy-view>
+    </li>
+</ul>

@@ -240,6 +240,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\spinner.gif" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="schemes\scheme-A01C.pdf" />
@@ -914,7 +915,7 @@
     <Content Include="scripts\custom\category\module.js" />
     <Content Include="scripts\custom\category\categoryListingService.js" />
     <Content Include="scripts\custom\item\addItemService.js" />
-    <Content Include="scripts\custom\_common\directives\hierrachyView.html" />
+    <Content Include="scripts\custom\_common\directives\categoryHierrachyView.html" />
     <Content Include="scripts\custom\search\searchService.js" />
     <Content Include="scripts\custom\search\searchController.js" />
     <Content Include="scripts\custom\search\app.js" />
@@ -922,7 +923,7 @@
     <Content Include="scripts\custom\_common\filters\escapedURI.js" />
     <Content Include="scripts\custom\_common\module.js" />
     <Content Include="scripts\modernizr-2.7.2.js" />
-    <Content Include="scripts\custom\_common\directives\hierrachyView.js" />
+    <Content Include="scripts\custom\_common\directives\categoryHierrachyView.js" />
     <Content Include="scripts\ui-bootstrap.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

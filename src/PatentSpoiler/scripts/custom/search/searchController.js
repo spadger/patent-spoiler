@@ -2,6 +2,7 @@
 'use strict';
 angular.module('search').controller('SearchController', ['$scope', '$window', 'searchService', function($scope, $window, searchService) {
 
+    $scope.working = false;
     var searchSuccess = function (results) {
         $scope.searchResults = results;
     }
@@ -11,9 +12,14 @@ angular.module('search').controller('SearchController', ['$scope', '$window', 's
     }
 
     $scope.term = $window.term || 'garden';
-    $scope.performSearch = function() {
-        searchService.performSearch($scope.term).then(searchSuccess, searchFailed);
+    $scope.performSearch = function () {
+        $scope.working = true;
+        searchService.performSearch($scope.term).then(searchSuccess, searchFailed).finally(function () { $scope.working = false; });
     }
+
+    $scope.$on('foofoo', function(event, item) {
+        debugger
+    });
 
     if (!!window.term) {
         $scope.performSearch();
