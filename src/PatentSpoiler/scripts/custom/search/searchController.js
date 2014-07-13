@@ -3,6 +3,7 @@
 angular.module('search').controller('SearchController', ['$scope', '$window', 'searchService', function($scope, $window, searchService) {
 
     $scope.working = false;
+    $scope.selectedItems = {};
     var searchSuccess = function (results) {
         $scope.searchResults = results;
     }

@@ -1,9 +1,14 @@
 ﻿<ul class="search-item">
     <li>
         <span ng-click="toggleExpansion()">{{symbol}}</span>
-        <strong><input type="checkbox" ng-if="mode=='select'" ng-model="selected" ng-change="itemChecked(selected)"/><a ng-href="/category/{{tree.Id}}">{{tree.Id}}</a></strong> - {{tree.Description}} ** {{mode}} ** {{topic}} **
+        <strong>
+            <input type="checkbox" ng-checked="selectedItems[entityId]!=null" ng-if="mode=='select'" ng-model="selected" ng-change="onItemToggled(selected)" />
+            <a    ng-show="mode!='select'" ng-href="/category/{{tree.Id}}">{{entityId}}</a>
+            <span ng-show="mode=='select'">{{entityId}}</span>
+        </strong>
+        - {{tree.Description}}
     </li>
     <li ng-if="tree.Child!=null && show">
-        <category-hierrachy-view tree="tree.Child" mode="{{mode}}" topic="{{topic}}" template-url="/scripts/custom/_common/directives/categoryHierrachyView.html"></category-hierrachy-view>
+        <category-hierrachy-view tree="tree.Child" mode="{{mode}}" topic="{{topic}}" selected-items="selectedItems" template-url="/scripts/custom/_common/directives/categoryHierrachyView.html"></category-hierrachy-view>
     </li>
 </ul>
