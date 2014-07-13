@@ -915,6 +915,10 @@
     <Content Include="scripts\custom\category\module.js" />
     <Content Include="scripts\custom\category\categoryListingService.js" />
     <Content Include="scripts\custom\item\addItemService.js" />
+    <Content Include="scripts\custom\search\popupCategoryChooser.js" />
+    <Content Include="scripts\custom\search\popupCategoryChooserView.html" />
+    <Content Include="scripts\custom\search\categoryChooserView.html" />
+    <Content Include="scripts\custom\search\categoryChooser.js" />
     <Content Include="scripts\custom\_common\directives\categoryHierrachyView.html" />
     <Content Include="scripts\custom\search\searchService.js" />
     <Content Include="scripts\custom\search\searchController.js" />

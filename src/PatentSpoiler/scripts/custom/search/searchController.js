@@ -18,10 +18,6 @@ angular.module('search').controller('SearchController', ['$scope', '$window', 's
         searchService.performSearch($scope.term).then(searchSuccess, searchFailed).finally(function () { $scope.working = false; });
     }
 
-    $scope.$on('foofoo', function(event, item) {
-        debugger
-    });
-
     if (!!window.term) {
         $scope.performSearch();
     }

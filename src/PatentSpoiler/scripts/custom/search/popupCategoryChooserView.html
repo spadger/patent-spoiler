@@ -1,0 +1,14 @@
+﻿<form ng-submit="performSearch()" role="form" class="form-inline">
+    <div class="form-group">
+        <input type="text" class="form-control" ng-model="term" placeholder="search..." />
+        <button type="submit" class="btn btn-default">Search</button>
+    </div>
+</form>
+
+<div ng-show="working"><img src="/content/spinner.gif" title="searching..." /></div>
+<div ng-hide="working">
+    <div ng-repeat="result in searchResults">
+        <category-hierrachy-view tree="result" mode="select" selected-items="selectedItems" template-url="/scripts/custom/_common/directives/categoryHierrachyView.html"></category-hierrachy-view>
+    </div>
+
+</div>

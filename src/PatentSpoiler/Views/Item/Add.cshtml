@@ -14,8 +14,9 @@
 <div ng-app="item" ng-controller="AddItemController">
 
     <h2>Add a new item to @Model.Category</h2>
-    <form name="addForm" novalidate role="form" ng-submit="add()">
+    <category-chooser selected-items="categories"></category-chooser>
 
+    <form name="addForm" novalidate role="form" ng-submit="add()">
         <div class="form-group" ng-class="{'has-error': addForm.name.$invalid && addForm.name.$pristine && submitted}">
             <label for="name">Name</label>
             <input type="text" required class="form-control" ng-model="item.name" id="name" name="name" placeholder="name" />

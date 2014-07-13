@@ -7,6 +7,7 @@ angular.module('item').controller('AddItemController', ['$scope', '$window', 'ad
     $scope.item = {};
     $scope.submitted = false;
     $scope.working = false;
+    $scope.categories = {};
 
     $scope.add = function() {
         $scope.submitted = true;
