@@ -9,6 +9,11 @@ angular.module('item').controller('AddItemController', ['$scope', '$window', 'ad
     $scope.working = false;
     $scope.categories = {};
 
+
+    $scope.removeCategory = function(id) {
+        delete $scope.categories[id];
+    }
+
     $scope.add = function() {
         $scope.submitted = true;
         

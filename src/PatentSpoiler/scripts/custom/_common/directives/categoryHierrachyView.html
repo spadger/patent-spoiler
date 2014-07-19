@@ -2,9 +2,10 @@
     <li>
         <span ng-click="toggleExpansion()">{{symbol}}</span>
         <strong>
-            <input type="checkbox" ng-checked="selectedItems[entityId]!=null" ng-if="mode=='select'" ng-model="selected" ng-change="onItemToggled(selected)" />
-            <a    ng-show="mode!='select'" ng-href="/category/{{tree.Id}}">{{entityId}}</a>
-            <span ng-show="mode=='select'">{{entityId}}</span>
+            <label ng-if ="mode=='select'">
+                <input type="checkbox" ng-checked="selectedItems[entityId]!=null" ng-model="selected" ng-change="onItemToggled(selected)" />{{entityId}}
+            </label>
+            <a ng-show="mode!='select'" ng-href="/category/{{tree.Id}}">{{entityId}}</a>
         </strong>
         - {{tree.Description}}
     </li>

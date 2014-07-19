@@ -28,10 +28,17 @@
             <span class="help-block" ng-show="addForm.description.$error.required && addForm.description.$pristine && submitted">Required</span>
         </div>
         <div class="form-group" ng-class="{'has-error': addForm.description.$invalid && addForm.description.$pristine && submitted}">
-            <label>Description</label>
+            <label>Categories</label><br />
             <popup-category-chooser selected-items="categories"></popup-category-chooser>
+            
+            <ul>
+                <li ng-repeat="item in categories | orderBy:item.Id">
+                    {{item.Id}}
+                    <span ng-click="removeCategory(item.Id)" class="glyphicon glyphicon-remove-sign"></span>
+                </li>
+            </ul>
         </div>
         <button type="submit" ng-disabled="working" class="btn btn-default">Save your item</button>
-        {{categories}}
+
     </form>
 </div>

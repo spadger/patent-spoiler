@@ -242,6 +242,7 @@
   <ItemGroup>
     <Content Include="Content\spinner.gif" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="schemes\scheme-A01C.pdf" />
     <Content Include="schemes\scheme-A.xml" />
@@ -971,6 +972,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Search\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
