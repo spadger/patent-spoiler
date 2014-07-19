@@ -1,7 +1,7 @@
 ﻿/// <reference path="~/scripts/custom/search/app.js" />
 
 'use strict';
-angular.module('search').directive('popupCategoryChooser', [, function (searchService) {
+angular.module('search').directive('popupCategoryChooser', ['$modal', function ($modal) {
     return {
         restrict: 'AE',
         scope: {
@@ -9,25 +9,40 @@ angular.module('search').directive('popupCategoryChooser', [, function (searchSe
         },
         templateUrl: '/scripts/custom/search/popupCategoryChooserView.html',
         controller: function($scope) {
-
-            $scope.workingItems = $scope.selectedItems.slice(0);
-            $scope.active = false;
-
-            $scope.open = function () {
-                alert('open');
-            }
-
-            $scope.close = function () {
-                alert('close');
-            }
-
-            $scope.ok = function () {
-                alert('ok');
-                $scope.selectedItems = $scope.workingItems;
-                $scope.close();
-            }
-
             
+            $scope.open = function () {
+
+                $scope.workingItems = {};
+
+                var modalInstance = $modal.open({
+                    templateUrl: '/scripts/custom/search/popupCategoryChooserPopupView.html',
+                    resolve: {
+                        workingItems: function () {
+                            return $scope.workingItems;
+                        }
+                    },
+                    controller: popupInstanceController
+                });
+
+                modalInstance.result.then(function () {
+                    for (var prop in $scope.workingItems) {
+                        $scope.selectedItems[prop] = $scope.workingItems[prop];
+                    }
+                });
+            }
         }
     }
 }]);
+
+var popupInstanceController = function($scope, $modalInstance, workingItems) {
+
+    $scope.selectedItems = workingItems;
+    $scope.$modalInstance = $modalInstance; //getting NRE
+    $scope.ok = function(modal) {
+        modal.close();
+    };
+
+    $scope.cancel = function (modal) {
+        modal.dismiss();
+    };
+};

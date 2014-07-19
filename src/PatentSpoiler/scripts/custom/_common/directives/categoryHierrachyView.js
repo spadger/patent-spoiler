@@ -13,7 +13,6 @@ angular.module('utils').directive('categoryHierrachyView', ['recursionHelper', f
         controller: function($scope) {
 
             $scope.entityId = ($scope.getIdGenerator() || function (x) { return x.Id; })($scope.tree);
-            debugger
             $scope.selected = false;
             $scope.show = true;
             $scope.symbol = '-';

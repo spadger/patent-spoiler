@@ -916,6 +916,7 @@
     <Content Include="scripts\custom\category\categoryListingService.js" />
     <Content Include="scripts\custom\item\addItemService.js" />
     <Content Include="scripts\custom\search\popupCategoryChooser.js" />
+    <Content Include="scripts\custom\search\popupCategoryChooserPopupView.html" />
     <Content Include="scripts\custom\search\popupCategoryChooserView.html" />
     <Content Include="scripts\custom\search\categoryChooserView.html" />
     <Content Include="scripts\custom\search\categoryChooser.js" />
@@ -926,6 +927,7 @@
     <Content Include="scripts\custom\_common\factories\recursionHelper.js" />
     <Content Include="scripts\custom\_common\filters\escapedURI.js" />
     <Content Include="scripts\custom\_common\module.js" />
+    <Content Include="scripts\lodash.js" />
     <Content Include="scripts\modernizr-2.7.2.js" />
     <Content Include="scripts\custom\_common\directives\categoryHierrachyView.js" />
     <Content Include="scripts\ui-bootstrap.js" />
