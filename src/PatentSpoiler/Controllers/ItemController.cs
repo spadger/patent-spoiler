@@ -10,7 +10,7 @@ namespace PatentSpoiler.Controllers
     {
         [HttpGet]
         [AuthoriseRoles(UserRole.PaidMember)]
-        [PatentCategoryMustExist("category")]
+        [PatentCategoryMustExist("category", IsOptional = true)]
         [Route("item/add/{*category}")]
         public ActionResult Add(string category)
         {

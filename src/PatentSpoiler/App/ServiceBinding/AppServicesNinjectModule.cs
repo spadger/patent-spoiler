@@ -46,7 +46,8 @@ namespace PatentSpoiler.App.ServiceBinding
 
             this.BindFilter<PatentCategoryMustExistFilter>(FilterScope.Action, int.MaxValue)
                 .WhenActionMethodHas<PatentCategoryMustExistAttribute>()
-                .WithConstructorArgumentFromActionAttribute<PatentCategoryMustExistAttribute>("categoryPath", x => x.CategoryPath);
+                .WithConstructorArgumentFromActionAttribute<PatentCategoryMustExistAttribute>("categoryPath", x => x.CategoryPath)
+                .WithConstructorArgumentFromActionAttribute<PatentCategoryMustExistAttribute>("isOptional", x => x.IsOptional);
         }
     }
 }

@@ -8,6 +8,8 @@ namespace PatentSpoiler.App.Filters
 {
     public class PatentCategoryMustExistAttribute : FilterAttribute
     {
+        public bool IsOptional { get; set; }
+
         public PatentCategoryMustExistAttribute(string categoryPath)
         {
             CategoryPath = categoryPath;
@@ -18,15 +20,16 @@ namespace PatentSpoiler.App.Filters
 
     public class PatentCategoryMustExistFilter : IActionFilter
     {
+        string[] categoryPathSegments { get; set; }
+        public bool IsOptional { get; set; }
         private IPatentStoreHierrachy patentStoreHierrachy;
 
-        public PatentCategoryMustExistFilter(string categoryPath, IPatentStoreHierrachy patentStoreHierrachy)
+        public PatentCategoryMustExistFilter(string categoryPath, bool isOptional, IPatentStoreHierrachy patentStoreHierrachy)
         {
-            this.patentStoreHierrachy = patentStoreHierrachy;
+            IsOptional = isOptional;
             categoryPathSegments = categoryPath.Split(new[] { '.' });
+            this.patentStoreHierrachy = patentStoreHierrachy;
         }
-
-        string[] categoryPathSegments { get; set; }
 
         public void OnActionExecuting(ActionExecutingContext filterContext)
         {
@@ -35,13 +38,18 @@ namespace PatentSpoiler.App.Filters
             {
                 categoryObject = filterContext.HttpContext.Request.Params[categoryPathSegments[0]];
             }
-
+            
             if (categoryObject == null)
             {
                 var request = filterContext.RequestContext.HttpContext.Request;
                 var possibleJson = new UTF8Encoding().GetString(request.BinaryRead(request.ContentLength));
                 categoryObject = RecurseDownPropertyTree(JsonConvert.DeserializeObject(possibleJson), categoryPathSegments);
                 request.InputStream.Seek(0, System.IO.SeekOrigin.Begin);
+            }
+
+            if (categoryObject == null && IsOptional)
+            {
+                return;
             }
 
             if (categoryObject == null)
@@ -57,6 +65,11 @@ namespace PatentSpoiler.App.Filters
 
         private string RecurseDownPropertyTree(dynamic tree, string[] pathElements)
         {
+            if (tree == null)
+            {
+                return null;
+            }
+
             for (var i = 0; i < pathElements.Length - 1; i++)
             {
                 tree = tree[pathElements[i]];
