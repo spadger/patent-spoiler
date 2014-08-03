@@ -49,7 +49,7 @@ namespace PatentSpoiler.App.Data.Queries
                 RavenQueryStatistics stats;
                 var items = await session.Query<PatentableEntity, PatentableEntitiesByCategoryIndex>()
                     .Statistics(out stats)
-                    .Where(x=> x.Category == category)
+                    .Search(x=>x.Categories, category)
                     .Skip((page-1)*pageSize)
                     .Take(pageSize)
                     .OrderByDescending(x => x.Id)

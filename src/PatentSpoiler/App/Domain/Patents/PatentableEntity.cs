@@ -11,7 +11,7 @@ namespace PatentSpoiler.App.Domain.Patents
         }
 
         public int Id { get; set; }
-        public string Category { get; set; }
+        public HashSet<string> Categories { get; set; }
         public string Owner { get; set; }
 
         public string Name { get; set; }
