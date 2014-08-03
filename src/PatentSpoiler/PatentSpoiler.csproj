@@ -187,6 +187,7 @@
     <Content Include="Content\bootstrap.css.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\Commands\SaveNewPatentableEntityCommand.cs" />
     <Compile Include="App\Data\DictionaryBasedPatentDatabase.cs" />
     <Compile Include="App\Data\Indexes\DocumentsByTitlePartIndex.cs" />
     <Compile Include="App\Data\Indexes\PatentableEntitiesByIdIndex.cs" />
@@ -238,6 +239,7 @@
     <Compile Include="Models\PatentHierrachyNode.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidationAttributes\CannotBeEmptyAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\spinner.gif" />

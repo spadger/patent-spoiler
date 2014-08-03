@@ -10,6 +10,7 @@ using Ninject.Web.Common;
 using Ninject.Web.Mvc.FilterBindingSyntax;
 using PatentSpoiler.Annotations;
 using PatentSpoiler.App.Data;
+using PatentSpoiler.App.Domain.Security;
 using PatentSpoiler.App.Filters;
 using PatentSpoiler.App.Import.Config;
 using PatentSpoiler.App.Security;
@@ -43,6 +44,8 @@ namespace PatentSpoiler.App.ServiceBinding
             {
                 return HttpContext.Current.GetOwinContext().Get<PatentSpoilerUserManager>();
             }).InRequestScope();
+            
+//            Bind<PatentSpoilerUser>().ToMethod(x => Microsoft.AspNet.Identity.User.HttpContext.Current.User as PatentSpoilerUser);
 
             this.BindFilter<PatentCategoryMustExistFilter>(FilterScope.Action, int.MaxValue)
                 .WhenActionMethodHas<PatentCategoryMustExistAttribute>()

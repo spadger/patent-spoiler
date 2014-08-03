@@ -16,6 +16,7 @@
     <h2>Patents registered under @Model.Category</h2>
     
     <p class="text-info bg-info" ng-if="noItems()">No items have been registered under {{category}}, be the first to <a ng-href="/item/add/{{category}}">add one</a></p>
+    <p class="text-info bg-info" ng-if="!noItems()">{{itemCount}} items have been registered under this category <a ng-href="/item/add/{{category}}">add another</a></p>
 
     <ul>
         <li ng-repeat="item in items">{{item.name}}: {{item.description}} ({{item.attachmentCount}} attachments). Uploaded by {{item.owner}}</li>

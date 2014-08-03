@@ -3,15 +3,17 @@
 angular.module('item').controller('AddItemController', ['$scope', '$window', 'addItemService', function ($scope, $window, addItemService) {
 
     $scope.working = false;
-    $scope.category = $window.category;
-    $scope.item = {};
+    $scope.initialCategory = $window.category;
+    $scope.item = {categories: {}, name:'', description:'' };
     $scope.submitted = false;
     $scope.working = false;
-    $scope.categories = {};
 
+    if ($scope.initialCategory) {
+        $scope.item.categories[$scope.initialCategory] = { Id: $scope.initialCategory };
+    }
 
     $scope.removeCategory = function(id) {
-        delete $scope.categories[id];
+        delete $scope.item.categories[id];
     }
 
     $scope.add = function() {
@@ -32,7 +34,7 @@ angular.module('item').controller('AddItemController', ['$scope', '$window', 'ad
             alert('An error occured whilst saving your item');
         };
 
-        addItemService.addItem($scope.item, $scope.category)
+        addItemService.addItem($scope.item)
             .then(handleSaveResult, handleError)
             .finally(function () { $scope.working = false; });
     }

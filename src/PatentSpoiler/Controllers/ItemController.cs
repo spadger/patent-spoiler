@@ -1,4 +1,5 @@
 using System.Web.Mvc;
+using PatentSpoiler.App.Commands;
 using PatentSpoiler.App.Domain.Security;
 using PatentSpoiler.App.DTOs;
 using PatentSpoiler.App.Filters;
@@ -8,6 +9,15 @@ namespace PatentSpoiler.Controllers
 {
     public class ItemController : Controller
     {
+        private readonly SaveNewPatentableEntityCommand saveNewPatentableEntityCommand;
+        private readonly PatentSpoilerUser user;
+
+        public ItemController(SaveNewPatentableEntityCommand saveNewPatentableEntityCommand, PatentSpoilerUser user)
+        {
+            this.saveNewPatentableEntityCommand = saveNewPatentableEntityCommand;
+            this.user = user;
+        }
+
         [HttpGet]
         [AuthoriseRoles(UserRole.PaidMember)]
         [PatentCategoryMustExist("category", IsOptional = true)]
@@ -19,10 +29,11 @@ namespace PatentSpoiler.Controllers
 
         [HttpPost]
         [AuthoriseRoles(UserRole.PaidMember)]
-        [PatentCategoryMustExist("category")]
         [Route("item/add/{*category}")]
-        public ActionResult Add(string category, AddItemRequestViewModel item)
+        public ActionResult Add(AddItemRequestViewModel item)
         {
+            var user = User.Identity;
+            saveNewPatentableEntityCommand.Save(item, user.Name);
             return Json(new{za="Hello"});
         }
     }
