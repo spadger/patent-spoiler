@@ -13,18 +13,26 @@ angular.module('search').directive('categoryChooser', ['searchService', function
 
             $scope.working = false;
 
-            var searchSuccess = function (results) {
+            var searchSuccess = function(results) {
                 $scope.searchResults = results;
-            }
+            };
 
-            var searchFailed = function (error) {
+            var searchFailed = function(error) {
                 alert('ruh-ro');
-            }
+            };
 
-            $scope.performSearch = function () {
+            $scope.performSearch = function() {
                 $scope.working = true;
-                searchService.performSearch($scope.term).then(searchSuccess, searchFailed).finally(function () { $scope.working = false; });
-            }
+                searchService.performSearchForCategorySelection($scope.term).then(searchSuccess, searchFailed).finally(function() { $scope.working = false; });
+            };
+
+            $scope.onItemToggled = function(id, selected) {
+                if (selected) {
+                    $scope.selectedItems[id] = {Id:id};
+                } else {
+                    delete $scope.selectedItems[id];
+                }
+            };
         }
     }
 }]);

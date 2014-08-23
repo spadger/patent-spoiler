@@ -7,27 +7,15 @@ angular.module('utils').directive('categoryHierrachyView', ['recursionHelper', f
         scope: {
             tree: '=',
             mode: '@',
-            selectedItems: '=',
-            getIdGenerator: '&idGenerator'
         },
         controller: function($scope) {
 
-            $scope.entityId = ($scope.getIdGenerator() || function (x) { return x.Id; })($scope.tree);
-            $scope.selected = false;
             $scope.show = true;
             $scope.symbol = '-';
             $scope.toggleExpansion = function () {
                 $scope.show = !$scope.show;
                 $scope.symbol = $scope.show ? '-' : '+';
             };
-
-            $scope.onItemToggled = function (selected) {
-                if (selected) {
-                    $scope.selectedItems[$scope.entityId] = $scope.tree;
-                } else {
-                    delete $scope.selectedItems[$scope.entityId];
-                }
-            }
         },
         compile: function(element) {
             // Use the compile function from the RecursionHelper,

@@ -8,7 +8,12 @@
 <div ng-show="working"><img src="/content/spinner.gif" title="searching..." /></div>
 <div ng-hide="working">
     <div ng-repeat="result in searchResults">
-        <category-hierrachy-view tree="result" mode="select" selected-items="selectedItems" template-url="/scripts/custom/_common/directives/categoryHierrachyView.html"></category-hierrachy-view>
+        <label>
+            <input style="display:none" type="checkbox" ng-checked="workingItems[result.id]!=null" ng-model="selected" ng-change="onItemToggled(result.id, selected)" />
+            <div class="not-bold" ng-class="{selected:selected}">
+                <category-hierrachy-view tree="result.hierrachy" mode="select" template-url="/scripts/custom/_common/directives/categoryHierrachyView.html"></category-hierrachy-view>
+            </div>
+        </label>
     </div>
 
 </div>

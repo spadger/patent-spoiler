@@ -32,7 +32,6 @@
         <div class="form-group" ng-class="{'has-error': addForm.description.$invalid && addForm.description.$pristine && submitted}">
             <label>Categories</label><br />
             <popup-category-chooser selected-items="item.categories"></popup-category-chooser>
-            
             <ul>
                 <li ng-repeat="category in item.categories | orderBy:category.Id">
                     {{category.Id}}

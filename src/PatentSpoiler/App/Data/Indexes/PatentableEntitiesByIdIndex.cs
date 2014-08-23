@@ -10,9 +10,9 @@ namespace PatentSpoiler.App.Data.Indexes
         public PatentableEntitiesByCategoryIndex()
         {
             Map = patentableEntities => from patentableEntity in patentableEntities
-                                        select new { patentableEntity.Categories };
+                                        select new { patentableEntity.ExplodedCategories };
 
-            Indexes.Add(x => x.Categories, FieldIndexing.NotAnalyzed);
+            Indexes.Add(x => x.ExplodedCategories, FieldIndexing.NotAnalyzed);
         }
     }
 
@@ -27,7 +27,7 @@ namespace PatentSpoiler.App.Data.Indexes
         public PatentableEntityCountByCategoryIndex()
         {
             Map = patentableEntities => from patentableEntity in patentableEntities
-                                        from category in patentableEntity.Categories
+                                        from category in patentableEntity.ExplodedCategories
                                         select new { Category=category, Count = 1 };
     
             Reduce = results => from result in results
