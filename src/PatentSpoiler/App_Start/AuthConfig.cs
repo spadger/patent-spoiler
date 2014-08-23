@@ -33,7 +33,7 @@ namespace PatentSpoiler
                 Provider = new CookieAuthenticationProvider
                 {
                     OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<PatentSpoilerUserManager, PatentSpoilerUser>(
-                        validateInterval: TimeSpan.FromMinutes(300),
+                        validateInterval: TimeSpan.FromDays(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
             });

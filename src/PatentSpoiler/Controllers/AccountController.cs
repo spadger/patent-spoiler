@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
@@ -111,7 +112,9 @@ namespace PatentSpoiler.Controllers
             authenticationManager.SignIn(
                new AuthenticationProperties
                {
-                   IsPersistent = isPersistent
+                   IsPersistent = isPersistent,
+                   ExpiresUtc = DateTimeOffset.UtcNow.AddDays(28)
+
                }, identity);
         }
 
