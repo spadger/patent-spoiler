@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using PatentSpoiler.App.Data;
 using PatentSpoiler.App.Domain.Patents;
-using PatentSpoiler.App.DTOs;
+using PatentSpoiler.App.DTOs.Item;
 using Raven.Client;
 
 namespace PatentSpoiler.App.Commands

@@ -1,7 +1,9 @@
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using PatentSpoiler.App.Commands;
+using PatentSpoiler.App.Data.Queries.PatentableEntities;
 using PatentSpoiler.App.Domain.Security;
-using PatentSpoiler.App.DTOs;
+using PatentSpoiler.App.DTOs.Item;
 using PatentSpoiler.App.Filters;
 using PatentSpoiler.App.Security;
 
@@ -11,11 +13,13 @@ namespace PatentSpoiler.Controllers
     {
         private readonly SaveNewPatentableEntityCommand saveNewPatentableEntityCommand;
         private readonly PatentSpoilerUser user;
+        private readonly IGetPatentableEntityForDisplayQuery getPatentableEntityForDisplayQuery;
 
-        public ItemController(SaveNewPatentableEntityCommand saveNewPatentableEntityCommand, PatentSpoilerUser user)
+        public ItemController(SaveNewPatentableEntityCommand saveNewPatentableEntityCommand, PatentSpoilerUser user, IGetPatentableEntityForDisplayQuery getPatentableEntityForDisplayQuery)
         {
             this.saveNewPatentableEntityCommand = saveNewPatentableEntityCommand;
             this.user = user;
+            this.getPatentableEntityForDisplayQuery = getPatentableEntityForDisplayQuery;
         }
 
         [HttpGet]
@@ -34,7 +38,25 @@ namespace PatentSpoiler.Controllers
         {
             var user = User.Identity;
             saveNewPatentableEntityCommand.Save(item, user.Name);
-            return Json(new{za="Hello"});
+            return Json(new { za = "Hello" });
+        }
+
+        [HttpGet]
+        [AuthoriseRoles(UserRole.PaidMember)]
+        [Route("item/{id}")]
+        public async Task<ActionResult> View(int id)
+        {
+            var item = await getPatentableEntityForDisplayQuery.ExecuteAsync(id);
+            return View(item);
+        }
+
+        [HttpPost]
+        [AuthoriseRoles(UserRole.PaidMember)]
+        [Route("item/{id}/edit")]
+        public async Task<ActionResult> Edit(int id)
+        {
+            var item = await getPatentableEntityForDisplayQuery.ExecuteAsync(id);
+            return View(item);
         }
     }
 }

@@ -197,17 +197,24 @@
   <ItemGroup>
     <Compile Include="App\Commands\SaveNewPatentableEntityCommand.cs" />
     <Compile Include="App\Data\DictionaryBasedPatentDatabase.cs" />
-    <Compile Include="App\Data\Indexes\DocumentsByTitlePartIndex.cs" />
-    <Compile Include="App\Data\Indexes\PatentableEntitiesByIdIndex.cs" />
-    <Compile Include="App\Data\Queries\RetrivePatentsForClassificationQuery.cs" />
+    <Compile Include="App\Data\Indexes\PatentableEntities\DocumentsByTitlePartIndex.cs" />
+    <Compile Include="App\Data\Indexes\PatentableEntities\PatentableEntitiesByCategoryIndex.cs" />
+    <Compile Include="App\Data\Indexes\PatentableEntities\PatentableEntitiesByOwnerIndex.cs" />
+    <Compile Include="App\Data\Indexes\PatentableEntities\PatentableEntityCountByCategoryIndex.cs" />
+    <Compile Include="App\Data\Indexes\PatentableEntities\PatentableEntitiesByIUserIndex.cs" />
+    <Compile Include="App\Data\Queries\PatentableEntities\GetPatentableEntityForDisplayQuery.cs" />
+    <Compile Include="App\Data\Queries\Page.cs" />
+    <Compile Include="App\Data\Queries\PatentableEntities\RetrivePatentsByClassificationQuery.cs" />
+    <Compile Include="App\Data\Queries\PatentableEntities\RetrivePatentsByOwnerQuery.cs" />
     <Compile Include="App\Data\RavenDbBasedPatentDatabase.cs" />
     <Compile Include="App\Data\DocumentStoreManager.cs" />
     <Compile Include="App\Domain\Patents\PatentableEntity.cs" />
     <Compile Include="App\Domain\Patents\PatentClassification.cs" />
     <Compile Include="App\Domain\Security\PatentSpoilerUser.cs" />
     <Compile Include="App\Domain\Security\UserRole.cs" />
-    <Compile Include="App\DTOs\AddItemViewModel.cs" />
+    <Compile Include="App\DTOs\Item\AddItemViewModel.cs" />
     <Compile Include="App\DTOs\CategoryListDisplayViewModel.cs" />
+    <Compile Include="App\DTOs\Item\DisplayItemViewModel.cs" />
     <Compile Include="App\DTOs\LoginVIewModel.cs" />
     <Compile Include="App\DTOs\PatentableEntityViewModel.cs" />
     <Compile Include="App\DTOs\RegistrationViewModel.cs" />
@@ -241,6 +248,7 @@
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -983,11 +991,16 @@
   <ItemGroup>
     <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\Item\View.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

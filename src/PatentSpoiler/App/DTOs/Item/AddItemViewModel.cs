@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using PatentSpoiler.ValidationAttributes;
 
-namespace PatentSpoiler.App.DTOs
+namespace PatentSpoiler.App.DTOs.Item
 {
     public class AddItemDisplayViewModel
     {

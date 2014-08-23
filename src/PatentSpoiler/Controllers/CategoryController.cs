@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using PatentSpoiler.App;
-using PatentSpoiler.App.Data.Queries;
+using PatentSpoiler.App.Data.Queries.PatentableEntities;
 using PatentSpoiler.App.Domain.Patents;
 using PatentSpoiler.App.DTOs;
 using PatentSpoiler.App.Filters;
@@ -13,13 +13,13 @@ namespace PatentSpoiler.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly IRetrivePatentsForClassificationQuery patentsForClassificationQuery;
-        private readonly IDocumentStore documentStore;
+        private readonly IRetrievePatentsByClassificationQuery patentsForClassificationQuery;
+        private readonly IAsyncDocumentSession session;
 
-        public CategoryController(IRetrivePatentsForClassificationQuery patentsForClassificationQuery, IDocumentStore documentStore)
+        public CategoryController(IRetrievePatentsByClassificationQuery patentsForClassificationQuery, IAsyncDocumentSession session)
         {
             this.patentsForClassificationQuery = patentsForClassificationQuery;
-            this.documentStore = documentStore;
+            this.session = session;
         }
 
         [Route("category/{*category}")]
@@ -43,11 +43,8 @@ namespace PatentSpoiler.Controllers
         [PatentCategoryMustExist("category")]
         public async Task<ActionResult> Add(string category)
         {
-            using (var session = documentStore.OpenAsyncSession())
-            {
-                await session.StoreAsync(new PatentableEntity {Categories = new HashSet<string>(new[]{category}), Name = x++.ToString(), Description = "Tis is a description of " + x, Owner = "spadger", Attachments = GetAttachments()});
-                await session.SaveChangesAsync();
-            }
+            await session.StoreAsync(new PatentableEntity {Categories = new HashSet<string>(new[]{category}), Name = x++.ToString(), Description = "Tis is a description of " + x, Owner = "spadger", Attachments = GetAttachments()});
+            await session.SaveChangesAsync();
 
             return Content("Stored: " + category);
         }

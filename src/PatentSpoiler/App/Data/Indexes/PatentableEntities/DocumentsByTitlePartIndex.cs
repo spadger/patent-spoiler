@@ -3,7 +3,7 @@ using PatentSpoiler.App.Domain.Patents;
 using Raven.Abstractions.Indexing;
 using Raven.Client.Indexes;
 
-namespace PatentSpoiler.App.Data.Indexes
+namespace PatentSpoiler.App.Data.Indexes.PatentableEntities
 {
     public class DocumentsByTitlePartIndex : AbstractIndexCreationTask<PatentClassification>
     {
