@@ -3,6 +3,8 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using Ninject;
+using Ninject.Activation;
 using Ninject.Infrastructure.Language;
 using Ninject.Modules;
 using Ninject.Extensions.Conventions;
@@ -14,6 +16,7 @@ using PatentSpoiler.App.Domain.Security;
 using PatentSpoiler.App.Filters;
 using PatentSpoiler.App.Import.Config;
 using PatentSpoiler.App.Security;
+using Raven.Client;
 
 namespace PatentSpoiler.App.ServiceBinding
 {
@@ -45,12 +48,23 @@ namespace PatentSpoiler.App.ServiceBinding
                 return HttpContext.Current.GetOwinContext().Get<PatentSpoilerUserManager>();
             }).InRequestScope();
             
-//            Bind<PatentSpoilerUser>().ToMethod(x => Microsoft.AspNet.Identity.User.HttpContext.Current.User as PatentSpoilerUser);
+            Bind<PatentSpoilerUser>().ToMethod(GetUser);
 
             this.BindFilter<PatentCategoryMustExistFilter>(FilterScope.Action, int.MaxValue)
                 .WhenActionMethodHas<PatentCategoryMustExistAttribute>()
                 .WithConstructorArgumentFromActionAttribute<PatentCategoryMustExistAttribute>("categoryPath", x => x.CategoryPath)
                 .WithConstructorArgumentFromActionAttribute<PatentCategoryMustExistAttribute>("isOptional", x => x.IsOptional);
+        }
+
+        private PatentSpoilerUser GetUser(IContext context)
+        {
+            var identity = HttpContext.Current.User.Identity;
+            if (!identity.IsAuthenticated)
+            {
+                return null;
+            }
+
+            return Kernel.Get<IDocumentSession>().Load<PatentSpoilerUser>(identity.Name);
         }
     }
 }
