@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Threading.Tasks;
 using PatentSpoiler.App.Data;
 using PatentSpoiler.App.Domain.Patents;
@@ -9,23 +10,23 @@ using Raven.Client;
 
 namespace PatentSpoiler.App.Commands
 {
-    public interface ISaveNewPatentableEntityCommand
+    public interface IUpdatePatentableEntityCommand
     {
-        Task SaveAsync(AddItemRequestViewModel viewModel, string userId);
+        Task UpdateAsync(UpdateItemRequestViewModel viewModel, string userId);
     }
 
-    public class SaveNewPatentableEntityCommand : ISaveNewPatentableEntityCommand
+    public class UpdatePatentableEntityCommand : IUpdatePatentableEntityCommand
     {
         private readonly IAsyncDocumentSession session;
         private readonly IPatentStoreHierrachy patentStoreHierrachy;
 
-        public SaveNewPatentableEntityCommand(IAsyncDocumentSession session, IPatentStoreHierrachy patentStoreHierrachy)
+        public UpdatePatentableEntityCommand(IAsyncDocumentSession session, IPatentStoreHierrachy patentStoreHierrachy)
         {
             this.session = session;
             this.patentStoreHierrachy = patentStoreHierrachy;
         }
 
-        public async Task SaveAsync(AddItemRequestViewModel viewModel, string userId)
+        public async Task UpdateAsync(UpdateItemRequestViewModel viewModel, string userId)
         {
             var validations = new List<ValidationResult>();
             if (!Validator.TryValidateObject(viewModel, new ValidationContext(viewModel), validations, true))
@@ -35,14 +36,22 @@ namespace PatentSpoiler.App.Commands
 
             var explodedCategories = patentStoreHierrachy.GetAllCategoriesFor(viewModel.Categories);
 
-            var entity = new PatentableEntity
+            var entity = await session.LoadAsync<PatentableEntity>(viewModel.Id);
+
+            if (entity == null)
             {
-                Categories = viewModel.Categories,
-                ExplodedCategories = explodedCategories,
-                Name = viewModel.Name,
-                Description = viewModel.Description,
-                Owner = userId
-            };
+                throw new InvalidOperationException("Not found");
+            }
+
+            if (entity.Owner != userId)
+            {
+                throw new InvalidOperationException("Wrong user");
+            }
+
+            entity.Categories = viewModel.Categories;
+            entity.ExplodedCategories = explodedCategories;
+            entity.Name = viewModel.Name;
+            entity.Description = viewModel.Description;
 
             await session.StoreAsync(entity);
             await session.SaveChangesAsync();

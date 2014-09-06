@@ -1,0 +1,47 @@
+﻿@using PatentSpoiler.App
+@model PatentSpoiler.App.DTOs.Item.EditItemDisplayViewModel
+@{
+    ViewBag.Title = "Edit your item";
+    
+    Bundles.Reference("scripts/custom/item", "end");
+}
+
+@section head{
+    <script>
+        'use strict';
+        window.item = @Html.Raw(Html.ToJson(Model));
+    </script>
+}
+
+<div ng-app="item" ng-controller="EditItemController">
+
+    <h2>Edit your item</h2>
+
+    <form name="editForm" novalidate role="form" ng-submit="update()">
+        <div class="form-group" ng-class="{'has-error': editForm.name.$invalid && editForm.name.$pristine && submitted}">
+            <label for="name">Name</label>
+            <input type="text" required ng-minlength="5" class="form-control" ng-model="item.name" id="name" name="name" placeholder="name" />
+            <span class="help-block" ng-show="editForm.name.$error.required && editForm.name.$pristine && submitted">Required</span>
+            <span class="help-block" ng-show="editForm.name.$error.minlength && editForm.name.$pristine && submitted">Please enter at least 5 characters</span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': editForm.description.$invalid && editForm.description.$pristine && submitted}">
+            <label for="description">Description</label>
+            <textarea rows="10" required ng-minlength="50" class="form-control" ng-model="item.description" id="description" name="description" placeholder="description"></textarea>
+            <span class="help-block" ng-show="editForm.description.$error.required && editForm.description.$pristine && submitted">Required</span>
+            <span class="help-block" ng-show="editForm.description.$error.minlength && editForm.description.$pristine && submitted">Please enter at least 50 characters</span>
+        </div>
+        <div class="form-group" ng-class="{'has-error': editForm.description.$invalid && editForm.description.$pristine && submitted}">
+            <label>Categories</label><br />
+            <popup-category-chooser selected-items="item.categories"></popup-category-chooser>
+            <ul>
+                <li ng-repeat="category in item.categories | orderBy:category.Id">
+                    {{category.Id}}
+                    <span ng-click="removeCategory(category.Id)" class="glyphicon glyphicon-remove-sign"></span>
+                </li>
+            </ul>
+        </div>
+        <button type="submit" ng-disabled="working" class="btn btn-default">Save your item</button>
+
+    </form>
+</div>

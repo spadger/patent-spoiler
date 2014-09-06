@@ -196,6 +196,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App\Commands\SaveNewPatentableEntityCommand.cs" />
+    <Compile Include="App\Commands\UpdatePatentableEntityCommand.cs" />
     <Compile Include="App\Data\DictionaryBasedPatentDatabase.cs" />
     <Compile Include="App\Data\Indexes\PatentableEntities\DocumentsByTitlePartIndex.cs" />
     <Compile Include="App\Data\Indexes\PatentableEntities\PatentableEntitiesByCategoryIndex.cs" />
@@ -204,6 +205,7 @@
     <Compile Include="App\Data\Indexes\PatentableEntities\PatentableEntitiesByIUserIndex.cs" />
     <Compile Include="App\Data\Queries\PatentableEntities\GetPatentableEntityForDisplayQuery.cs" />
     <Compile Include="App\Data\Queries\Page.cs" />
+    <Compile Include="App\Data\Queries\PatentableEntities\GetPatentableEntityForEditQuery.cs" />
     <Compile Include="App\Data\Queries\PatentableEntities\RetrivePatentsByClassificationQuery.cs" />
     <Compile Include="App\Data\Queries\PatentableEntities\RetrivePatentsByOwnerQuery.cs" />
     <Compile Include="App\Data\RavenDbBasedPatentDatabase.cs" />
@@ -215,6 +217,7 @@
     <Compile Include="App\DTOs\Item\AddItemViewModel.cs" />
     <Compile Include="App\DTOs\CategoryListDisplayViewModel.cs" />
     <Compile Include="App\DTOs\Item\DisplayItemViewModel.cs" />
+    <Compile Include="App\DTOs\Item\EditItemDisplayViewModel.cs" />
     <Compile Include="App\DTOs\LoginVIewModel.cs" />
     <Compile Include="App\DTOs\PatentableEntityViewModel.cs" />
     <Compile Include="App\DTOs\RegistrationViewModel.cs" />
@@ -928,12 +931,13 @@
     <Content Include="scripts\angular.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="scripts\custom\item\editItemController.js" />
     <Content Include="scripts\custom\item\addItemController.js" />
     <Content Include="scripts\custom\item\module.js" />
     <Content Include="scripts\custom\category\categoryListController.js" />
     <Content Include="scripts\custom\category\module.js" />
     <Content Include="scripts\custom\category\categoryListingService.js" />
-    <Content Include="scripts\custom\item\addItemService.js" />
+    <Content Include="scripts\custom\item\ItemService.js" />
     <Content Include="scripts\custom\search\popupCategoryChooser.js" />
     <Content Include="scripts\custom\search\popupCategoryChooserPopupView.html" />
     <Content Include="scripts\custom\search\popupCategoryChooserView.html" />
@@ -1001,6 +1005,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\User\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Item\Edit.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 using PatentSpoiler.App.Import;
 using PatentSpoiler.App.Import.Config;
@@ -12,6 +13,8 @@ namespace PatentSpoiler.App.Data
         PatentHierrachyNode GetDefinitionFor(string id);
         PatentHierrachyNode Root { get; }
         bool ContainsCategory(string id);
+        HashSet<string> GetAllCategoriesFor(IEnumerable<string> categories);
+        IEnumerable<string> GetParentCategoriesFor(string category);
     }
 
     public class DictionaryBasedPatentStoreHierrachy : IPatentStoreHierrachy
@@ -101,6 +104,36 @@ namespace PatentSpoiler.App.Data
         public bool ContainsCategory(string id)
         {
             return nodesForCategory.ContainsKey((id??"").Trim());
+        }
+
+        public HashSet<string> GetAllCategoriesFor(IEnumerable<string> categories)
+        {
+            var results = new HashSet<string>();
+
+            foreach (var category in categories)
+            {
+                var relatedCategories = GetParentCategoriesFor(category);
+                foreach (var relatedCategory in relatedCategories)
+                {
+                    results.Add(relatedCategory);
+                }
+            }
+
+            return results;
+        }
+        
+        public IEnumerable<string> GetParentCategoriesFor(string category)
+        {
+            var categoryHierrachy = GetDefinitionFor(category);
+
+            do
+            {
+                if (categoryHierrachy.ClassificationSymbol != null)
+                {
+                    yield return categoryHierrachy.ClassificationSymbol;
+                }
+                categoryHierrachy = categoryHierrachy.Parent;
+            } while (categoryHierrachy != null);
         }
     }
 

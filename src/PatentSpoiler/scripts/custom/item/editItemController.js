@@ -1,27 +1,30 @@
 ﻿///<reference path="module.js" />
 /// <reference path="ItemService.js" />
 'use strict';
-angular.module('item').controller('AddItemController', ['$scope', '$window', 'itemService', function ($scope, $window, itemService) {
-
+angular.module('item').controller('EditItemController', ['$scope', '$window', 'itemService', function ($scope, $window, itemService) {
+    
     $scope.working = false;
-    $scope.initialCategory = $window.category;
-    $scope.item = {categories: {}, name:'', description:'' };
+    $scope.item = $window.item;
+
+    var categories = $scope.item.categories;
+    $scope.item.categories = {};
+    for (var i in categories) {
+        var category = categories[i];
+        $scope.item.categories[category] = { Id: category };
+    }
+
     $scope.submitted = false;
     $scope.working = false;
-
-    if ($scope.initialCategory) {
-        $scope.item.categories[$scope.initialCategory] = { Id: $scope.initialCategory };
-    }
 
     $scope.removeCategory = function(id) {
         delete $scope.item.categories[id];
     }
 
-    $scope.add = function() {
+    $scope.update = function() {
         $scope.submitted = true;
         
-        if (!$scope.addForm.$valid) {
-            $scope.addForm.$setPristine();
+        if (!$scope.editForm.$valid) {
+            $scope.editForm.$setPristine();
             return;
         }
 
@@ -35,7 +38,7 @@ angular.module('item').controller('AddItemController', ['$scope', '$window', 'it
             alert('An error occured whilst saving your item');
         };
 
-        itemService.addItem($scope.item)
+        itemService.updateItem($scope.item)
             .then(handleSaveResult, handleError)
             .finally(function () { $scope.working = false; });
     }

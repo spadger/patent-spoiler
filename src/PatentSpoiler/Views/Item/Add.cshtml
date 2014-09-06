@@ -25,7 +25,7 @@
 
         <div class="form-group" ng-class="{'has-error': addForm.description.$invalid && addForm.description.$pristine && submitted}">
             <label for="description">Description</label>
-            <input type="text" required ng-minlength="50" class="form-control" ng-model="item.description" id="description" name="description" placeholder="description" />
+            <textarea rows="10" required ng-minlength="50" class="form-control" ng-model="item.description" id="description" name="description" placeholder="description"></textarea>
             <span class="help-block" ng-show="addForm.description.$error.required && addForm.description.$pristine && submitted">Required</span>
             <span class="help-block" ng-show="addForm.description.$error.minlength && addForm.description.$pristine && submitted">Please enter at least 50 characters</span>
         </div>

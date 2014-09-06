@@ -9,7 +9,7 @@ namespace PatentSpoiler.App.DTOs.Item
         public string Category { get; set; }
     }
 
-    public class AddItemRequestViewModel
+    public abstract class ItemRequestViewModel
     {
         [Required, StringLength(250, MinimumLength = 5)]
         public string Name { get; set; }
@@ -18,5 +18,14 @@ namespace PatentSpoiler.App.DTOs.Item
 
         [CannotBeEmpty]
         public HashSet<string> Categories { get; set; }
+    }
+
+    public class AddItemRequestViewModel : ItemRequestViewModel
+    { }
+
+    public class UpdateItemRequestViewModel : ItemRequestViewModel
+    {
+        [Required]
+        public int Id { get; set; }
     }
 }

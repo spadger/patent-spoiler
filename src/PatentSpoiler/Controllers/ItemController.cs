@@ -1,3 +1,4 @@
+using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using PatentSpoiler.App.Commands;
@@ -12,14 +13,18 @@ namespace PatentSpoiler.Controllers
     public class ItemController : Controller
     {
         private readonly SaveNewPatentableEntityCommand saveNewPatentableEntityCommand;
+        private readonly UpdatePatentableEntityCommand updatePatentableEntityCommand;
         private readonly PatentSpoilerUser user;
         private readonly IGetPatentableEntityForDisplayQuery getPatentableEntityForDisplayQuery;
+        private readonly IGetPatentableEntityForEditQuery getPatentableEntityForEditQuery;
 
-        public ItemController(SaveNewPatentableEntityCommand saveNewPatentableEntityCommand, PatentSpoilerUser user, IGetPatentableEntityForDisplayQuery getPatentableEntityForDisplayQuery)
+        public ItemController(SaveNewPatentableEntityCommand saveNewPatentableEntityCommand, UpdatePatentableEntityCommand updatePatentableEntityCommand, PatentSpoilerUser user, IGetPatentableEntityForDisplayQuery getPatentableEntityForDisplayQuery, IGetPatentableEntityForEditQuery getPatentableEntityForEditQuery)
         {
             this.saveNewPatentableEntityCommand = saveNewPatentableEntityCommand;
+            this.updatePatentableEntityCommand = updatePatentableEntityCommand;
             this.user = user;
             this.getPatentableEntityForDisplayQuery = getPatentableEntityForDisplayQuery;
+            this.getPatentableEntityForEditQuery = getPatentableEntityForEditQuery;
         }
 
         [HttpGet]
@@ -34,10 +39,10 @@ namespace PatentSpoiler.Controllers
         [HttpPost]
         [AuthoriseRoles(UserRole.PaidMember)]
         [Route("item/add/{*category}")]
-        public ActionResult Add(AddItemRequestViewModel item)
+        public async Task<ActionResult> Add(AddItemRequestViewModel item)
         {
             var user = User.Identity;
-            saveNewPatentableEntityCommand.Save(item, user.Name);
+            await saveNewPatentableEntityCommand.SaveAsync(item, user.Name);
             return Json(new { za = "Hello" });
         }
 
@@ -50,13 +55,29 @@ namespace PatentSpoiler.Controllers
             return View(item);
         }
 
-        [HttpPost]
+        [HttpGet]
         [AuthoriseRoles(UserRole.PaidMember)]
         [Route("item/{id}/edit")]
         public async Task<ActionResult> Edit(int id)
         {
-            var item = await getPatentableEntityForDisplayQuery.ExecuteAsync(id);
+            var item = await getPatentableEntityForEditQuery.ExecuteAsync(id);
+
+            if (user.Id != item.Owner)
+            {
+                return new RedirectResult("/item/" + id);
+            }
+
             return View(item);
+        }
+
+        [HttpPut]
+        [AuthoriseRoles(UserRole.PaidMember)]
+        [Route("item/{id}")]
+        public async Task<ActionResult> Edit(UpdateItemRequestViewModel item)
+        {
+            await updatePatentableEntityCommand.UpdateAsync(item, user.Id);
+
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
     }
 }
