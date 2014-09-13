@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using PatentSpoiler.App.Domain.Patents;
+using PatentSpoiler.App.Domain.Security;
 using PatentSpoiler.App.DTOs.Item;
 using Raven.Client;
 
@@ -13,10 +14,12 @@ namespace PatentSpoiler.App.Data.Queries.PatentableEntities
     public class GetPatentableEntityForDisplayQuery : IGetPatentableEntityForDisplayQuery
     {
         private readonly IAsyncDocumentSession session;
+        private readonly PatentSpoilerUser user;
 
-        public GetPatentableEntityForDisplayQuery(IAsyncDocumentSession session)
+        public GetPatentableEntityForDisplayQuery(IAsyncDocumentSession session, PatentSpoilerUser user)
         {
             this.session = session;
+            this.user = user;
         }
 
         public async Task<DisplayItemViewModel> ExecuteAsync(int id)

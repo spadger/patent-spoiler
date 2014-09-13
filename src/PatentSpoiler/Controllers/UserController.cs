@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using PatentSpoiler.App;
 using PatentSpoiler.App.Data.Queries.PatentableEntities;
 using PatentSpoiler.App.Domain.Security;
+using PatentSpoiler.App.Security;
 using Raven.Client;
 
 namespace PatentSpoiler.Controllers
@@ -11,11 +12,13 @@ namespace PatentSpoiler.Controllers
     {
         private readonly IAsyncDocumentSession session;
         private readonly IRetrievePatentsByOwnerQuery retrievePatentsByOwnerQuery;
+        private readonly PatentSpoilerUser user;
 
-        public UserController(IAsyncDocumentSession session, IRetrievePatentsByOwnerQuery retrievePatentsByOwnerQuery)
+        public UserController(IAsyncDocumentSession session, IRetrievePatentsByOwnerQuery retrievePatentsByOwnerQuery, PatentSpoilerUser user)
         {
             this.session = session;
             this.retrievePatentsByOwnerQuery = retrievePatentsByOwnerQuery;
+            this.user = user;
         }
 
         [Route("user/{username}")]
@@ -27,13 +30,13 @@ namespace PatentSpoiler.Controllers
                 return new HttpNotFoundResult("User could no be found");
             }
             ViewBag.UserId = username;
-            return View();
+            return View("Index");
         }
 
         [Route("user/{username}/patents")]
-        public async Task<ActionResult> List(string username, int page = 1, int pageSize = 10)
+        public async Task<ActionResult> GetPatentsForUser(string username, int skip = 1, int pageSize = 20)
         {
-            var results = await retrievePatentsByOwnerQuery.ExecuteAsync(username, page, pageSize);
+            var results = await retrievePatentsByOwnerQuery.ExecuteAsync(username, skip, pageSize);
 
             return this.JsonNetResult(results, JsonRequestBehavior.AllowGet);
         }

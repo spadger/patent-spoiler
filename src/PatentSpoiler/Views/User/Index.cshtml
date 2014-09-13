@@ -1,8 +1,26 @@
-﻿@model dynamic
-
+﻿@model PatentSpoiler.App.DTOs.CategoryListDisplayViewModel
 @{
-    ViewBag.Title = ViewBag.UserId;
+    ViewBag.Title = string.Format("Patents for {0}", @ViewBag.UserId);
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Bundles.Reference("scripts/custom/user", "end");
 }
 
-<h2>@ViewBag.UserId</h2>
+@section head{
+    <script>
+    window.user = '@ViewBag.UserId';
+    </script>
+}
+
+<div ng-app="user" ng-controller="UserPatentsController">
+
+    <h2>Patents by @ViewBag.UserId</h2>
+
+    <p class="text-info bg-info" ng-if="noItems()">{{user}} does not currently have any patents</p>
+
+    <ul>
+        <li ng-repeat="patent in patents">
+            <a ng-href="/item/{{patent.id}}">{{patent.name}}</a> ({{patent.attachmentCount}} attachments)
+        </li>
+    </ul>
+    Showing {{patents.length}} of {{totalPatentCount}}<button type="button" class="btn btn-default" ng-disable="working" ng-click="morePatents()" ng-if="morePatentsAvailable()">more...</button>
+</div>

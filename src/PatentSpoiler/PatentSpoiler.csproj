@@ -943,6 +943,9 @@
     <Content Include="scripts\custom\search\popupCategoryChooserView.html" />
     <Content Include="scripts\custom\search\categoryChooserView.html" />
     <Content Include="scripts\custom\search\categoryChooser.js" />
+    <Content Include="scripts\custom\user\app.js" />
+    <Content Include="scripts\custom\user\userPatentsController.js" />
+    <Content Include="scripts\custom\user\userPatentService.js" />
     <Content Include="scripts\custom\_common\directives\categoryHierrachyView.html" />
     <Content Include="scripts\custom\search\searchService.js" />
     <Content Include="scripts\custom\search\searchController.js" />

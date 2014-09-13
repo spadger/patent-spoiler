@@ -9,7 +9,7 @@ namespace PatentSpoiler.App.Data.Queries.PatentableEntities
 {
     public interface IRetrievePatentsByOwnerQuery
     {
-        Task<PageOf<PatentableEntityViewModel>> ExecuteAsync(string category, int page, int pageSize);
+        Task<PageOf<PatentableEntityViewModel>> ExecuteAsync(string category, int skip, int pageSize);
     }
 
     public class RetrievePatentsByOwnerQuery : IRetrievePatentsByOwnerQuery
@@ -21,13 +21,13 @@ namespace PatentSpoiler.App.Data.Queries.PatentableEntities
             this.session = session;
         }
 
-        public async Task<PageOf<PatentableEntityViewModel>> ExecuteAsync(string owner, int page, int pageSize)
+        public async Task<PageOf<PatentableEntityViewModel>> ExecuteAsync(string owner, int skip, int pageSize)
         {
                 RavenQueryStatistics stats;
                 var items = await session.Query<PatentableEntity, PatentableEntitiesByOwnerIndex>()
                     .Statistics(out stats)
                     .Search(x => x.Owner, owner)
-                    .Skip((page-1)*pageSize)
+                    .Skip(skip)
                     .Take(pageSize)
                     .OrderByDescending(x => x.Id)
                     .ToListAsync();
