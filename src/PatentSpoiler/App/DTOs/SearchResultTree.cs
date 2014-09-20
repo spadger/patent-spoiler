@@ -18,7 +18,7 @@ namespace PatentSpoiler.App.DTOs
             var current = new SearchResult
             {
                 Id = currentNode.ClassificationSymbol,
-                Description = string.Join(" ", currentNode.TitleParts),
+                Description = currentNode.Title,
             };
 
             if (child != null)

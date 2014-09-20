@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Threading.Tasks;
+using System.Web.Mvc;
 using PatentSpoiler.App.Data;
 using PatentSpoiler.App.Domain.Security;
 using PatentSpoiler.App.Security;
@@ -7,12 +8,12 @@ namespace PatentSpoiler.Controllers
 {
     public class AdminController : Controller
     {
-        private readonly IPatentDatabaseLoader patentDatabaseLoader;
+        private readonly IPatentDatabaseIndexBuilder patentDatabaseIndexBuilder;
         private readonly IPatentStoreHierrachy patentStoreHierrachy;
 
-        public AdminController(IPatentDatabaseLoader patentDatabaseLoader, IPatentStoreHierrachy patentStoreHierrachy)
+        public AdminController(IPatentDatabaseIndexBuilder patentDatabaseIndexBuilder, IPatentStoreHierrachy patentStoreHierrachy)
         {
-            this.patentDatabaseLoader = patentDatabaseLoader;
+            this.patentDatabaseIndexBuilder = patentDatabaseIndexBuilder;
             this.patentStoreHierrachy = patentStoreHierrachy;
         }
 
@@ -22,11 +23,11 @@ namespace PatentSpoiler.Controllers
             return View();
         }
 
-        public ActionResult ImportData()
+        public async Task<ActionResult> ImportData()
         {
             var root = patentStoreHierrachy.Root;
-            
-            patentDatabaseLoader.StoreNodes(root);
+
+            await patentDatabaseIndexBuilder.IndexCategoriesAsync(root);
             return Content("Done!");
         }
     }

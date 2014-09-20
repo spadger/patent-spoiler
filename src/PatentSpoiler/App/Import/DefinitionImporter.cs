@@ -105,12 +105,8 @@ namespace PatentSpoiler.App.Import
             };
 
             var titleParts = element.SelectNodes("class-title/title-part/text").Cast<XmlElement>().Select(x=>x.InnerXml.Trim());
-
-            foreach (var part in titleParts)
-            {
-                result.AddTitlePart(part.Trim());
-            }
-
+            result.Title = string.Join("; ", titleParts);
+            
             return result;
         }
     }

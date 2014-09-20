@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using PatentSpoiler.App.Import;
 using PatentSpoiler.App.Import.Config;
@@ -81,10 +80,7 @@ namespace PatentSpoiler.App.Data
 
             parent.Remove(node);
 
-            foreach (var nodePart in node.TitleParts)
-            {
-                parent.AddTitlePart(nodePart);
-            }
+            parent.Title = string.Concat(parent.Title, ",", node.Title);
         }
 
         public void SetupInverseIndexes(PatentHierrachyNode node)

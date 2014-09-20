@@ -1,8 +1,10 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using Nest;
 using Ninject;
 using Ninject.Activation;
 using Ninject.Infrastructure.Language;
@@ -27,7 +29,6 @@ namespace PatentSpoiler.App.ServiceBinding
         {
             Bind<ImporterSettings>().ToMethod(x => (ImporterSettings) (dynamic) ConfigurationManager.GetSection("importerSettings")).InTransientScope();
             Bind<IPatentStoreHierrachy>().To<DictionaryBasedPatentStoreHierrachy>().InSingletonScope();
-            Bind<IPatentDatabaseLoader>().To<RavenDBBasedPatentDatabaseLoader>().InSingletonScope();
 
             Kernel.Bind(x => x.FromAssembliesMatching("PatentSpoiler*")
                 .SelectAllClasses()
@@ -54,6 +55,10 @@ namespace PatentSpoiler.App.ServiceBinding
                 .WhenActionMethodHas<PatentCategoryMustExistAttribute>()
                 .WithConstructorArgumentFromActionAttribute<PatentCategoryMustExistAttribute>("categoryPath", x => x.CategoryPath)
                 .WithConstructorArgumentFromActionAttribute<PatentCategoryMustExistAttribute>("isOptional", x => x.IsOptional);
+
+            var node = new Uri(ConfigurationManager.ConnectionStrings["ElasticSearch"].ConnectionString);
+            var settings = new ConnectionSettings(node);
+            Bind<IElasticClient>().ToMethod(x => new ElasticClient(settings)).InRequestScope();
         }
 
         private PatentSpoilerUser GetUser(IContext context)

@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using PatentSpoiler.App.Data.Indexes.PatentableEntities;
+using Nest;
 using PatentSpoiler.App.Domain.Patents;
 using PatentSpoiler.Models;
-using Raven.Abstractions.Util;
-using Raven.Client;
 
 namespace PatentSpoiler.App.Data.Queries
 {
@@ -15,31 +13,32 @@ namespace PatentSpoiler.App.Data.Queries
 
     public class SearchForClassificationQuery : ISearchForClassificationQuery
     {
-        private readonly  IDocumentStore documentStore;
+        private readonly IElasticClient client;
         private readonly  IPatentStoreHierrachy patentStoreHierrachy;
 
-        public SearchForClassificationQuery(IDocumentStore documentStore, IPatentStoreHierrachy patentStoreHierrachy)
+        public SearchForClassificationQuery(IElasticClient client, IPatentStoreHierrachy patentStoreHierrachy)
         {
-            this.documentStore = documentStore;
+            this.client = client;
             this.patentStoreHierrachy = patentStoreHierrachy;
         }
 
         public IEnumerable<PatentHierrachyNode> Execute(string searchPhrase, uint pageNumber, uint pageSize)
         {
-            using (var session = documentStore.OpenSession())
-            {
-                var query = session.Advanced.LuceneQuery<PatentClassification, DocumentsByTitlePartIndex>();
+            var searchResults = client.Search<PatentClassification>(s => s
+                                      .Index("patent-classifications")                      
+                                      .From(0)
+                                      .Size(10)
+                                      .Query(q => q.FuzzyLikeThis(fz => fz.OnFields(cat => cat.Title)
+                                                                          .LikeText(searchPhrase)
+                                                                          .MinimumSimilarity(0.8)
+                                                                  )
+                                             )
+                                      )
+                                      .Documents;
 
-                query = query.Search(x => x.Keywords, RavenQuery.Escape(searchPhrase, true, true) + "~0.8")
-                             .Skip((int) pageNumber*(int) pageSize)
-                             .Take((int) pageSize);
-
-                var queryResults = query.Take(10).ToList();
-
-                var results = queryResults.Select(x => patentStoreHierrachy.GetDefinitionFor(x.Id));
-
-                return results.ToList();
-            }
+            var results = searchResults.Select(x => patentStoreHierrachy.GetDefinitionFor(x.Id))
+                                       .ToList();
+            return results;
         }
     }
 }
