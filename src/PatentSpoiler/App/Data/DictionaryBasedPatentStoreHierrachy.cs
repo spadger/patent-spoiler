@@ -80,7 +80,7 @@ namespace PatentSpoiler.App.Data
 
             parent.Remove(node);
 
-            parent.Title = string.Concat(parent.Title, ",", node.Title);
+            parent.Title = string.Concat(parent.Title, ", ", node.Title);
         }
 
         public void SetupInverseIndexes(PatentHierrachyNode node)
