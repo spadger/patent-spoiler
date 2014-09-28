@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Nest;
 using PatentSpoiler.App.Domain.Patents;
@@ -31,16 +34,37 @@ namespace PatentSpoiler.App.Data
             var result = await elasticClient.BulkAsync(descriptor);
         }
 
-        private void BuildIndexOperation(PatentHierrachyNode node, BulkDescriptor bulkDescriptor)
+        private void BuildIndexOperation(PatentHierrachyNode node, BulkDescriptor bulkDescriptor, int level = 0)
         {
-            var classification = node.ToPatentClassification();
+            //var classification = new PatentClassification{Id=node.ClassificationSymbol, Title = node.Title};
+            var classification = new PatentClassification{Id=node.ClassificationSymbol, Title = GetTotalDescriptionFor(node)};
 
-            bulkDescriptor.Index<PatentClassification>(x => x.Document(classification).Index("patent-classifications"));
+            if (level > 3)
+            {
+                bulkDescriptor.Index<PatentClassification>(x => x.Document(classification).Index("patent-classifications"));
+            }
             
             foreach (var child in node.Children)
             {
-                BuildIndexOperation(child, bulkDescriptor);
+                BuildIndexOperation(child, bulkDescriptor, level+1);
             }
+        }
+
+        private string GetTotalDescriptionFor(PatentHierrachyNode node)
+        {
+            var keywords = new StringBuilder();
+            do
+            {
+                keywords.Append(' ').Append(node.Title);
+                node = node.Parent;
+            } while (node != null);
+
+            var distinctKeywords = keywords.ToString()
+                                           .Split(',',';', ' ')
+                                           .Distinct(StringComparer.InvariantCultureIgnoreCase)
+                                           .Where(x=>x.Length>2);
+
+            return string.Join(" ", distinctKeywords);
         }
 
         private void Check(PatentHierrachyNode node, HashSet<string> prev, List<PatentHierrachyNode> nodes)

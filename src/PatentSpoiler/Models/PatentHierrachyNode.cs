@@ -47,15 +47,6 @@ namespace PatentSpoiler.Models
             }
         }
 
-        public PatentClassification ToPatentClassification()
-        {
-            return new PatentClassification
-            {
-                Id = ClassificationSymbol,
-                Title = Title
-            };
-        }
-
         public override string ToString()
         {
             return ClassificationSymbol;
