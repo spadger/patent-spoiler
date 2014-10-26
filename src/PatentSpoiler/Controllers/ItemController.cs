@@ -76,7 +76,7 @@ namespace PatentSpoiler.Controllers
         public async Task<ActionResult> Edit(UpdateItemRequestViewModel item)
         {
             await updatePatentableEntityCommand.UpdateAsync(item, user.Id);
-
+            
             return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
     }

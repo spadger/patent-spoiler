@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
+using AutoMapper;
 using PatentSpoiler.App.Data;
 using PatentSpoiler.App.Domain.Patents;
 using PatentSpoiler.App.DTOs.Item;
@@ -35,14 +36,9 @@ namespace PatentSpoiler.App.Commands
 
             var explodedCategories = patentStoreHierrachy.GetAllCategoriesFor(viewModel.Categories);
 
-            var entity = new PatentableEntity
-            {
-                Categories = viewModel.Categories,
-                ExplodedCategories = explodedCategories,
-                Name = viewModel.Name,
-                Description = viewModel.Description,
-                Owner = userId
-            };
+            var entity = Mapper.Map<AddItemRequestViewModel, PatentableEntity>(viewModel);
+            entity.ExplodedCategories = explodedCategories;
+            entity.Owner = userId;
 
             await session.StoreAsync(entity);
             await session.SaveChangesAsync();

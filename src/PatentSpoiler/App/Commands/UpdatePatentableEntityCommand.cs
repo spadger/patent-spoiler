@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Threading.Tasks;
+using AutoMapper;
 using PatentSpoiler.App.Data;
 using PatentSpoiler.App.Domain.Patents;
 using PatentSpoiler.App.DTOs.Item;
@@ -34,26 +35,26 @@ namespace PatentSpoiler.App.Commands
                 throw new ArgumentException("Can't save new item");
             }
 
-            var explodedCategories = patentStoreHierrachy.GetAllCategoriesFor(viewModel.Categories);
+            var original = await session.LoadAsync<PatentableEntity>(viewModel.Id);
 
-            var entity = await session.LoadAsync<PatentableEntity>(viewModel.Id);
-
-            if (entity == null)
+            if (original == null)
             {
                 throw new InvalidOperationException("Not found");
             }
 
-            if (entity.Owner != userId)
+            if (original.Owner != userId)
             {
                 throw new InvalidOperationException("Wrong user");
             }
 
-            entity.Categories = viewModel.Categories;
-            entity.ExplodedCategories = explodedCategories;
-            entity.Name = viewModel.Name;
-            entity.Description = viewModel.Description;
+            var archvedEntity = original.CreateArchiveVersion();
 
-            await session.StoreAsync(entity);
+            Mapper.Map(viewModel, original);
+            original.BumpVersion();
+            original.ExplodedCategories = patentStoreHierrachy.GetAllCategoriesFor(viewModel.Categories);
+            
+            await session.StoreAsync(original);
+            await session.StoreAsync(archvedEntity);
             await session.SaveChangesAsync();
         }
     }

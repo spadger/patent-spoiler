@@ -9,7 +9,8 @@ namespace PatentSpoiler.App.Data.Indexes.PatentableEntities
         public PatentableEntitiesByOwnerIndex()
         {
             Map = patentableEntities => from patentableEntity in patentableEntities
-                select new { patentableEntity.Owner };
+                                        where !patentableEntity.Archived
+                                        select new { patentableEntity.Owner };
         }
     }
 }

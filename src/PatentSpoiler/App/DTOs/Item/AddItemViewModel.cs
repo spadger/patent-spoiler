@@ -1,7 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
+using AutoMapper;
+using PatentSpoiler.App.Domain.Patents;
+using PatentSpoiler.App.DTOs.Item;
 using PatentSpoiler.ValidationAttributes;
 
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(UpdateItemRequestViewModelMappings), "ConfigureMappings")]
 namespace PatentSpoiler.App.DTOs.Item
 {
     public class AddItemDisplayViewModel
@@ -28,4 +34,16 @@ namespace PatentSpoiler.App.DTOs.Item
         [Required]
         public int Id { get; set; }
     }
+
+
+    static class UpdateItemRequestViewModelMappings
+    {
+        static void ConfigureMappings()
+        {
+            Mapper.CreateMap<AddItemRequestViewModel, PatentableEntity>();
+            Mapper.CreateMap<UpdateItemRequestViewModel, PatentableEntity>()
+                .ForMember(x=>x.Id, opt=>opt.Ignore());
+        }
+    }
+    
 }

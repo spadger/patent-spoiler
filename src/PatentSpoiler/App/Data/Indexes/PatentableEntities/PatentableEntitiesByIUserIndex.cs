@@ -15,6 +15,7 @@ namespace PatentSpoiler.App.Data.Indexes.PatentableEntities
         public PatentableEntityCountByOwnerIndex()
         {
             Map = patentableEntities => from patentableEntity in patentableEntities
+                                        where !patentableEntity.Archived
                                         select new { patentableEntity.Owner, Count = 1 };
     
             Reduce = results => from result in results
