@@ -1,5 +1,9 @@
 using System.Collections.Generic;
+using AutoMapper;
+using PatentSpoiler.App.Domain.Patents;
+using PatentSpoiler.App.DTOs.Item;
 
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(EditItemDisplayViewModelMappings), "ConfigureMappings")]
 namespace PatentSpoiler.App.DTOs.Item
 {
     public class EditItemDisplayViewModel
@@ -9,5 +13,14 @@ namespace PatentSpoiler.App.DTOs.Item
         public string Owner { get; set; }
         public string Description { get; set; }
         public HashSet<string> Categories { get; set; }
+    }
+
+
+    static class EditItemDisplayViewModelMappings
+    {
+        static void ConfigureMappings()
+        {
+            Mapper.CreateMap<PatentableEntity, EditItemDisplayViewModel>();
+        }
     }
 }
