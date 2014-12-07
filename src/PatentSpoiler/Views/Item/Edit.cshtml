@@ -10,6 +10,27 @@
     <script>
         'use strict';
         window.item = @Html.Raw(Html.ToJson(Model));
+
+        window.item.files = [
+            {
+                lastModifiedDate: new Date(),
+                size: 65535,
+                type: 'image/jpeg',
+                name: 'some-image.jpg'
+            },
+            {
+                lastModifiedDate: new Date(),
+                size: 1024,
+                type: 'text/plain',
+                name: 'contract.txt'
+            },
+            {
+                lastModifiedDate: new Date(),
+                size: 51200,
+                type: 'image/gif',
+                name: 'animated.gif'
+            }
+        ];
     </script>
 }
 
@@ -42,6 +63,11 @@
             </ul>
         </div>
         <button type="submit" ng-disabled="working" class="btn btn-default">Save your item</button>
+
+
+        <hr />
+
+        <file-upload-wrapper upload-uri="addAttachmentPath" remove-uri="removeAttachmentPath" existing-files="item.files"></file-upload-wrapper>
 
     </form>
 </div>

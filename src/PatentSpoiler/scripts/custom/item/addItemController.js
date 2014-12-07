@@ -27,8 +27,8 @@ angular.module('item').controller('AddItemController', ['$scope', '$window', 'it
 
         $scope.working = true;
 
-        var handleSaveResult = function () {
-            alert('Yeah!');
+        var handleSaveResult = function (result) {
+            $window.location.pathname = '/item/' + result.id + '/edit';
         };
 
         var handleError = function () {

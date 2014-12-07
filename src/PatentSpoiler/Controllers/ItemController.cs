@@ -41,9 +41,8 @@ namespace PatentSpoiler.Controllers
         [Route("item/add/{*category}")]
         public async Task<ActionResult> Add(AddItemRequestViewModel item)
         {
-            var user = User.Identity;
-            await saveNewPatentableEntityCommand.SaveAsync(item, user.Name);
-            return Json(new { za = "Hello" });
+            var id = await saveNewPatentableEntityCommand.SaveAsync(item, User.Identity.Name);
+            return Json(new { id });
         }
 
         [HttpGet]
@@ -78,6 +77,22 @@ namespace PatentSpoiler.Controllers
             await updatePatentableEntityCommand.UpdateAsync(item, user.Id);
             
             return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+        [HttpPost]
+        [AuthoriseRoles(UserRole.PaidMember)]
+        [Route("item/{id}/attachment")]
+        public async Task<ActionResult> AddAttachment(int id)
+        {
+            return Json("added");
+        }
+
+        [HttpDelete]
+        [AuthoriseRoles(UserRole.PaidMember)]
+        [Route("item/{id}/attachment")]
+        public async Task<ActionResult> DeleteAttachment(int id, string fileName)
+        {
+            return Json("deleted");
         }
     }
 }

@@ -1,0 +1,13 @@
+﻿<ul>
+    <li ng-repeat="item in uploader.queue">
+        <span ng-bind="item.file.name"></span>
+        <span>{{item.progress}}</span>
+        <span>
+            <button ng-show="true" class="btn" type="button" ng-click="item.upload()">upload</button>
+            <button ng-show="true" class="btn" type="button" ng-click="remove(item)">remove</button>
+        </span>
+    </li>
+</ul>
+
+<input type="file" nv-file-select uploader="uploader" multiple /><br />
+<button class="btn" ng-click="uploadAll()" type="button">Do!</button>

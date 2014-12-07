@@ -940,6 +940,7 @@
     <Content Include="schemes\scheme-Y04S.xml" />
     <Content Include="schemes\scheme-Y10S.xml" />
     <Content Include="schemes\scheme.xml" />
+    <Content Include="scripts\angular-file-upload.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -958,6 +959,8 @@
     <Content Include="scripts\custom\user\app.js" />
     <Content Include="scripts\custom\user\userPatentsController.js" />
     <Content Include="scripts\custom\user\userPatentService.js" />
+    <Content Include="scripts\custom\_common\directives\fileUploaderView.html" />
+    <Content Include="scripts\custom\_common\directives\fileUploadWrapper.js" />
     <Content Include="scripts\custom\_common\directives\categoryHierrachyView.html" />
     <Content Include="scripts\custom\search\searchService.js" />
     <Content Include="scripts\custom\search\searchController.js" />

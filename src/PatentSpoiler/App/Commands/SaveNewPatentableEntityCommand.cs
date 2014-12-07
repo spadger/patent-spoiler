@@ -12,7 +12,7 @@ namespace PatentSpoiler.App.Commands
 {
     public interface ISaveNewPatentableEntityCommand
     {
-        Task SaveAsync(AddItemRequestViewModel viewModel, string userId);
+        Task<int> SaveAsync(AddItemRequestViewModel viewModel, string userId);
     }
 
     public class SaveNewPatentableEntityCommand : ISaveNewPatentableEntityCommand
@@ -26,7 +26,7 @@ namespace PatentSpoiler.App.Commands
             this.patentStoreHierrachy = patentStoreHierrachy;
         }
 
-        public async Task SaveAsync(AddItemRequestViewModel viewModel, string userId)
+        public async Task<int> SaveAsync(AddItemRequestViewModel viewModel, string userId)
         {
             var validations = new List<ValidationResult>();
             if (!Validator.TryValidateObject(viewModel, new ValidationContext(viewModel), validations, true))
@@ -42,6 +42,8 @@ namespace PatentSpoiler.App.Commands
 
             await session.StoreAsync(entity);
             await session.SaveChangesAsync();
+
+            return entity.Id;
         }
     }
 }
