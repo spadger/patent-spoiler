@@ -21,7 +21,7 @@ namespace PatentSpoiler.App.Data
         private readonly Dictionary<string, PatentHierrachyNode> nodesForCategory = new Dictionary<string, PatentHierrachyNode>(StringComparer.InvariantCultureIgnoreCase);
         private readonly PatentHierrachyNode root;
 
-        public DictionaryBasedPatentStoreHierrachy(IDefinitionImporter importer, ImporterSettings importerSettings, HttpContextBase context)
+        public DictionaryBasedPatentStoreHierrachy(IDefinitionImporter importer, IImporterSettings importerSettings, HttpContextBase context)
         {
             var fullPath = context.Server.MapPath(importerSettings.DocumentsPath);
             root = importer.Import(fullPath, importerSettings.RootDocumentFileName);

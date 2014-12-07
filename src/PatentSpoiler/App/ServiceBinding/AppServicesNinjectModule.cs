@@ -13,6 +13,7 @@ using Ninject.Extensions.Conventions;
 using Ninject.Web.Common;
 using Ninject.Web.Mvc.FilterBindingSyntax;
 using PatentSpoiler.Annotations;
+using PatentSpoiler.App.Attachments;
 using PatentSpoiler.App.Data;
 using PatentSpoiler.App.Domain.Security;
 using PatentSpoiler.App.Filters;
@@ -27,7 +28,8 @@ namespace PatentSpoiler.App.ServiceBinding
     {
         public override void Load()
         {
-            Bind<ImporterSettings>().ToMethod(x => (ImporterSettings) (dynamic) ConfigurationManager.GetSection("importerSettings")).InTransientScope();
+            Bind<IImporterSettings>().ToMethod(x => (IImporterSettings)(dynamic)ConfigurationManager.GetSection("importer")).InTransientScope();
+            Bind<IAttachmentStagingSettings>().ToMethod(x => (IAttachmentStagingSettings)(dynamic)ConfigurationManager.GetSection("attachmentStaging")).InTransientScope();
             Bind<IPatentStoreHierrachy>().To<DictionaryBasedPatentStoreHierrachy>().InSingletonScope();
 
             Kernel.Bind(x => x.FromAssembliesMatching("PatentSpoiler*")
