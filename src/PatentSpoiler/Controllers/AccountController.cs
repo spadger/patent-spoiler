@@ -20,12 +20,7 @@ namespace PatentSpoiler.Controllers
             this.authenticationManager = authenticationManager;
             this.userManager = userManager;
         }
-
-        public ActionResult Index()
-        {
-            return View();
-        }
-
+        
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {

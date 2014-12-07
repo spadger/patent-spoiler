@@ -6,7 +6,8 @@ namespace PatentSpoiler.App.Attachments
 {
     public interface IStagingAttachmentAdapter
     {
-        Task<Guid> Save(byte[] data);
+        Task<Guid> SaveAsync(Stream inputStream);
+        FileStream Get(Guid id);
         void Delete(Guid id);
     }
 
@@ -19,24 +20,36 @@ namespace PatentSpoiler.App.Attachments
             this.attachmentStagingSettings = attachmentStagingSettings;
         }
 
-        public async Task<Guid> Save(byte[] data)
+        public async Task<Guid> SaveAsync(Stream inputStream)
         {
-            var fileId = Guid.NewGuid();
-            var path = Path.Combine(attachmentStagingSettings.Path, fileId + ".dat");
-
-            using (var sourceStream = new FileStream(path, FileMode.Append, FileAccess.Write, FileShare.None, 8192, true))
+            var id = Guid.NewGuid();
+            var path = GetPath(id);
+            
+            using (var destinationStream = new FileStream(path, FileMode.Append, FileAccess.Write, FileShare.None, 8192, true))
             {
-                await sourceStream.WriteAsync(data, 0, data.Length);
+                await inputStream.CopyToAsync(destinationStream);
             };
 
-            return fileId;
+            return id;
+        }
+
+        public FileStream Get(Guid id)
+        {
+            var path = GetPath(id);
+
+            return File.OpenRead(path);
         }
 
         public void Delete(Guid id)
         {
-            var path = Path.Combine(attachmentStagingSettings.Path, id + ".dat");
+            var path = GetPath(id);
 
             File.Delete(path);
+        }
+
+        private string GetPath(Guid id)
+        {
+            return Path.Combine(attachmentStagingSettings.Path, id + ".dat");
         }
     }
 }

@@ -9,7 +9,7 @@ using PatentSpoiler.App.Domain.Patents;
 using PatentSpoiler.App.DTOs.Item;
 using Raven.Client;
 
-namespace PatentSpoiler.App.Commands
+namespace PatentSpoiler.App.Commands.PatentableEntities
 {
     public interface IUpdatePatentableEntityCommand
     {

@@ -1,7 +1,7 @@
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using PatentSpoiler.App.Commands;
+using PatentSpoiler.App.Commands.PatentableEntities;
 using PatentSpoiler.App.Data.Queries.PatentableEntities;
 using PatentSpoiler.App.Domain.Security;
 using PatentSpoiler.App.DTOs.Item;

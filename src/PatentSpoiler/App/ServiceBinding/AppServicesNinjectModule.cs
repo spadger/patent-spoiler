@@ -4,6 +4,9 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using Microsoft.WindowsAzure;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Blob;
 using Nest;
 using Ninject;
 using Ninject.Activation;
@@ -32,6 +35,10 @@ namespace PatentSpoiler.App.ServiceBinding
             Bind<IAttachmentStagingSettings>().ToMethod(x => (IAttachmentStagingSettings)(dynamic)ConfigurationManager.GetSection("attachmentStaging")).InTransientScope();
             Bind<IPatentStoreHierrachy>().To<DictionaryBasedPatentStoreHierrachy>().InSingletonScope();
 
+            var blobStorageConnectionString = ConfigurationManager.ConnectionStrings["BlobStorage"].ConnectionString;
+            var storageAccount = CloudStorageAccount.Parse(blobStorageConnectionString);
+            Bind<CloudBlobClient>().ToMethod(x => storageAccount.CreateCloudBlobClient()).InTransientScope();
+            
             Kernel.Bind(x => x.FromAssembliesMatching("PatentSpoiler*")
                 .SelectAllClasses()
                 .BindDefaultInterface()
