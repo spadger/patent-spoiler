@@ -25,7 +25,6 @@ namespace PatentSpoiler.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            Response.StatusCode = (int) HttpStatusCode.Unauthorized;
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
