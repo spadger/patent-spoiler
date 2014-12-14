@@ -24,6 +24,8 @@ namespace PatentSpoiler.App.DTOs.Item
 
         [CannotBeEmpty]
         public HashSet<string> Categories { get; set; }
+
+        public List<AttachmentViewModel> Attachments { get; set; }
     }
 
     public class AddItemRequestViewModel : ItemRequestViewModel
@@ -42,8 +44,8 @@ namespace PatentSpoiler.App.DTOs.Item
         {
             Mapper.CreateMap<AddItemRequestViewModel, PatentableEntity>();
             Mapper.CreateMap<UpdateItemRequestViewModel, PatentableEntity>()
-                .ForMember(x=>x.Id, opt=>opt.Ignore());
+                .ForMember(x=>x.Id, opt=>opt.Ignore())
+                .ForMember(x=>x.Attachments, opt=>opt.Ignore());
         }
     }
-    
 }

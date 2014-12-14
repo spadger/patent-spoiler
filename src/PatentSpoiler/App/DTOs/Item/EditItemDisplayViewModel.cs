@@ -13,6 +13,7 @@ namespace PatentSpoiler.App.DTOs.Item
         public string Owner { get; set; }
         public string Description { get; set; }
         public HashSet<string> Categories { get; set; }
+        public List<AttachmentViewModel> Attachments { get; set; }
     }
 
 

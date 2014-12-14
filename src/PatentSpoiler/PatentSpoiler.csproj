@@ -244,6 +244,7 @@
     <Compile Include="App\Data\Queries\PatentableEntities\RetrivePatentsByOwnerQuery.cs" />
     <Compile Include="App\Data\PatentDatabaseIndexBuilder.cs" />
     <Compile Include="App\Data\DocumentStoreManager.cs" />
+    <Compile Include="App\Domain\Patents\Attachment.cs" />
     <Compile Include="App\Domain\Patents\PatentableEntity.cs" />
     <Compile Include="App\Domain\Patents\PatentClassification.cs" />
     <Compile Include="App\Domain\Security\PatentSpoilerUser.cs" />
@@ -252,6 +253,7 @@
     <Compile Include="App\DTOs\CategoryListDisplayViewModel.cs" />
     <Compile Include="App\DTOs\Item\DisplayItemViewModel.cs" />
     <Compile Include="App\DTOs\Item\EditItemDisplayViewModel.cs" />
+    <Compile Include="App\DTOs\Item\AttachmentViewModel.cs" />
     <Compile Include="App\DTOs\LoginVIewModel.cs" />
     <Compile Include="App\DTOs\PatentableEntityViewModel.cs" />
     <Compile Include="App\DTOs\RegistrationViewModel.cs" />
