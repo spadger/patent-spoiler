@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using PatentSpoiler.App.Attachments;
 
@@ -9,25 +8,28 @@ namespace PatentSpoiler.Controllers
 {
     public class StorageTestController : Controller
     {
-        private IStagedAttachmentAdapter stagedAttachmentAdapter;
-        private readonly HttpContextBase context;
+        private readonly IStagedAttachmentAdapter stagedAttachmentAdapter;
 
-        public StorageTestController(IStagedAttachmentAdapter stagedAttachmentAdapter, HttpContextBase context)
+        public StorageTestController(IStagedAttachmentAdapter stagedAttachmentAdapter)
         {
             this.stagedAttachmentAdapter = stagedAttachmentAdapter;
-            this.context = context;
         }
 
         public async Task<ActionResult> A()
         {
-            await stagedAttachmentAdapter.SaveAsync(id, new FileStream(@"d:\test.png", FileMode.Open));
+            using (var fs = new FileStream(@"d:\test.png", FileMode.Open))
+            {
+                await stagedAttachmentAdapter.SaveAsync(id, fs, "application/octet-stream");
+            }
             return Content("Saved");
         }
 
         public async Task<ActionResult> B()
         {
-            Response.AddHeader("Content-Disposition", "attachment; filename=result.png");
-            await stagedAttachmentAdapter.GetAsync(id, context.Response.OutputStream);
+            Response.AddHeader("Content-Disposition", "attachment; filename=test.png");
+            Response.ContentType = "application/octet-stream";
+            
+            await stagedAttachmentAdapter.GetAsync(id, Response.OutputStream);
             return new EmptyResult();
         }
 
