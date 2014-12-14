@@ -6,7 +6,7 @@ angular.module('utils').directive('categoryHierrachyView', ['recursionHelper', f
         restrict: 'AE',
         scope: {
             tree: '=',
-            mode: '@',
+            mode: '@'
         },
         controller: function($scope) {
 

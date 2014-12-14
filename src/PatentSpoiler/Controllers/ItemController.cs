@@ -18,7 +18,10 @@ namespace PatentSpoiler.Controllers
         private readonly IGetPatentableEntityForDisplayQuery getPatentableEntityForDisplayQuery;
         private readonly IGetPatentableEntityForEditQuery getPatentableEntityForEditQuery;
 
-        public ItemController(SaveNewPatentableEntityCommand saveNewPatentableEntityCommand, UpdatePatentableEntityCommand updatePatentableEntityCommand, PatentSpoilerUser user, IGetPatentableEntityForDisplayQuery getPatentableEntityForDisplayQuery, IGetPatentableEntityForEditQuery getPatentableEntityForEditQuery)
+        public ItemController(SaveNewPatentableEntityCommand saveNewPatentableEntityCommand,
+            UpdatePatentableEntityCommand updatePatentableEntityCommand, PatentSpoilerUser user,
+            IGetPatentableEntityForDisplayQuery getPatentableEntityForDisplayQuery,
+            IGetPatentableEntityForEditQuery getPatentableEntityForEditQuery)
         {
             this.saveNewPatentableEntityCommand = saveNewPatentableEntityCommand;
             this.updatePatentableEntityCommand = updatePatentableEntityCommand;
@@ -33,7 +36,7 @@ namespace PatentSpoiler.Controllers
         [Route("item/add/{*category}")]
         public ActionResult Add(string category)
         {
-            return View(new AddItemDisplayViewModel{Category = category});
+            return View(new AddItemDisplayViewModel {Category = category});
         }
 
         [HttpPost]
@@ -42,7 +45,7 @@ namespace PatentSpoiler.Controllers
         public async Task<ActionResult> Add(AddItemRequestViewModel item)
         {
             var id = await saveNewPatentableEntityCommand.SaveAsync(item, User.Identity.Name);
-            return Json(new { id });
+            return Json(new {id});
         }
 
         [HttpGet]
@@ -75,24 +78,8 @@ namespace PatentSpoiler.Controllers
         public async Task<ActionResult> Edit(UpdateItemRequestViewModel item)
         {
             await updatePatentableEntityCommand.UpdateAsync(item, user.Id);
-            
+
             return new HttpStatusCodeResult(HttpStatusCode.OK);
-        }
-
-        [HttpPost]
-        [AuthoriseRoles(UserRole.PaidMember)]
-        [Route("item/{id}/attachment")]
-        public async Task<ActionResult> AddAttachment(int id)
-        {
-            return Json("added");
-        }
-
-        [HttpDelete]
-        [AuthoriseRoles(UserRole.PaidMember)]
-        [Route("item/{id}/attachment")]
-        public async Task<ActionResult> DeleteAttachment(int id, string fileName)
-        {
-            return Json("deleted");
         }
     }
 }

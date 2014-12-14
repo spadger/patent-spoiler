@@ -63,10 +63,13 @@
         </div>
         <button type="submit" ng-disabled="working" class="btn btn-default">Save your item</button>
 
+        <hr/>
 
-        <hr />
+        <ul>
+            <li ng-repeat="item in item.attachments">{{item}}</li>
+        </ul>
+        <popup-file-upload-wrapper upload-uri="uploadAttachmentPath" existing-files="item.attachments" success-callback="filesUploaded"></popup-file-upload-wrapper>
 
-
-        <file-upload-wrapper upload-uri="uploadAttachmentPath" existing-files="item.attachments" success-callback="filesUploaded"></file-upload-wrapper>
+        <button type="submit" class="btn btn-primary">Save</button>
     </form>
 </div>

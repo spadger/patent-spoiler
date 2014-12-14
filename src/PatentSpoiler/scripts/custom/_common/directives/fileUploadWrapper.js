@@ -7,7 +7,7 @@ angular.module('utils').directive('fileUploadWrapper', ['FileUploader', function
         restrict: 'AE',
         scope: {
             uploadUri: '&',
-            existingFiles: '&',
+            existingFiles: '=',
             successCallback: '&'
         },
         controller: ['$scope','$http', function ($scope, $http) {
@@ -16,7 +16,7 @@ angular.module('utils').directive('fileUploadWrapper', ['FileUploader', function
                 url: $scope.uploadUri()
         });
 
-            var existing = $scope.existingFiles();
+            var existing = $scope.existingFiles;
             
             for (var i in existing) {
                 var file = existing[i];
@@ -34,12 +34,8 @@ angular.module('utils').directive('fileUploadWrapper', ['FileUploader', function
             if (existing.length > 0) {
                 uploader.progress = 100;
             }
-            
-            $scope.cancel = function () {
-                alert('Done');
-            }
 
-            $scope.done = function () {
+            $scope.$on('ok', function() {
                 var allItemsUploaded = _.every(uploader.queue, function(item) {
                     return item.isSuccess && item.isUploaded;
                 });
@@ -51,10 +47,11 @@ angular.module('utils').directive('fileUploadWrapper', ['FileUploader', function
                     });
 
                     $scope.successCallback()(results);
+                    $scope.$emit('filesAmended');
                 } else {
                     alert('Not all files have been successfully uploaded.  Please check or remove those highlighted');
                 }
-            }
+            });
 
             uploader.onWhenAddingFileFailed = function (item /*{File|FileLikeObject}*/, filter, options) {
                 alert('Sorry, this file could not be added');

@@ -991,6 +991,8 @@
     <Content Include="scripts\custom\search\searchService.js" />
     <Content Include="scripts\custom\search\searchController.js" />
     <Content Include="scripts\custom\search\app.js" />
+    <Content Include="scripts\custom\_common\directives\popupFileUploadWrapper.js" />
+    <Content Include="scripts\custom\_common\directives\popupFileUploadWrapperView.html" />
     <Content Include="scripts\custom\_common\factories\recursionHelper.js" />
     <Content Include="scripts\custom\_common\filters\escapedURI.js" />
     <Content Include="scripts\custom\_common\filters\prettyFileSize.js" />
