@@ -31,8 +31,16 @@ namespace PatentSpoiler.App.ServiceBinding
     {
         public override void Load()
         {
-            Bind<IImporterSettings>().ToMethod(x => (IImporterSettings)(dynamic)ConfigurationManager.GetSection("importer")).InTransientScope();
-            Bind<IAttachmentStagingSettings>().ToMethod(x => (IAttachmentStagingSettings)(dynamic)ConfigurationManager.GetSection("attachmentStaging")).InTransientScope();
+            Bind<IImporterSettings>().ToMethod(x =>
+            {
+                IImporterSettings result = (dynamic)ConfigurationManager.GetSection("importer");
+                return result;
+            }).InTransientScope();
+            Bind<IAttachmentStagingSettings>().ToMethod(x =>
+            {
+                IAttachmentStagingSettings result = (dynamic)ConfigurationManager.GetSection("attachmentStaging");
+                return result;
+            }).InTransientScope();
             Bind<IPatentStoreHierrachy>().To<DictionaryBasedPatentStoreHierrachy>().InSingletonScope();
 
             var blobStorageConnectionString = ConfigurationManager.ConnectionStrings["BlobStorage"].ConnectionString;
