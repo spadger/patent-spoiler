@@ -994,6 +994,7 @@
     <Content Include="scripts\custom\search\app.js" />
     <Content Include="scripts\custom\_common\factories\recursionHelper.js" />
     <Content Include="scripts\custom\_common\filters\escapedURI.js" />
+    <Content Include="scripts\custom\_common\filters\prettyFileSize.js" />
     <Content Include="scripts\custom\_common\module.js" />
     <Content Include="scripts\lodash.js" />
     <Content Include="scripts\custom\_common\directives\categoryHierrachyView.js" />
@@ -1053,6 +1054,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Item\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AttachmentStaging\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

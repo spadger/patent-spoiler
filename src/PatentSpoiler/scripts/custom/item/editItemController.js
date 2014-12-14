@@ -6,8 +6,7 @@ angular.module('item').controller('EditItemController', ['$scope', '$window', 'i
     $scope.working = false;
     $scope.item = $window.item;
 
-    $scope.addAttachmentPath = 'attachment';
-    $scope.removeAttachmentPath = 'attachment';
+    $scope.uploadAttachmentPath = '/attachment';
 
     var categories = $scope.item.categories;
     $scope.item.categories = {};
@@ -21,6 +20,10 @@ angular.module('item').controller('EditItemController', ['$scope', '$window', 'i
 
     $scope.removeCategory = function(id) {
         delete $scope.item.categories[id];
+    }
+
+    $scope.filesUploaded = function (attachments) {
+        $scope.item.attachments = attachments;
     }
 
     $scope.update = function() {

@@ -11,26 +11,25 @@
         'use strict';
         window.item = @Html.Raw(Html.ToJson(Model));
 
-        window.item.files = [
-            {
-                lastModifiedDate: new Date(),
-                size: 65535,
-                type: 'image/jpeg',
-                name: 'some-image.jpg'
-            },
-            {
-                lastModifiedDate: new Date(),
-                size: 1024,
-                type: 'text/plain',
-                name: 'contract.txt'
-            },
-            {
-                lastModifiedDate: new Date(),
-                size: 51200,
-                type: 'image/gif',
-                name: 'animated.gif'
-            }
-        ];
+        window.item.attachments = [
+        {
+            id: '9047b117-abbb-4ae1-bc5f-aebd3d4340c0',
+            size: 65535,
+            type: 'image/jpeg',
+            name: 'some-image.jpg'
+        },
+        {
+            id: '9047b117-abbb-4ae1-bc5f-aebd3d4340c1',
+            size: 1024,
+            type: 'text/plain',
+            name: 'contract.txt'
+        },
+        {
+            id: '9047b117-abbb-4ae1-bc5f-aebd3d4340c2',
+            size: 51200,
+            type: 'image/gif',
+            name: 'animated.gif'
+        }];
     </script>
 }
 
@@ -67,7 +66,7 @@
 
         <hr />
 
-        <file-upload-wrapper upload-uri="addAttachmentPath" remove-uri="removeAttachmentPath" existing-files="item.files"></file-upload-wrapper>
 
+        <file-upload-wrapper upload-uri="uploadAttachmentPath" existing-files="item.attachments" success-callback="filesUploaded"></file-upload-wrapper>
     </form>
 </div>

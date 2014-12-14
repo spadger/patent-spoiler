@@ -2,8 +2,10 @@
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using PatentSpoiler.App;
 using PatentSpoiler.App.Attachments;
 using PatentSpoiler.App.Domain.Security;
+using PatentSpoiler.App.DTOs.Item;
 using PatentSpoiler.App.Security;
 
 namespace PatentSpoiler.Controllers
@@ -45,7 +47,15 @@ namespace PatentSpoiler.Controllers
             var descriptor = files[0];
 
             var id = await stagingAttachmentAdapter.SaveAsync(descriptor.InputStream);
-            return Json(new{id});
+
+            var result = new AttachmentViewModel
+            {
+                Id = id,
+                Type = descriptor.ContentType,
+                Name = descriptor.FileName,
+                Size = descriptor.ContentLength
+            };
+            return new JsonNetResult{Data = result};
         }
     }
 }

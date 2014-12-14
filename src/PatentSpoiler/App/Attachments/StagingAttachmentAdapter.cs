@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace PatentSpoiler.App.Attachments
 {
@@ -24,7 +25,8 @@ namespace PatentSpoiler.App.Attachments
         {
             var id = Guid.NewGuid();
             var path = GetPath(id);
-            
+
+            path = HttpContext.Current.Request.MapPath(path);
             using (var destinationStream = new FileStream(path, FileMode.Append, FileAccess.Write, FileShare.None, 8192, true))
             {
                 await inputStream.CopyToAsync(destinationStream);

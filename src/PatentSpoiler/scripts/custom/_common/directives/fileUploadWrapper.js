@@ -1,18 +1,20 @@
-﻿///<reference path="../module.js" />
+﻿///<reference path="../../../lodash.js" />
+/// <reference path="../filters/prettyFileSize.js" />
+///<reference path="../module.js" />
 'use strict';
 angular.module('utils').directive('fileUploadWrapper', ['FileUploader', function (FileUploader) {
     return {
         restrict: 'AE',
         scope: {
             uploadUri: '&',
-            removeUri: '&',
-            existingFiles: '&'
+            existingFiles: '&',
+            successCallback: '&'
         },
         controller: ['$scope','$http', function ($scope, $http) {
 
             var uploader = $scope.uploader = new FileUploader({
                 url: $scope.uploadUri()
-            });
+        });
 
             var existing = $scope.existingFiles();
             
@@ -24,55 +26,50 @@ angular.module('utils').directive('fileUploadWrapper', ['FileUploader', function
                 fileInfo.progress = 100;
                 fileInfo.isUploaded = true;
                 fileInfo.isSuccess = true;
-
+                fileInfo.uploadResult = file;
+                
                 uploader.queue.push(fileInfo);
             }
-            
-            uploader.onWhenAddingFileFailed = function (item /*{File|FileLikeObject}*/, filter, options) {
-                console.info('onWhenAddingFileFailed', item, filter, options);
-            };
-            uploader.onAfterAddingFile = function (fileItem) {
-                console.info('onAfterAddingFile', fileItem);
-            };
-            uploader.onAfterAddingAll = function (addedFileItems) {
-                console.info('onAfterAddingAll', addedFileItems);
-            };
-            uploader.onBeforeUploadItem = function (item) {
-                console.info('onBeforeUploadItem', item);
-            };
-            uploader.onProgressItem = function (fileItem, progress) {
-                console.info('onProgressItem', fileItem, progress);
-            };
-            uploader.onProgressAll = function (progress) {
-                console.info('onProgressAll', progress);
-            };
-            uploader.onSuccessItem = function (fileItem, response, status, headers) {
-                console.info('onSuccessItem', fileItem, response, status, headers);
-            };
-            uploader.onErrorItem = function (fileItem, response, status, headers) {
-                console.info('onErrorItem', fileItem, response, status, headers);
-            };
-            uploader.onCancelItem = function (fileItem, response, status, headers) {
-                console.info('onCancelItem', fileItem, response, status, headers);
-            };
-            uploader.onCompleteItem = function (fileItem, response, status, headers) {
-                console.info('onCompleteItem', fileItem, response, status, headers);
-            };
-            uploader.onCompleteAll = function () {
-                console.info('onCompleteAll');
-            };
 
-            $scope.uploadAll = function () {
-                uploader.uploadAll();
+            if (existing.length > 0) {
+                uploader.progress = 100;
+            }
+            
+            $scope.cancel = function () {
+                alert('Done');
             }
 
-            $scope.remove = function(item) {
-                
-                $http.delete($scope.removeUri(), { fileName: item.file.name }).then(function () {
-                    item.remove();
-                }, function () {
-                    alert('error');
+            $scope.done = function () {
+                var allItemsUploaded = _.every(uploader.queue, function(item) {
+                    return item.isSuccess && item.isUploaded;
                 });
+                if (allItemsUploaded) {
+
+                    var results = _.map(uploader.queue, function(item) {
+
+                        return item.uploadResult;
+                    });
+
+                    $scope.successCallback()(results);
+                } else {
+                    alert('Not all files have been successfully uploaded.  Please check or remove those highlighted');
+                }
+            }
+
+            uploader.onWhenAddingFileFailed = function (item /*{File|FileLikeObject}*/, filter, options) {
+                alert('Sorry, this file could not be added');
+            };
+            
+            uploader.onErrorItem = function (fileItem, response, status, headers) {
+                alert('Sorry, there was an error uploading ' + fileItem);
+            };
+            
+            uploader.onCompleteItem = function (fileItem, response, status, headers) {
+                fileItem.uploadResult = response;
+            };
+            
+            $scope.uploadAll = function () {
+                uploader.uploadAll();
             }
         }],
         templateUrl: '/scripts/custom/_common/directives/fileUploaderView.html'
