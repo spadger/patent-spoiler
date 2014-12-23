@@ -69,6 +69,11 @@ namespace PatentSpoiler.Controllers
                 return new RedirectResult("/item/" + id);
             }
 
+            if (item.Archived)
+            {
+                return RedirectToAction("View");
+            }
+
             return View(item);
         }
 

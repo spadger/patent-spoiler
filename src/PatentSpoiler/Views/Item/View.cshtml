@@ -9,6 +9,11 @@
     
 }
 
+@if (Model.LatestId.HasValue)
+{
+    <p class="bg-warning">You are looking at an old verison of this item.  Please go @Html.ActionLink("here", "View", new{id=Model.LatestId.Value}) to see the latest</p>
+}
+
 <div ng-app="item" ng-controller="AddItemController">
 
     <h2>@Model.Name</h2>

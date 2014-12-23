@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using PatentSpoiler.App.Data.Indexes.PatentableEntities;
 using PatentSpoiler.App.Domain.Patents;
 using PatentSpoiler.App.Domain.Security;
 using PatentSpoiler.App.DTOs.Item;
@@ -38,6 +39,17 @@ namespace PatentSpoiler.App.Data.Queries.PatentableEntities
                 Categories = item.Categories,
                 Attachments = item.Attachments
             };
+
+            if (item.Archived)
+            {
+                var latestItem = await session.Query<PatentableEntity, PatentableEntitiesBySetIdIndex>()
+                                    .FirstOrDefaultAsync(x => x.SetId == item.SetId && !x.Archived);
+
+                if (latestItem != null)
+                {
+                    result.LatestId = latestItem.Id;
+                }
+            }
 
             return result;
         }

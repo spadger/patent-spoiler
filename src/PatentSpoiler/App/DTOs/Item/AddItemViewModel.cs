@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
 using AutoMapper;
 using PatentSpoiler.App.Domain.Patents;
 using PatentSpoiler.App.DTOs.Item;
