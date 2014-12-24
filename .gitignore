@@ -40,6 +40,4 @@ Backup*/
 UpgradeLog*.XML
 UpgradeLog*.htm
 Readme.html
-src/PatentSpoiler.DB/Data/
-src/PatentSpoiler.DB/Database/
-src/PatentSpoiler.DB/Raven/
+src/PatentSpoiler.DB/
