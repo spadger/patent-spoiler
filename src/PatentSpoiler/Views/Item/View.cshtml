@@ -36,4 +36,15 @@
     <div class="row">
         <pre>@Model.Description</pre>
     </div>
+
+    <div class="row">
+        <ul>
+            @foreach (var attachment in Model.Attachments)
+            {
+                <li>
+                    @Html.RouteLink(@attachment.LinkText(), "GetAttachment", new {id = attachment.Id, fileName = attachment.Name.Replace(".", "^")})
+                </li>
+            }
+        </ul>
+    </div>
 </div>

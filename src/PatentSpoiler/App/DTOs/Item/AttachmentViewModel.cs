@@ -21,8 +21,7 @@ namespace PatentSpoiler.App.DTOs.Item
             Mapper.CreateMap<Attachment, AttachmentViewModel>();
 
             Mapper.CreateMap<AttachmentViewModel, Attachment>()
-                .ForMember(x=>x.DateCreated, opt=> opt.UseValue(DateTime.Now))
-                .ForMember(x=>x.Path, opt=>opt.Ignore());
+                .ForMember(x=>x.DateCreated, opt=> opt.UseValue(DateTime.Now));
         }
     }
 }

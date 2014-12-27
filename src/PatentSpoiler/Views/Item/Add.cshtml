@@ -30,7 +30,7 @@
             <span class="help-block" ng-show="addForm.description.$error.minlength && addForm.description.$pristine && submitted">Please enter at least 50 characters</span>
         </div>
         <div class="form-group" ng-class="{'has-error': addForm.description.$invalid && addForm.description.$pristine && submitted}">
-            <label>Categories</label><br />
+            <label>Categories</label><br/>
             <popup-category-chooser selected-items="item.categories"></popup-category-chooser>
             <ul>
                 <li ng-repeat="category in item.categories | orderBy:category.Id">
@@ -39,6 +39,13 @@
                 </li>
             </ul>
         </div>
+        <div class="form-group">
+            <ul>
+                <li ng-repeat="item in item.attachments">{{item}}</li>
+            </ul>
+            <popup-file-upload-wrapper existing-files="item.attachments" success-callback="filesUploaded"></popup-file-upload-wrapper>
+        </div>
+
         <button type="submit" ng-disabled="working" class="btn btn-default">Save your item</button>
 
     </form>

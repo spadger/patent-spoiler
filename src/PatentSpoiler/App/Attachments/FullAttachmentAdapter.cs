@@ -23,7 +23,7 @@ namespace PatentSpoiler.App.Attachments
         public async Task SaveAsync(Guid id, Stream source, string contentType)
         {
             var blockBlob = cloudBlobContainer.GetBlockBlobReference(id.ToString());
-            blockBlob.Metadata.Add("content-type", contentType);
+            //blockBlob.Metadata.Add("content-type", contentType);
             await blockBlob.UploadFromStreamAsync(source);
         }
 

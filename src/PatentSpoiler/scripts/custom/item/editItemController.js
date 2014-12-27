@@ -6,8 +6,6 @@ angular.module('item').controller('EditItemController', ['$scope', '$window', 'i
     $scope.working = false;
     $scope.item = $window.item;
 
-    $scope.uploadAttachmentPath = '/attachment';
-
     var categories = $scope.item.categories;
     $scope.item.categories = {};
     for (var i in categories) {

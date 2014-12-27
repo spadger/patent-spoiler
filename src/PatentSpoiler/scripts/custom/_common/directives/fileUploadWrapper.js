@@ -6,14 +6,13 @@ angular.module('utils').directive('fileUploadWrapper', ['FileUploader', function
     return {
         restrict: 'AE',
         scope: {
-            uploadUri: '&',
             existingFiles: '=',
             successCallback: '&'
         },
-        controller: ['$scope','$http', function ($scope, $http) {
+        controller: ['$scope', function ($scope) {
 
             var uploader = $scope.uploader = new FileUploader({
-                url: $scope.uploadUri()
+                url: '/attachment'
         });
 
             var existing = $scope.existingFiles;

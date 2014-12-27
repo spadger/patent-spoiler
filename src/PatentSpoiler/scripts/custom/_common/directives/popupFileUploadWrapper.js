@@ -5,7 +5,6 @@ angular.module('utils').directive('popupFileUploadWrapper', ['$modal', function 
     return {
         restrict: 'AE',
         scope: {
-            uploadUri: '&',
             existingFiles: '&',
             successCallback: '&'
         },
@@ -15,7 +14,6 @@ angular.module('utils').directive('popupFileUploadWrapper', ['$modal', function 
             $scope.open = function () {
 
                 var extraArgs = {
-                    uploadUri : $scope.uploadUri(),
                     existingFiles: $scope.existingFiles().slice(0),
                     successCallback: $scope.successCallback()
                 }

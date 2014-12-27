@@ -5,7 +5,7 @@ angular.module('item').controller('AddItemController', ['$scope', '$window', 'it
 
     $scope.working = false;
     $scope.initialCategory = $window.category;
-    $scope.item = {categories: {}, name:'', description:'' };
+    $scope.item = {attachments:[], categories: {}, name:'', description:'' };
     $scope.submitted = false;
     $scope.working = false;
 
@@ -15,6 +15,11 @@ angular.module('item').controller('AddItemController', ['$scope', '$window', 'it
 
     $scope.removeCategory = function(id) {
         delete $scope.item.categories[id];
+    }
+
+
+    $scope.filesUploaded = function (attachments) {
+        $scope.item.attachments = attachments;
     }
 
     $scope.add = function() {
