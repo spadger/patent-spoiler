@@ -8,7 +8,7 @@ namespace PatentSpoiler.App.Attachments
     public interface IStagedAttachmentAdapter
     {
         Task SaveAsync(Guid id, Stream source, string contentType);
-        Task GetAsync(Guid id, Stream destination);
+        Task<string> GetAsync(Guid id, Stream destination);
     }
 
     public class StagedAttachmentAdapter : IStagedAttachmentAdapter
@@ -23,14 +23,15 @@ namespace PatentSpoiler.App.Attachments
         public async Task SaveAsync(Guid id, Stream source, string contentType)
         {
             var blockBlob = cloudBlobContainer.GetBlockBlobReference(id.ToString());
-            //blockBlob.Metadata.Add("content-type", contentType);
+            blockBlob.Properties.ContentType = contentType;
             await blockBlob.UploadFromStreamAsync(source);
         }
 
-        public async Task GetAsync(Guid id, Stream destination)
+        public async Task<string> GetAsync(Guid id, Stream destination)
         {
             var blockBlob = cloudBlobContainer.GetBlockBlobReference(id.ToString());
             await blockBlob.DownloadToStreamAsync(destination);
+            return blockBlob.Properties.ContentType;
         }
     }
 }

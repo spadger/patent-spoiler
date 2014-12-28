@@ -29,7 +29,7 @@ namespace PatentSpoiler.Controllers
         public async Task<ActionResult> Get(Guid id, string fileName)
         {
             Response.AddHeader("Content-Disposition", "attachment; filename=" + fileName.Replace("^", "."));
-            await stagedAttachmentAdapter.GetAsync(id, context.Response.OutputStream);
+            Response.ContentType = await stagedAttachmentAdapter.GetAsync(id, context.Response.OutputStream);
             return new EmptyResult();
         }
 
