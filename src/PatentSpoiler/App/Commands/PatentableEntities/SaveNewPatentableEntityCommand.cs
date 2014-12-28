@@ -50,7 +50,7 @@ namespace PatentSpoiler.App.Commands.PatentableEntities
             await session.StoreAsync(entity);
             await session.SaveChangesAsync();
 
-            Task.Run(() => DeletedStagingAttachmentsAsync(viewModel.Attachments));
+            Task.Run(() => DeletedStagingAttachments(viewModel.Attachments));
 
             return entity.Id;
         }
@@ -66,7 +66,7 @@ namespace PatentSpoiler.App.Commands.PatentableEntities
             }
         }
 
-        private void DeletedStagingAttachmentsAsync(List<AttachmentViewModel> attachments)
+        private void DeletedStagingAttachments(List<AttachmentViewModel> attachments)
         {
             foreach (var attachment in attachments)
             {
