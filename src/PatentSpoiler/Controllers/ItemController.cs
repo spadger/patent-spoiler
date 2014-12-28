@@ -64,6 +64,11 @@ namespace PatentSpoiler.Controllers
         {
             var item = await getPatentableEntityForEditQuery.ExecuteAsync(id);
 
+            if (item == null)
+            {
+                return new HttpStatusCodeResult(404);
+            }
+
             if (user.Id != item.Owner)
             {
                 return new RedirectResult("/item/" + id);
