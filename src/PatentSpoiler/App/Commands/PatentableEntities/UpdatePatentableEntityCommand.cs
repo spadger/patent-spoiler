@@ -82,7 +82,7 @@ namespace PatentSpoiler.App.Commands.PatentableEntities
 
                 using (var stagedStream = stagingAttachmentAdapter.Get(newAttachment.Id))
                 {
-                    await stagedAttachmentAdapter.SaveAsync(newAttachment.Id, stagedStream, newAttachment.Type);
+                    await stagedAttachmentAdapter.SaveAsync(newAttachment.Id, stagedStream, newAttachment.Type, newAttachment.Name);
                 }
             }
         }

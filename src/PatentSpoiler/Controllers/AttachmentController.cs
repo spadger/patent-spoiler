@@ -24,12 +24,13 @@ namespace PatentSpoiler.Controllers
         }
 
         [HttpGet]
-        [Route("attachment/{id:guid}/{fileName}", Name = "GetAttachment")]
+        [Route("attachment/{id:guid}", Name = "GetAttachment")]
         [AuthoriseRoles(UserRole.VerifiedMember)]
-        public async Task<ActionResult> Get(Guid id, string fileName)
+        public async Task<ActionResult> Get(Guid id)
         {
-            Response.AddHeader("Content-Disposition", "attachment; filename=" + fileName.Replace("^", "."));
-            Response.ContentType = await stagedAttachmentAdapter.GetAsync(id, context.Response.OutputStream);
+            var attachmentDescriptor = await stagedAttachmentAdapter.GetAsync(id, context.Response.OutputStream);
+            Response.ContentType = attachmentDescriptor.ContentType;
+            Response.AddHeader("Content-Disposition", "attachment; filename=" + attachmentDescriptor.FileName);
             return new EmptyResult();
         }
 

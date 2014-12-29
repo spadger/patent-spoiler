@@ -12,7 +12,7 @@ namespace PatentSpoiler.App.Domain.Patents
 
         public string LinkText()
         {
-            return string.Format("{0}, {1} bytes", Name, Size);
+            return string.Format("{0}, {1}", Name, Size.PrettyFileSize());
         }
     }
 }

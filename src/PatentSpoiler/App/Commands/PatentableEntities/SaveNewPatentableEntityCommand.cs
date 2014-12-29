@@ -61,7 +61,7 @@ namespace PatentSpoiler.App.Commands.PatentableEntities
             {
                 using (var stagedStream = stagingAttachmentAdapter.Get(attachment.Id))
                 {
-                    await stagedAttachmentAdapter.SaveAsync(attachment.Id, stagedStream, attachment.Type);
+                    await stagedAttachmentAdapter.SaveAsync(attachment.Id, stagedStream, attachment.Type, attachment.Name);
                 }
             }
         }

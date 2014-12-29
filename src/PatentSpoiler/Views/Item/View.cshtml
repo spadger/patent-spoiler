@@ -42,7 +42,7 @@
             @foreach (var attachment in Model.Attachments)
             {
                 <li>
-                    @Html.RouteLink(@attachment.LinkText(), "GetAttachment", new {id = attachment.Id, fileName = attachment.Name.Replace(".", "^")})
+                    @Html.RouteLink(@attachment.LinkText(), "GetAttachment", new {id = attachment.Id})
                 </li>
             }
         </ul>
