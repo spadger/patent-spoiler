@@ -44,6 +44,7 @@ namespace PatentSpoiler.App.Commands.PatentableEntities
             var entity = Mapper.Map<AddItemRequestViewModel, PatentableEntity>(viewModel);
             entity.ExplodedCategories = explodedCategories;
             entity.Owner = userId;
+            entity.Changes = "Created";
 
             await StageAttachmentsAsync(viewModel.Attachments);
             

@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using AutoMapper;
 using PatentSpoiler.App.Data.Indexes.PatentableEntities;
 using PatentSpoiler.App.Domain.Patents;
 using PatentSpoiler.App.Domain.Security;
@@ -31,14 +32,7 @@ namespace PatentSpoiler.App.Data.Queries.PatentableEntities
                 return null;
             }
 
-            var result = new DisplayItemViewModel
-            {
-                Name = item.Name,
-                Description = item.Description,
-                Owner = item.Owner,
-                Categories = item.Categories,
-                Attachments = item.Attachments
-            };
+            var result = Mapper.Map<PatentableEntity, DisplayItemViewModel>(item);
 
             if (item.Archived)
             {

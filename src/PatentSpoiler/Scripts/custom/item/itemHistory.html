@@ -1,0 +1,11 @@
+﻿<div style="max-height: 200px; overflow:auto">
+    <div ng-repeat="item in items">
+        <a ng-href="/item/{{item.id}}">
+            {{item.dateUpdated | date : 'dd/MMM/yyyy HH:mm'}}
+        </a> : {{item.changes}}
+    </div>
+</div>
+<div ng-show="working"><img src="/content/spinner.gif" title="searching..." /></div>
+<div ng-show="showMore && !working">
+    <button type="button" ng-click="moreItems()">More</button>
+</div>

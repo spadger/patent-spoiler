@@ -14,10 +14,10 @@
     <p class="bg-warning">You are looking at an old verison of this item.  Please go @Html.ActionLink("here", "View", new{id=Model.LatestId.Value}) to see the latest</p>
 }
 
-<div ng-app="item" ng-controller="AddItemController">
+<div ng-app="item" ng-controller="ViewItemController">
 
     <h2>@Model.Name</h2>
-    
+
     <div class="row">
         <div class="col-md-1">Owner</div>
         <div class="col-md-11"><a href="/user/@Model.Owner">@Model.Owner</a></div>
@@ -50,5 +50,13 @@
                 </li>
             }
         </ul>
+    </div>
+    
+    
+    <div class="btn-group" dropdown is-open="open">
+        <a href="javascript:void"  ng-click="initHistory()" dropdown-toggle>Previous Versions</a>
+        <div class="dropdown-menu" role="menu" ng-click="$event.stopPropagation();initHistory()" style="min-width: 500px;">
+            <item-history set-id="@Model.SetId"></item-history>
+        </div>
     </div>
 </div>

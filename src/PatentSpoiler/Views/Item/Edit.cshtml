@@ -50,6 +50,11 @@
         </ul>
         <popup-file-upload-wrapper existing-files="item.attachments" success-callback="filesUploaded"></popup-file-upload-wrapper>
 
+        <div class="form-group">
+            <label for="changes">Changes<small>(optional)</small></label>
+            <input type="text" class="form-control" ng-model="item.changes" id="changes" name="changes" placeholder="The reason for your edit"></input>
+        </div>
+
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
 </div>

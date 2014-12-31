@@ -33,6 +33,7 @@ namespace PatentSpoiler.App.DTOs.Item
     {
         [Required]
         public int Id { get; set; }
+        public string Changes { get; set; }
     }
 
 

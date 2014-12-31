@@ -241,6 +241,7 @@
     <Compile Include="App\Data\Queries\Page.cs" />
     <Compile Include="App\Data\Queries\PatentableEntities\GetPatentableEntityForEditQuery.cs" />
     <Compile Include="App\Data\Queries\PatentableEntities\RetrivePatentsByClassificationQuery.cs" />
+    <Compile Include="App\Data\Queries\PatentableEntities\GetPatentsBySetIdQuery.cs" />
     <Compile Include="App\Data\Queries\PatentableEntities\RetrivePatentsByOwnerQuery.cs" />
     <Compile Include="App\Data\PatentDatabaseIndexBuilder.cs" />
     <Compile Include="App\Data\DocumentStoreManager.cs" />
@@ -256,6 +257,7 @@
     <Compile Include="App\DTOs\Item\AttachmentViewModel.cs" />
     <Compile Include="App\DTOs\LoginVIewModel.cs" />
     <Compile Include="App\DTOs\PatentableEntityViewModel.cs" />
+    <Compile Include="App\DTOs\PreviousEntityVersionsViewModel.cs" />
     <Compile Include="App\DTOs\RegistrationViewModel.cs" />
     <Compile Include="App\DTOs\SearchResultTree.cs" />
     <Compile Include="App\DTOs\SearchViewModel.cs" />
@@ -969,8 +971,11 @@
     <Content Include="scripts\angular-file-upload.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="scripts\custom\item\viewItemController.js" />
+    <Content Include="scripts\custom\item\itemHistory.html" />
     <Content Include="scripts\custom\item\editItemController.js" />
     <Content Include="scripts\custom\item\addItemController.js" />
+    <Content Include="scripts\custom\item\itemHistoryDirective.js" />
     <Content Include="scripts\custom\item\module.js" />
     <Content Include="scripts\custom\category\categoryListController.js" />
     <Content Include="scripts\custom\category\module.js" />

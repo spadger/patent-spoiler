@@ -1,6 +1,8 @@
+using System;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using PatentSpoiler.App;
 using PatentSpoiler.App.Commands.PatentableEntities;
 using PatentSpoiler.App.Data.Queries.PatentableEntities;
 using PatentSpoiler.App.Domain.Security;
@@ -17,17 +19,20 @@ namespace PatentSpoiler.Controllers
         private readonly PatentSpoilerUser user;
         private readonly IGetPatentableEntityForDisplayQuery getPatentableEntityForDisplayQuery;
         private readonly IGetPatentableEntityForEditQuery getPatentableEntityForEditQuery;
+        private readonly IGetPatentsBySetIdQuery getPatentsBySetIdQuery;
 
         public ItemController(SaveNewPatentableEntityCommand saveNewPatentableEntityCommand,
             UpdatePatentableEntityCommand updatePatentableEntityCommand, PatentSpoilerUser user,
             IGetPatentableEntityForDisplayQuery getPatentableEntityForDisplayQuery,
-            IGetPatentableEntityForEditQuery getPatentableEntityForEditQuery)
+            IGetPatentableEntityForEditQuery getPatentableEntityForEditQuery,
+            IGetPatentsBySetIdQuery getPatentsBySetIdQuery)
         {
             this.saveNewPatentableEntityCommand = saveNewPatentableEntityCommand;
             this.updatePatentableEntityCommand = updatePatentableEntityCommand;
             this.user = user;
             this.getPatentableEntityForDisplayQuery = getPatentableEntityForDisplayQuery;
             this.getPatentableEntityForEditQuery = getPatentableEntityForEditQuery;
+            this.getPatentsBySetIdQuery = getPatentsBySetIdQuery;
         }
 
         [HttpGet]
@@ -90,6 +95,15 @@ namespace PatentSpoiler.Controllers
             await updatePatentableEntityCommand.UpdateAsync(item, user.Id);
 
             return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+        [HttpGet]
+        [Route("item/{setId:guid}/versions")]
+        public async Task<ActionResult> PreviousVersions(Guid setId, int skip, int take)
+        {
+            var previousVersions = await getPatentsBySetIdQuery.ExecuteAsync(setId, skip, take);
+
+            return this.JsonNetResult(previousVersions, JsonRequestBehavior.AllowGet);
         }
     }
 }

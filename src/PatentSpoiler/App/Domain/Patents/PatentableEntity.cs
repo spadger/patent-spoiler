@@ -22,6 +22,7 @@ namespace PatentSpoiler.App.Domain.Patents
         
         public string Name { get; set; }
         public string Description { get; set; }
+        public string Changes { get; set; }
         
         public List<Attachment> Attachments { get; set; }
         
