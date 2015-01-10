@@ -53,12 +53,13 @@ namespace PatentSpoiler.Controllers
         public async Task<ActionResult> View(int id)
         {
             var item = await getPatentableEntityForDisplayQuery.ExecuteAsync(id);
+            ViewBag.CanEdit = item.Owner == user.Id;
             return View(item);
         }
 
         [HttpGet]
         [AuthoriseRoles(UserRole.VerifiedMember)]
-        [Route("item/{id}/edit")]
+        [Route("item/{id}/edit", Name = "EditItem")]
         public async Task<ActionResult> Edit(int id)
         {
             var item = await getPatentableEntityForEditQuery.ExecuteAsync(id);

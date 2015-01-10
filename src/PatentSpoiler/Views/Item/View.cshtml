@@ -21,6 +21,10 @@
     <div class="row">
         <div class="col-md-1">Owner</div>
         <div class="col-md-11"><a href="/user/@Model.Owner">@Model.Owner</a></div>
+        @if (ViewBag.CanEdit)
+        {
+            <div class="col-md-11"><a href="@Url.Action("View")/edit">Edit</a></div>
+        }
     </div>
     <div class="row">
         <div class="col-md-1">Categories</div>
