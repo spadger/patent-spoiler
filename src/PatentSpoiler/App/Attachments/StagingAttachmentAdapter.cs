@@ -51,7 +51,15 @@ namespace PatentSpoiler.App.Attachments
 
         private string GetPath(Guid id)
         {
-            var path = Path.Combine(HttpRuntime.AppDomainAppPath, attachmentStagingSettings.Path, id + ".dat");
+            var directory = HttpContext.Current.Server.MapPath(attachmentStagingSettings.Path);
+
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
+            var path = Path.Combine(directory, id + ".dat");
+
             return path;
         }
     }
