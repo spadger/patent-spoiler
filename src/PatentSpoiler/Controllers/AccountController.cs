@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using PatentSpoiler.App;
 using PatentSpoiler.App.Domain.Security;
 using PatentSpoiler.App.DTOs;
 using PatentSpoiler.App.Security;
@@ -23,18 +23,14 @@ namespace PatentSpoiler.Controllers
         }
         
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        public ActionResult Login()
         {
-            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
-        //
-        // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public async Task<ActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -42,27 +38,17 @@ namespace PatentSpoiler.Controllers
                 if (user != null)
                 {
                     await SignInAsync(user, model.RememberMe);
-                    return RedirectToLocal(returnUrl);
+                    return this.JsonNetResult(new {ok = true});
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Invalid username or password.");
-                }
+                
+                return this.JsonNetResult(new {errors = new[]{"Invalid username or password."}});
             }
 
-            // If we got this far, something failed, redisplay form
-            return View(model);
-        }
-
-        [AllowAnonymous]
-        public ActionResult Register()
-        {
-            return View();
+            throw new ArgumentException();
         }
 
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegistrationViewModel model)
         {
             if (ModelState.IsValid)
@@ -124,18 +110,6 @@ namespace PatentSpoiler.Controllers
         private void DoLogout()
         {
             authenticationManager.SignOut(new[] { DefaultAuthenticationTypes.ApplicationCookie });
-        }
-
-        private ActionResult RedirectToLocal(string returnUrl)
-        {
-            if (Url.IsLocalUrl(returnUrl))
-            {
-                return Redirect(returnUrl);
-            }
-            else
-            {
-                return RedirectToAction("Index", "Home");
-            }
         }
     }
 }

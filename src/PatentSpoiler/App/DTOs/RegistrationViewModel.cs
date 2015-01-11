@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using PatentSpoiler.App.Domain.Security;
 
@@ -35,7 +36,8 @@ namespace PatentSpoiler.App.DTOs
                 Id = Username,
                 Email = Email,
                 Passwordhash = BCrypt.Net.BCrypt.HashPassword(Password),
-                MemberSince = DateTime.Now
+                MemberSince = DateTime.Now,
+                Roles = new HashSet<UserRole> { UserRole.UnverifiedMember }
             };
         }
     }

@@ -21,6 +21,13 @@ namespace PatentSpoiler.Controllers
             this.user = user;
         }
 
+        [Route("me")]
+        [AuthoriseRoles(UserRole.VerifiedMember)]
+        public Task<ActionResult> Me()
+        {
+            return Index(user.Id);
+        }
+
         [Route("user/{username}")]
         public async Task<ActionResult> Index(string username)
         {

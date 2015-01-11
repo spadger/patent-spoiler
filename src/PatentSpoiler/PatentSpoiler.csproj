@@ -981,6 +981,10 @@
     <Content Include="scripts\custom\category\module.js" />
     <Content Include="scripts\custom\category\categoryListingService.js" />
     <Content Include="scripts\custom\item\ItemService.js" />
+    <Content Include="scripts\custom\login\loginController.js" />
+    <Content Include="scripts\custom\login\loginService.js" />
+    <Content Include="scripts\custom\login\matchDirective.js" />
+    <Content Include="scripts\custom\login\module.js" />
     <Content Include="scripts\custom\search\popupCategoryChooser.js" />
     <Content Include="scripts\custom\search\popupCategoryChooserPopupView.html" />
     <Content Include="scripts\custom\search\popupCategoryChooserView.html" />
@@ -997,6 +1001,7 @@
     <Content Include="scripts\custom\search\app.js" />
     <Content Include="scripts\custom\_common\directives\popupFileUploadWrapper.js" />
     <Content Include="scripts\custom\_common\directives\popupFileUploadWrapperView.html" />
+    <Content Include="scripts\custom\_common\factories\queryString.js" />
     <Content Include="scripts\custom\_common\factories\recursionHelper.js" />
     <Content Include="scripts\custom\_common\filters\escapedURI.js" />
     <Content Include="scripts\custom\_common\filters\prettyFileSize.js" />
