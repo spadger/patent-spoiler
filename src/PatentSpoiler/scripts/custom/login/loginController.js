@@ -6,7 +6,7 @@ angular.module('login').controller('loginController', ['$scope', '$window', 'que
     $scope.submitted = false;
     $scope.working = false;
     $scope.mode = 'login';
-    $scope.serverErrors = [];
+    $scope.serverErrors = {};
     
     $scope.switchToRegister = function () {
 
@@ -31,6 +31,8 @@ angular.module('login').controller('loginController', ['$scope', '$window', 'que
                 .then(redirectToUrlOfDefault,
                 function (errors) {
                     $scope.serverErrors = errors;
+                }).finally(function() {
+                    $scope.working = false;
                 });
     }
 
@@ -39,14 +41,20 @@ angular.module('login').controller('loginController', ['$scope', '$window', 'que
                .then(redirectToUrlOfDefault,
                function (errors) {
                    $scope.serverErrors = errors;
+               }).finally(function() {  
+                   $scope.working = false;
                });
     }
 
     $scope.submit = function () {
-        
+
+        $scope.submitted = true;
+        $scope.serverErrors = {};
+        $scope.working = true;
+        $scope.loginForm.$setPristine();
         if (!$scope.loginForm.$valid) {
-            $scope.submitted = true;
             $scope.loginForm.$setPristine();
+            $scope.working = false;
             return;
         }
         
@@ -56,5 +64,4 @@ angular.module('login').controller('loginController', ['$scope', '$window', 'que
             register();
         }
     }
-    
 }]);

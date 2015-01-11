@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using PatentSpoiler.App;
+using PatentSpoiler.App.Commands;
+using PatentSpoiler.App.Commands.User;
 using PatentSpoiler.App.Domain.Security;
 using PatentSpoiler.App.DTOs;
 using PatentSpoiler.App.Security;
@@ -13,12 +16,14 @@ namespace PatentSpoiler.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        private IAuthenticationManager authenticationManager;
-        private PatentSpoilerUserManager userManager;
+        private readonly IAuthenticationManager authenticationManager;
+        private readonly IRegisterNewUserCommand registerNewUserCommand;
+        private readonly PatentSpoilerUserManager userManager;
 
-        public AccountController(IAuthenticationManager authenticationManager, PatentSpoilerUserManager userManager)
+        public AccountController(IAuthenticationManager authenticationManager, IRegisterNewUserCommand registerNewUserCommand, PatentSpoilerUserManager userManager)
         {
             this.authenticationManager = authenticationManager;
+            this.registerNewUserCommand = registerNewUserCommand;
             this.userManager = userManager;
         }
         
@@ -32,57 +37,38 @@ namespace PatentSpoiler.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> Login(LoginViewModel model)
         {
-            if (ModelState.IsValid)
+            var result = new DomainResult();
+
+            if (!ModelState.IsValid)
             {
-                var user = await userManager.FindAsync(model.Username, model.Password);
-                if (user != null)
-                {
-                    await SignInAsync(user, model.RememberMe);
-                    return this.JsonNetResult(new {ok = true});
-                }
-                
-                return this.JsonNetResult(new {errors = new[]{"Invalid username or password."}});
+                result.AddError(ModelState);
+                return this.JsonNetResult(result);
             }
 
-            throw new ArgumentException();
+            var user = await userManager.FindAsync(model.Username, model.Password);
+            if (user != null)
+            {
+                await SignInAsync(user, model.RememberMe);
+            }
+            else
+            {
+                result.AddGeneralError("Invalid username or password");
+            }
+
+            return this.JsonNetResult(result);
         }
 
         [HttpPost]
         [AllowAnonymous]
         public async Task<ActionResult> Register(RegistrationViewModel model)
         {
-            if (ModelState.IsValid)
+            var result = await registerNewUserCommand.RegisterAsync(model);
+            if (result.Success)
             {
-                var user = model.ToUser();
-                IdentityResult result = await userManager.CreateAsync(user);
-                if (result.Succeeded)
-                {
-                    await SignInAsync(user, isPersistent: model.RememberMe);
-
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    AddErrors(result);
-                }
+                await SignInAsync(registerNewUserCommand.User, isPersistent: model.RememberMe);
             }
 
-            // If we got this far, something failed, redisplay form
-            return View(model);
-        }
-
-        private void AddErrors(IdentityResult result)
-        {
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError("", error);
-            }
+            return this.JsonNetResult(result);
         }
 
         private async Task SignInAsync(PatentSpoilerUser user, bool isPersistent)

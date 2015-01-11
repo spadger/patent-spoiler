@@ -11,14 +11,14 @@ angular.module('login').factory('loginService', ['$http', '$q', function($http, 
             $http({ method: 'POST', url: '/account/login', data: { username: username, password: password, rememberMe: rememberMe } })
                 .success(function(result) {
  
-                    if (result.ok) {
+                    if (result.success) {
                         deferred.resolve();
                     } else {
                         deferred.reject(result.errors);
                     }
                 })
                 .error(function() {
-                     deferred.reject(['Sorry, something went wrong whilst logging you in.']);
+                     deferred.reject({ general: ['Sorry, something went wrong whilst logging you in.'] });
             });
 
             return deferred.promise;
@@ -28,10 +28,16 @@ angular.module('login').factory('loginService', ['$http', '$q', function($http, 
             var deferred = $q.defer();
 
             $http({ method: 'POST', url: '/account/register', data: { username: username, email: email, password: password, passwordConfirmation: passwordConfirmation, rememberMe: rememberMe } })
-                .success(deferred.resolve)
-                .error(function () {
+                 .success(function (result) {
 
-                    deferred.reject(['Sorry, something went wrong whilst registering your account.']);
+                     if (result.success) {
+                         deferred.resolve();
+                     } else {
+                         deferred.reject(result.errors);
+                     }
+                 })
+                .error(function () {
+                    deferred.reject({ general: ['Sorry, something went wrong whilst registering your account.'] });
                 });
 
             return deferred.promise;

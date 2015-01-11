@@ -232,6 +232,8 @@
     <Compile Include="App\Attachments\IAttachmentStagingSettings.cs" />
     <Compile Include="App\Commands\PatentableEntities\SaveNewPatentableEntityCommand.cs" />
     <Compile Include="App\Commands\PatentableEntities\UpdatePatentableEntityCommand.cs" />
+    <Compile Include="App\Commands\User\RegisterNewUserCommand.cs" />
+    <Compile Include="App\Commands\ValidationResult.cs" />
     <Compile Include="App\Data\DictionaryBasedPatentStoreHierrachy.cs" />
     <Compile Include="App\Data\Indexes\PatentableEntities\PatentableEntitiesByCategoryIndex.cs" />
     <Compile Include="App\Data\Indexes\PatentableEntities\PatentableEntitiesByOwnerIndex.cs" />
