@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Reflection;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -16,10 +15,12 @@ namespace PatentSpoiler.App.Attachments
     public class StagingAttachmentAdapter : IStagingAttachmentAdapter
     {
         private IAttachmentStagingSettings attachmentStagingSettings;
+        private HttpContextBase context;
 
-        public StagingAttachmentAdapter(IAttachmentStagingSettings attachmentStagingSettings)
+        public StagingAttachmentAdapter(IAttachmentStagingSettings attachmentStagingSettings, HttpContextBase context)
         {
             this.attachmentStagingSettings = attachmentStagingSettings;
+            this.context = context;
         }
 
         public async Task<Guid> SaveAsync(Stream inputStream)
@@ -51,7 +52,7 @@ namespace PatentSpoiler.App.Attachments
 
         private string GetPath(Guid id)
         {
-            var directory = HttpContext.Current.Server.MapPath(attachmentStagingSettings.Path);
+            var directory = context.Server.MapPath(attachmentStagingSettings.Path);
 
             if (!Directory.Exists(directory))
             {
