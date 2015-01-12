@@ -303,8 +303,10 @@
     <Compile Include="ValidationAttributes\CannotBeEmptyAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\font-awesome.css" />
     <Content Include="Content\spinner.gif" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="schemes\scheme-A01C.pdf" />
@@ -1011,6 +1013,10 @@
     <Content Include="scripts\lodash.js" />
     <Content Include="scripts\custom\_common\directives\categoryHierrachyView.js" />
     <Content Include="scripts\modernizr-2.8.3.js" />
+    <Content Include="scripts\textangular\textAngular-rangy.min.js" />
+    <Content Include="scripts\textangular\textAngular-sanitize.js" />
+    <Content Include="scripts\textangular\textAngular.js" />
+    <Content Include="scripts\textangular\TextAngularSetup.js" />
     <Content Include="scripts\ui-bootstrap.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1069,6 +1075,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AttachmentStaging\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\fontawesome-webfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\FontAwesome.otf" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
