@@ -6,6 +6,9 @@
 *.user
 *.sln.docstates
 
+src/.vs/
+src/PatentSpoiler/node_modules/
+
 # Build results
 
 [Dd]ebug/
