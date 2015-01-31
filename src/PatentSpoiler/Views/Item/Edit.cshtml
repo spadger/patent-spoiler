@@ -18,7 +18,7 @@
 
     <h2>Edit your item</h2>
 
-   
+
 
     <form name="editForm" novalidate role="form" ng-submit="update()">
 
@@ -28,19 +28,19 @@
                 <div class="col-md-6">
                     <div class="form-group" ng-class="{'has-error': editForm.name.$invalid && editForm.name.$pristine && submitted}">
                         <label class="control-label" for="name">Name</label>
-                        <input type="text" required ng-minlength="5" class="form-control" ng-model="item.name" id="name" name="name" placeholder="name" />
+                        <input type="text" required ng-minlength="5" class="form-control" ng-model="item.name" id="name" name="name" placeholder="name"/>
                         <span class="help-block" ng-show="editForm.name.$error.required && editForm.name.$pristine && submitted">Required</span>
                         <span class="help-block" ng-show="editForm.name.$error.minlength && editForm.name.$pristine && submitted">Please enter at least 5 characters</span>
                     </div>
-                    <div style="min-height:450px;" class="form-control">
-                        <div  ng-class="{'has-error': editForm.description.$invalid && editForm.description.$pristine && submitted}">
+                    <div style="min-height: 450px;" class="form-control">
+                        <div ng-class="{'has-error': editForm.description.$invalid && editForm.description.$pristine && submitted}">
                             <label for="description">Description</label>
-                            <div text-angular required ng-minlength="50"  ng-model="item.description" id="description" name="description" placeholder="description"></div>
+                            <div text-angular required ng-minlength="50" ng-model="item.description" id="description" name="description" placeholder="description"></div>
                             <span class="help-block" ng-show="editForm.description.$error.required && editForm.description.$pristine && submitted">Required</span>
                             <span class="help-block" ng-show="editForm.description.$error.minlength && editForm.description.$pristine && submitted">Please enter at least 50 characters</span>
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="changes">Changes<small>(optional)</small></label>
                         <input type="text" class="form-control" ng-model="item.changes" id="changes" name="changes" placeholder="The reason for your edit" />
@@ -78,4 +78,16 @@
 
         <button type="submit" ng-disabled="working" class="btn btn-primary">Save your item</button>
     </form>
+
+    <script type="text/ng-template" id="saved.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Item Updated!</h3>
+        </div>
+        <div class="modal-body">
+            Your item was saved successfully
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">View</button>
+        </div>
+    </script>
 </div>

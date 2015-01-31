@@ -1,7 +1,7 @@
 ﻿///<reference path="module.js" />
 /// <reference path="ItemService.js" />
 'use strict';
-angular.module('item').controller('EditItemController', ['$scope', '$window', 'itemService', function ($scope, $window, itemService) {
+angular.module('item').controller('EditItemController', ['$scope', '$window', '$modal', 'itemService', function ($scope, $window, $modal, itemService) {
     
     $scope.working = false;
     $scope.item = $window.item;
@@ -35,7 +35,21 @@ angular.module('item').controller('EditItemController', ['$scope', '$window', 'i
         $scope.working = true;
 
         var handleSaveResult = function () {
-            alert('Yeah!');
+
+            var modalInstance = $modal.open({
+                templateUrl: 'saved.html',
+                controller:function ($scope, $modalInstance) {
+    
+                    $scope.modalInstance = $modalInstance; //getting NRE
+
+                    $scope.ok = $modalInstance.close;
+                }
+            });
+            
+            modalInstance.result.then(function() {
+                $window.location.href = '/item/' + $scope.item.id;
+            });
+
         };
 
         var handleError = function () {
