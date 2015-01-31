@@ -1,6 +1,7 @@
 using System;
 using System.Net;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 using PatentSpoiler.App;
 using PatentSpoiler.App.Commands.PatentableEntities;
@@ -58,7 +59,13 @@ namespace PatentSpoiler.Controllers
         public async Task<ActionResult> View(int id)
         {
             var item = await getPatentableEntityForDisplayQuery.ExecuteAsync(id);
-            ViewBag.CanEdit = item.Owner == user.Id;
+
+	        if (item == null)
+	        {
+		        throw new HttpException(404, "Item not found");
+	        }
+
+            ViewBag.CanEdit = item.Owner == (user==null ? null :user.Id);
             return View(item);
         }
 
