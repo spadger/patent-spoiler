@@ -69,6 +69,7 @@ namespace PatentSpoiler.App.Commands.PatentableEntities
 
         public async Task MergeAttachmentsAsync(PatentableEntity liveEntity, UpdateItemRequestViewModel viewModel)
         {
+            viewModel.Attachments = viewModel.Attachments ?? new List<AttachmentViewModel>();
             var requiredAttachmentIds = new HashSet<Guid>(viewModel.Attachments.Select(x => x.Id));
             liveEntity.Attachments.RemoveAll(x => !requiredAttachmentIds.Contains(x.Id));
 
