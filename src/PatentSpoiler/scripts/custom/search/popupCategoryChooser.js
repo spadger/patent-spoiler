@@ -15,6 +15,7 @@ angular.module('search').directive('popupCategoryChooser', ['$modal', function (
                 $scope.workingItems = {};
 
                 var modalInstance = $modal.open({
+                    size:'lg',
                     templateUrl: '/scripts/custom/search/popupCategoryChooserPopupView.html',
                     resolve: {
                         workingItems: function () {

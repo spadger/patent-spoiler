@@ -6,7 +6,7 @@
 </form>
 
 <div ng-show="working"><img src="/content/spinner.gif" title="searching..." /></div>
-<div ng-hide="working">
+<div ng-hide="working" class="category-chooser-results">
     <div ng-repeat="result in searchResults">
         <label>
             <input style="display:none" type="checkbox" ng-checked="workingItems[result.id]!=null" ng-model="selected" ng-change="onItemToggled(result.id, selected)" />
