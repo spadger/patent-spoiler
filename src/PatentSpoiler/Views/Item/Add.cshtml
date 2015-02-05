@@ -26,14 +26,14 @@
 
                     <div class="form-group" ng-class="{'has-error': addForm.name.$invalid && addForm.name.$pristine && submitted}">
                         <label for="name">Name</label>
-                        <input type="text" required ng-minlength="5" class="form-control" ng-model="item.name" id="name" name="name" placeholder="name"/>
+                        <input type="text" required ng-minlength="5" class="form-control" ng-model="item.name" id="name" name="name" placeholder="name" />
                         <span class="help-block" ng-show="addForm.name.$error.required && addForm.name.$pristine && submitted">Required</span>
                         <span class="help-block" ng-show="addForm.name.$error.minlength && addForm.name.$pristine && submitted">Please enter at least 5 characters</span>
                     </div>
 
                     <div class="form-group" ng-class="{'has-error': addForm.description.$invalid && addForm.description.$pristine && submitted}">
                         <label for="description">Description</label>
-                        <textarea rows="10" required ng-minlength="50" class="form-control" ng-model="item.description" id="description" name="description" placeholder="description"></textarea>
+                        <div text-angular   required ng-minlength="50" ng-model="item.description" id="description" name="description" placeholder="description"></div>
                         <span class="help-block" ng-show="addForm.description.$error.required && addForm.description.$pristine && submitted">Required</span>
                         <span class="help-block" ng-show="addForm.description.$error.minlength && addForm.description.$pristine && submitted">Please enter at least 50 characters</span>
                     </div>
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="form-group" ng-class="{'has-error': addForm.description.$invalid && addForm.description.$pristine && submitted}">
-                        <label>Categories</label><br/>
+                        <label>Categories</label><br />
                         <popup-category-chooser selected-items="item.categories"></popup-category-chooser>
                         <ul>
                             <li ng-repeat="category in item.categories | orderBy:category.Id">
