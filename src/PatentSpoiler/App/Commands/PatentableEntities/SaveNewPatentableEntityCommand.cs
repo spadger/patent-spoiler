@@ -33,7 +33,7 @@ namespace PatentSpoiler.App.Commands.PatentableEntities
 
         public async Task<int> SaveAsync(AddItemRequestViewModel viewModel, string userId)
         {
-            var validations = new List<System.ComponentModel.DataAnnotations.ValidationResult>();
+            var validations = new List<ValidationResult>();
             if (!Validator.TryValidateObject(viewModel, new ValidationContext(viewModel), validations, true))
             {
                 throw new ArgumentException("Can't save new item");
@@ -58,6 +58,10 @@ namespace PatentSpoiler.App.Commands.PatentableEntities
 
         private async Task StageAttachmentsAsync(List<AttachmentViewModel> attachments)
         {
+            if (attachments == null)
+            {
+                return;
+            }
             foreach (var attachment in attachments)
             {
                 using (var stagedStream = stagingAttachmentAdapter.Get(attachment.Id))

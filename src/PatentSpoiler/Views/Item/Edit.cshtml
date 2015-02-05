@@ -18,32 +18,32 @@
 
     <h2>Edit your item</h2>
 
-
-
     <form name="editForm" novalidate role="form" ng-submit="update()">
 
         <div class="container">
 
             <div class="row">
                 <div class="col-md-6">
+                    
                     <div class="form-group" ng-class="{'has-error': editForm.name.$invalid && editForm.name.$pristine && submitted}">
                         <label class="control-label" for="name">Name</label>
                         <input type="text" required ng-minlength="5" class="form-control" ng-model="item.name" id="name" name="name" placeholder="name"/>
                         <span class="help-block" ng-show="editForm.name.$error.required && editForm.name.$pristine && submitted">Required</span>
                         <span class="help-block" ng-show="editForm.name.$error.minlength && editForm.name.$pristine && submitted">Please enter at least 5 characters</span>
                     </div>
-                    <div style="min-height: 450px;" class="form-control">
-                        <div ng-class="{'has-error': editForm.description.$invalid && editForm.description.$pristine && submitted}">
-                            <label for="description">Description</label>
-                            <div text-angular required ng-minlength="50" ng-model="item.description" id="description" name="description" placeholder="description"></div>
-                            <span class="help-block" ng-show="editForm.description.$error.required && editForm.description.$pristine && submitted">Required</span>
-                            <span class="help-block" ng-show="editForm.description.$error.minlength && editForm.description.$pristine && submitted">Please enter at least 50 characters</span>
-                        </div>
+
+                    <div style="min-height: 450px;" class="form-group" ng-class="{'has-error': editForm.description.$invalid && editForm.description.$pristine && submitted}">
+
+                        <label class="control-label" for="description">Description</label>
+                        <div text-angular required ng-minlength="50" ng-model="item.description" id="description" name="description" placeholder="description"></div>
+                        <span class="help-block" ng-show="editForm.description.$error.required && editForm.description.$pristine && submitted">Required</span>
+                        <span class="help-block" ng-show="editForm.description.$error.minlength && editForm.description.$pristine && submitted">Please enter at least 50 characters</span>
+                        
                     </div>
 
                     <div class="form-group">
                         <label for="changes">Changes<small>(optional)</small></label>
-                        <input type="text" class="form-control" ng-model="item.changes" id="changes" name="changes" placeholder="The reason for your edit" />
+                        <input type="text" class="form-control" ng-model="item.changes" id="changes" name="changes" placeholder="The reason for your edit"/>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -56,9 +56,8 @@
 
                     </div>
 
-
                     <div class="form-group" ng-class="{'has-error': editForm.description.$invalid && editForm.description.$pristine && submitted}">
-                        <label>Categories</label><br/>
+                        <label>Categories</label><br />
 
                         <popup-category-chooser selected-items="item.categories"></popup-category-chooser>
                         <ul>

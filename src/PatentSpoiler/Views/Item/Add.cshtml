@@ -1,12 +1,14 @@
 ﻿@model PatentSpoiler.App.DTOs.Item.AddItemDisplayViewModel
 @{
     ViewBag.Title = "Add a new item";
-    
+
+    Bundles.Reference("scripts/textangular", "end");
     Bundles.Reference("scripts/custom/item", "end");
 }
 
 @section head{
     <script>
+        'use strict';
         window.category = '@Model.Category';
     </script>
 }
@@ -14,39 +16,64 @@
 <div ng-app="item" ng-controller="AddItemController">
 
     <h2>Add a new item</h2>
-    
+
     <form name="addForm" novalidate role="form" ng-submit="add()">
-        <div class="form-group" ng-class="{'has-error': addForm.name.$invalid && addForm.name.$pristine && submitted}">
-            <label for="name">Name</label>
-            <input type="text" required ng-minlength="5" class="form-control" ng-model="item.name" id="name" name="name" placeholder="name" />
-            <span class="help-block" ng-show="addForm.name.$error.required && addForm.name.$pristine && submitted">Required</span>
-            <span class="help-block" ng-show="addForm.name.$error.minlength && addForm.name.$pristine && submitted">Please enter at least 5 characters</span>
-        </div>
 
-        <div class="form-group" ng-class="{'has-error': addForm.description.$invalid && addForm.description.$pristine && submitted}">
-            <label for="description">Description</label>
-            <textarea rows="10" required ng-minlength="50" class="form-control" ng-model="item.description" id="description" name="description" placeholder="description"></textarea>
-            <span class="help-block" ng-show="addForm.description.$error.required && addForm.description.$pristine && submitted">Required</span>
-            <span class="help-block" ng-show="addForm.description.$error.minlength && addForm.description.$pristine && submitted">Please enter at least 50 characters</span>
-        </div>
-        <div class="form-group" ng-class="{'has-error': addForm.description.$invalid && addForm.description.$pristine && submitted}">
-            <label>Categories</label><br/>
-            <popup-category-chooser selected-items="item.categories"></popup-category-chooser>
-            <ul>
-                <li ng-repeat="category in item.categories | orderBy:category.Id">
-                    {{category.Id}}
-                    <span ng-click="removeCategory(category.Id)" class="glyphicon glyphicon-remove-sign"></span>
-                </li>
-            </ul>
-        </div>
-        <div class="form-group">
-            <ul>
-                <li ng-repeat="item in item.attachments">{{item}}</li>
-            </ul>
-            <popup-file-upload-wrapper existing-files="item.attachments" success-callback="filesUploaded"></popup-file-upload-wrapper>
-        </div>
+        <div class="container">
 
-        <button type="submit" ng-disabled="working" class="btn btn-default">Save your item</button>
+            <div class="row">
+                <div class="col-md-6">
 
+                    <div class="form-group" ng-class="{'has-error': addForm.name.$invalid && addForm.name.$pristine && submitted}">
+                        <label for="name">Name</label>
+                        <input type="text" required ng-minlength="5" class="form-control" ng-model="item.name" id="name" name="name" placeholder="name"/>
+                        <span class="help-block" ng-show="addForm.name.$error.required && addForm.name.$pristine && submitted">Required</span>
+                        <span class="help-block" ng-show="addForm.name.$error.minlength && addForm.name.$pristine && submitted">Please enter at least 5 characters</span>
+                    </div>
+
+                    <div class="form-group" ng-class="{'has-error': addForm.description.$invalid && addForm.description.$pristine && submitted}">
+                        <label for="description">Description</label>
+                        <textarea rows="10" required ng-minlength="50" class="form-control" ng-model="item.description" id="description" name="description" placeholder="description"></textarea>
+                        <span class="help-block" ng-show="addForm.description.$error.required && addForm.description.$pristine && submitted">Required</span>
+                        <span class="help-block" ng-show="addForm.description.$error.minlength && addForm.description.$pristine && submitted">Please enter at least 50 characters</span>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Attachments</label>
+                        <ul>
+                            <li ng-repeat="item in item.attachments">{{item.name}} ({{item.size | prettyFileSize}})</li>
+                        </ul>
+                        <popup-file-upload-wrapper existing-files="item.attachments" success-callback="filesUploaded"></popup-file-upload-wrapper>
+
+                    </div>
+
+                    <div class="form-group" ng-class="{'has-error': addForm.description.$invalid && addForm.description.$pristine && submitted}">
+                        <label>Categories</label><br/>
+                        <popup-category-chooser selected-items="item.categories"></popup-category-chooser>
+                        <ul>
+                            <li ng-repeat="category in item.categories | orderBy:category.Id">
+                                {{category.Id}}
+                                <span ng-click="removeCategory(category.Id)" class="glyphicon glyphicon-remove-sign"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" ng-disabled="working" class="btn btn-primary">Save your item</button>
     </form>
+
+    <script type="text/ng-template" id="saved.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Item Updated!</h3>
+        </div>
+        <div class="modal-body">
+            Your item was saved successfully
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">View</button>
+        </div>
+    </script>
 </div>
