@@ -1,9 +1,10 @@
 ﻿<div style="max-height: 200px; overflow:auto">
-    <div ng-repeat="item in items">
+    <div ng-if="items.length>0" ng-repeat="item in items">
         <a ng-href="/item/{{item.id}}">
             {{item.dateUpdated | date : 'dd/MMM/yyyy HH:mm'}}
-        </a> : {{item.changes}}
+        </a> : {{commentFor(item.changes)}}
     </div>
+    <div ng-if="items.length==0 && working==false">No previous versions</div>
 </div>
 <div ng-show="working"><img src="/content/spinner.gif" title="searching..." /></div>
 <div ng-show="showMore && !working">

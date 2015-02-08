@@ -21,6 +21,11 @@ angular.module('item').directive('itemHistory', function() {
 
             $scope.items = [];
             $scope.showMore = true;
+
+            $scope.commentFor = function(comment)
+            {
+                return comment || '<no commant>';
+            }
             
             $scope.working = false;
             $scope.moreItems = function () {
