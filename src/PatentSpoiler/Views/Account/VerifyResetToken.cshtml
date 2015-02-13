@@ -1,0 +1,46 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Password Reset";
+    Bundles.Reference("scripts/custom/login", "end");
+}
+
+@section head{
+    <script>
+        'use strict';
+        window.token = '@Html.Raw(ViewBag.token.ToString())';
+    </script>
+}
+<h2>Almost there...</h2>
+
+<div ng-app="login" ng-controller="passwordResetController">
+    <form role="form" novalidate id="passwordResetForm" name="passwordResetForm" ng-cloak class="ng-cloak" ng-submit="resetPassword()">
+
+        <div class="form-group has-error" ng-show="serverErrors['general']">
+            <span ng-repeat="error in serverErrors['general']" class="help-block">{{error}}</span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': passwordResetForm.password.$invalid && passwordResetForm.password.$pristine && submitted}">
+            <label class="col-sm-2 control-label" for="password">Password</label>
+            <input type="password" name="password" id="password" ng-model="password" required class="form-control"/>
+            <span class="help-block" ng-show="passwordResetForm.password.$error.required && passwordResetForm.password.$pristine && submitted">Please enter your password</span>
+            <span class="help-block" ng-show="serverErrors['password'] && passwordResetForm.password.$pristine" ng-repeat="error in serverErrors['password']">{{error}}</span>
+        </div>
+        <div ng-cloak class="form-group" ng-class="{'has-error': passwordResetForm.passwordConfirmation.$invalid && passwordResetForm.passwordConfirmation.$pristine && submitted}">
+            <label class="col-sm-2 control-label" for="passwordConfirmation">Password (again)</label>
+            <input type="password" name="passwordConfirmation" id="passwordConfirmation" ng-model="$parent.passwordConfirmation" class="form-control" match="password" required />
+            <span class="help-block" ng-show="passwordResetForm.passwordConfirmation.$error.required && passwordResetForm.passwordConfirmation.$pristine && submitted">Please enter your password again</span>
+            <span class="help-block" ng-show="passwordResetForm.passwordConfirmation.$error.match && passwordResetForm.passwordConfirmation.$pristine && submitted">Passwords may not differ</span>
+            <span class="help-block" ng-show="$parent.serverErrors['passwordConfirmation'] && passwordResetForm.passwordConfirmation.$pristine" ng-repeat="error in $parent.serverErrors['passwordConfirmation']">{{error}}</span>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10" ng-if="!working">
+                <button class="btn btn-default" type="submit">Reset your password</button>
+            </div>
+            <div class="col-sm-offset-2 col-sm-10" ng-if="working">
+                <img src="/Content/spinner.gif" ng-if="working" />
+            </div>
+        </div>
+    </form>    
+</div>

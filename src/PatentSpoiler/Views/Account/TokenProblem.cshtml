@@ -1,0 +1,28 @@
+﻿@using PatentSpoiler.App.Data.Queries.User
+@model dynamic
+
+@{
+    ViewBag.Title = "Uh-oh";
+    string message = "Something unknown happened";
+    switch ((PasswordResetTokenStatus) ViewBag.Error)
+    {
+        case PasswordResetTokenStatus.TokenExpired:
+            message = "Your password-reset token has expired";
+            break;
+        case PasswordResetTokenStatus.TokenFormatNotValid:
+            message = "Your password-reset token has not been recognised";
+            break;
+        case PasswordResetTokenStatus.UserNotFound:
+            message = "Your password-reset token could not be linked to a user; have you created a newer one?";
+            break;
+    }
+}
+
+<h2>There has been a problem!</h2>
+<div>
+    Unfortunately, there has been a problem with your password-reset token:<br/>
+    @message<br/>
+    You can get a new one <a href="/account/login">here</a>
+
+
+</div>

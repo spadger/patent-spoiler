@@ -24,8 +24,9 @@
         <div class="form-group" ng-class="{'has-error': loginForm.password.$invalid && loginForm.password.$pristine && submitted}">
             <label class="col-sm-2 control-label" for="password">Password</label>
             <input type="password" name="password" id="password" ng-model="password" required class="form-control" />
-            <span class="help-block" ng-show="loginForm.password.$error.required && loginForm.password.$pristine && submitted">Please enter your password again</span>
+            <span class="help-block" ng-show="loginForm.password.$error.required && loginForm.password.$pristine && submitted">Please enter your password</span>
             <span class="help-block" ng-show="serverErrors['password'] && loginForm.password.$pristine" ng-repeat="error in serverErrors['password']">{{error}}</span>
+            <a href="#" ng-if="mode==='login'" ng-click="forgotPassword()">Forgot your password?</a>
         </div>
 
         <div ng-cloak class="form-group" ng-class="{'has-error': loginForm.passwordConfirmation.$invalid && loginForm.passwordConfirmation.$pristine && submitted}" ng-if="mode=='register'">
@@ -66,9 +67,32 @@
                 <a href="#" ng-click="switchToLogin()">log in</a>
             </div>
             <div class="col-sm-offset-2 col-sm-10" ng-if="working">
-                <img src="~/Content/spinner.gif" ng-if="working" />
+                <img src="/Content/spinner.gif" ng-if="working" />
             </div>
         </div>
     </form>
 
+    <script type="text/ng-template" id="forgotPassword.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Forgotten your password?</h3>
+        </div>
+        <div class="modal-body">
+            <span class="row">
+                No worries; just enter your username or email address and if we have it on file, we'll send you a link to reset it.
+            </span>
+            <form class="form-inline" ng-submit="tryReset()">
+                <div class="form-group">
+                    <input type="text" required class="form-control" ng-model="account" />
+                    <button type="submit" class="btn btn-default" ng-hide="working">Reset Password</button>
+                    <img src="/Content/spinner.gif" ng-show="working" />
+                </div>
+            </form>
+            <span class="row" ng-show="sent">
+                Your request has been sent.
+            </span>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">Done</button>
+        </div>
+    </script>
 </div>

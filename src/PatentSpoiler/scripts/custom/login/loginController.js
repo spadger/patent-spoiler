@@ -1,7 +1,7 @@
 ﻿///<reference path="module.js" />
 /// <reference path="loginService.js" />
 'use strict';
-angular.module('login').controller('loginController', ['$scope', '$window', 'queryString', 'loginService', function ($scope, $window, queryString, loginService) {
+angular.module('login').controller('loginController', ['$scope', '$window', 'queryString', 'loginService', '$modal', function ($scope, $window, queryString, loginService, $modal) {
 
     $scope.submitted = false;
     $scope.working = false;
@@ -63,5 +63,33 @@ angular.module('login').controller('loginController', ['$scope', '$window', 'que
         } else {
             register();
         }
+    }
+
+    $scope.forgotPassword = function() {
+        $modal.open({
+            templateUrl: 'forgotPassword.html',
+            resolve: {
+                account: function () {
+                    return $scope.username;
+                }
+            },
+            controller: function ($scope, $modalInstance, account) {
+                
+                $scope.account = account;
+                $scope.ok = $modalInstance.close;
+                $scope.sent = false;
+                $scope.working = false;
+
+                $scope.tryReset = function () {
+                    $scope.sent = false;
+                    $scope.working = true;
+
+                    loginService.beginResetPassword($scope.account)
+                                .then(function () { $scope.sent = true; },
+                                function (){ alert('Sorry, something went wrong')})
+                                .finally(function() { $scope.working = false; });
+                }
+            }
+        });
     }
 }]);

@@ -41,6 +41,34 @@ angular.module('login').factory('loginService', ['$http', '$q', function($http, 
                 });
 
             return deferred.promise;
+        },
+        beginResetPassword: function(account) {
+            var deferred = $q.defer();
+
+            $http({ method: 'POST', url: '/account/BeginForgottenPassword', data: { account: account} })
+                .success(deferred.resolve)
+                .error(deferred.reject);
+
+            return deferred.promise;
+        },
+        confirmForgottenPassword : function(password, passwordConfirmation, token) {
+            debugger
+            var deferred = $q.defer();
+
+            $http({ method: 'PUT', url: '/account/confirmForgottenPassword', data: { password: password, passwordConfirmation: passwordConfirmation, token: token } })
+                .success(function (result) {
+
+                    if (result.success) {
+                        deferred.resolve();
+                    } else {
+                        deferred.reject(result.errors);
+                    }
+                })
+                .error(function () {
+                    deferred.reject({ general: ['Sorry, something went wrong whilst logging you in.'] });
+                });
+
+            return deferred.promise;
         }
     }
 }]);

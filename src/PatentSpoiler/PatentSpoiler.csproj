@@ -232,13 +232,17 @@
     <Compile Include="App\Attachments\IAttachmentStagingSettings.cs" />
     <Compile Include="App\Commands\PatentableEntities\SaveNewPatentableEntityCommand.cs" />
     <Compile Include="App\Commands\PatentableEntities\UpdatePatentableEntityCommand.cs" />
+    <Compile Include="App\Commands\User\BeginPasswordResetCommand.cs" />
     <Compile Include="App\Commands\User\RegisterNewUserCommand.cs" />
+    <Compile Include="App\Commands\User\ConfirmForgottenPasswordCommand.cs" />
     <Compile Include="App\Commands\ValidationResult.cs" />
     <Compile Include="App\Data\DictionaryBasedPatentStoreHierrachy.cs" />
     <Compile Include="App\Data\Indexes\PatentableEntities\PatentableEntitiesByCategoryIndex.cs" />
     <Compile Include="App\Data\Indexes\PatentableEntities\PatentableEntitiesByOwnerIndex.cs" />
     <Compile Include="App\Data\Indexes\PatentableEntities\PatentableEntitiesBySetIdIndex.cs" />
     <Compile Include="App\Data\Indexes\PatentableEntities\PatentableEntitiesByIUserIndex.cs" />
+    <Compile Include="App\Data\Indexes\User\PatentSpoilerUserIndex.cs" />
+    <Compile Include="App\Data\Queries\Account\GetUserByTokenQuery.cs" />
     <Compile Include="App\Data\Queries\PatentableEntities\GetPatentableEntityForDisplayQuery.cs" />
     <Compile Include="App\Data\Queries\Page.cs" />
     <Compile Include="App\Data\Queries\PatentableEntities\GetPatentableEntityForEditQuery.cs" />
@@ -247,6 +251,7 @@
     <Compile Include="App\Data\Queries\PatentableEntities\RetrivePatentsByOwnerQuery.cs" />
     <Compile Include="App\Data\PatentDatabaseIndexBuilder.cs" />
     <Compile Include="App\Data\DocumentStoreManager.cs" />
+    <Compile Include="App\Data\Queries\Account\FindUserForPasswordResetQuery.cs" />
     <Compile Include="App\Domain\Patents\Attachment.cs" />
     <Compile Include="App\Domain\Patents\PatentableEntity.cs" />
     <Compile Include="App\Domain\Patents\PatentClassification.cs" />
@@ -258,11 +263,14 @@
     <Compile Include="App\DTOs\Item\EditItemDisplayViewModel.cs" />
     <Compile Include="App\DTOs\Item\AttachmentViewModel.cs" />
     <Compile Include="App\DTOs\LoginVIewModel.cs" />
+    <Compile Include="App\DTOs\PasswordResetViewModel.cs" />
     <Compile Include="App\DTOs\PatentableEntityViewModel.cs" />
     <Compile Include="App\DTOs\PreviousEntityVersionsViewModel.cs" />
     <Compile Include="App\DTOs\RegistrationViewModel.cs" />
     <Compile Include="App\DTOs\SearchResultTree.cs" />
     <Compile Include="App\DTOs\SearchViewModel.cs" />
+    <Compile Include="App\ExternalInfrastructure\ProvideAppSettings.cs" />
+    <Compile Include="App\ExternalInfrastructure\SMTPAdapter.cs" />
     <Compile Include="App\Filters\PatentCategoryMustExist.cs" />
     <Compile Include="App\HtmlHelperExtensions.cs" />
     <Compile Include="App\Import\Config\IImporterSettings.cs" />
@@ -991,6 +999,7 @@
     <Content Include="scripts\custom\category\module.js" />
     <Content Include="scripts\custom\category\categoryListingService.js" />
     <Content Include="scripts\custom\item\ItemService.js" />
+    <Content Include="scripts\custom\login\passwordResetController.js" />
     <Content Include="scripts\custom\login\loginController.js" />
     <Content Include="scripts\custom\login\loginService.js" />
     <Content Include="scripts\custom\login\matchDirective.js" />
@@ -1098,6 +1107,12 @@
     <Content Include="Content\Site.css.map">
       <DependentUpon>Site.css</DependentUpon>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\VerifyResetToken.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\TokenProblem.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

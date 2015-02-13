@@ -21,9 +21,26 @@ namespace PatentSpoiler.App.Domain.Security
         public bool Phone { get; set; }
         public DateTime? LockedOutUntil { get; set; }
         public string Passwordhash { get; set; }
+        public Guid? PasswordResetToken { get; set; }
+        public DateTime? PasswordResetTokenExpiry { get; set; }
         public DateTime? MemberSince { get; set; }
 
         public HashSet<UserRole> Roles { get; set; }
+
+        public Guid NewPasswordResetToken()
+        {
+            PasswordResetToken = Guid.NewGuid();
+            PasswordResetTokenExpiry = DateTime.Now.AddDays(5);
+
+            return PasswordResetToken.Value;
+        }
+
+        public void UpdatePassword(string passwordHash)
+        {
+            Passwordhash = passwordHash;
+            PasswordResetToken = null;
+            PasswordResetTokenExpiry = null;
+        }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<PatentSpoilerUser> manager)
         {

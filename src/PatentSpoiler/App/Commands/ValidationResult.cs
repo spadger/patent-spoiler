@@ -36,7 +36,7 @@ namespace PatentSpoiler.App.Commands
                 }
         }
 
-        public void AddError(ModelStateDictionary model)
+        public void AddErrors(ModelStateDictionary model)
         {
             foreach (var kvp in model)
             foreach (var message in kvp.Value.Errors)
@@ -66,6 +66,15 @@ namespace PatentSpoiler.App.Commands
         public static DomainResult Valid()
         {
             return new DomainResult();
+        }
+
+        public static DomainResult From(ModelStateDictionary modelState)
+        {
+            var result = new DomainResult();
+
+            result.AddErrors(modelState);
+
+            return result;
         }
     }
 }

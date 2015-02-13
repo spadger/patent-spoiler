@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.WindowsAzure;
@@ -19,6 +20,7 @@ using PatentSpoiler.Annotations;
 using PatentSpoiler.App.Attachments;
 using PatentSpoiler.App.Data;
 using PatentSpoiler.App.Domain.Security;
+using PatentSpoiler.App.ExternalInfrastructure;
 using PatentSpoiler.App.Filters;
 using PatentSpoiler.App.Import.Config;
 using PatentSpoiler.App.Security;
@@ -60,6 +62,7 @@ namespace PatentSpoiler.App.ServiceBinding
                         cfg.InTransientScope();
                 }));
 
+            Bind<IPasswordHasher>().To<BCryptPasswordHasher>();
             Bind<IAuthenticationManager>().ToMethod(c => HttpContext.Current.GetOwinContext().Authentication).InRequestScope();
             Bind<PatentSpoilerUserManager>().ToMethod(c =>
             {

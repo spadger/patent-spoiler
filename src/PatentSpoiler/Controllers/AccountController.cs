@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Linq;
+using System.Diagnostics;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
@@ -7,6 +8,7 @@ using Microsoft.Owin.Security;
 using PatentSpoiler.App;
 using PatentSpoiler.App.Commands;
 using PatentSpoiler.App.Commands.User;
+using PatentSpoiler.App.Data.Queries.Account;
 using PatentSpoiler.App.Domain.Security;
 using PatentSpoiler.App.DTOs;
 using PatentSpoiler.App.Security;
@@ -19,12 +21,18 @@ namespace PatentSpoiler.Controllers
         private readonly IAuthenticationManager authenticationManager;
         private readonly IRegisterNewUserCommand registerNewUserCommand;
         private readonly PatentSpoilerUserManager userManager;
+        private readonly IFindUserForPasswordResetQuery findUserForPasswordResetQuery;
+        private readonly IBeginPasswordResetCommand beginPasswordResetCommand;
+        private readonly IConfirmForgottenPasswordCommand confirmForgottenPasswordCommand;
 
-        public AccountController(IAuthenticationManager authenticationManager, IRegisterNewUserCommand registerNewUserCommand, PatentSpoilerUserManager userManager)
+        public AccountController(IAuthenticationManager authenticationManager, IRegisterNewUserCommand registerNewUserCommand, PatentSpoilerUserManager userManager, IFindUserForPasswordResetQuery findUserForPasswordResetQuery, IBeginPasswordResetCommand beginPasswordResetCommand, IConfirmForgottenPasswordCommand confirmForgottenPasswordCommand)
         {
             this.authenticationManager = authenticationManager;
             this.registerNewUserCommand = registerNewUserCommand;
             this.userManager = userManager;
+            this.findUserForPasswordResetQuery = findUserForPasswordResetQuery;
+            this.beginPasswordResetCommand = beginPasswordResetCommand;
+            this.confirmForgottenPasswordCommand = confirmForgottenPasswordCommand;
         }
         
         [AllowAnonymous]
@@ -38,12 +46,6 @@ namespace PatentSpoiler.Controllers
         public async Task<ActionResult> Login(LoginViewModel model)
         {
             var result = new DomainResult();
-
-            if (!ModelState.IsValid)
-            {
-                result.AddError(ModelState);
-                return this.JsonNetResult(result);
-            }
 
             var user = await userManager.FindAsync(model.Username, model.Password);
             if (user != null)
@@ -96,6 +98,44 @@ namespace PatentSpoiler.Controllers
         private void DoLogout()
         {
             authenticationManager.SignOut(new[] { DefaultAuthenticationTypes.ApplicationCookie });
+        }
+
+        [AllowAnonymous]
+        public async Task<HttpStatusCodeResult> BeginForgottenPassword(string account)
+        {
+            await beginPasswordResetCommand.Execute(account);
+            return new HttpStatusCodeResult(HttpStatusCode.Accepted);
+        }
+
+        [AllowAnonymous]
+        public async Task<ActionResult> VerifyResetToken(string token)
+        {
+            var tokenResult = await findUserForPasswordResetQuery.GetUserForResetTokenAsync(token);
+
+            if (tokenResult.Item1 != PasswordResetTokenStatus.Valid)
+            {
+                ViewBag.Error = tokenResult.Item1;
+                return View("TokenProblem");
+            }
+
+            ViewBag.token = token;
+            return View();
+        }
+
+        [AllowAnonymous, HttpPut]
+        public async Task<ActionResult> ConfirmForgottenPassword(PasswordResetViewModel model)
+        {
+            Debugger.Launch();
+            var result = DomainResult.From(ModelState);
+
+            if (result.HasErrors)
+            {
+                return this.JsonNetResult(result);
+            }
+
+            result = await confirmForgottenPasswordCommand.Execute(model);
+
+            return this.JsonNetResult(result);
         }
     }
 }
