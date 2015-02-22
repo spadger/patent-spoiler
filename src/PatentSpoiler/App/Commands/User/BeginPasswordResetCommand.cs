@@ -2,6 +2,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using PatentSpoiler.App.Domain.Security;
 using PatentSpoiler.App.ExternalInfrastructure;
+using PatentSpoiler.App.ExternalInfrastructure.PasswordReset;
 using Raven.Client;
 using Raven.Client.Linq;
 
@@ -15,14 +16,13 @@ namespace PatentSpoiler.App.Commands.User
     public class BeginPasswordResetCommand : IBeginPasswordResetCommand
     {
         private readonly IAsyncDocumentSession session;
-        private readonly ISMTPAdapter smtpAdapter;
+        private readonly IPasswordResetMailAdapter passwordResetMailAdapter;
         private readonly IProvideAppSettings _appSettings;
 
-
-        public BeginPasswordResetCommand(IAsyncDocumentSession session, ISMTPAdapter smtpAdapter, IProvideAppSettings appSettings)
+        public BeginPasswordResetCommand(IAsyncDocumentSession session, IPasswordResetMailAdapter passwordResetMailAdapter, IProvideAppSettings appSettings)
         {
             this.session = session;
-            this.smtpAdapter = smtpAdapter;
+            this.passwordResetMailAdapter = passwordResetMailAdapter;
             _appSettings = appSettings;
         }
 
@@ -43,7 +43,7 @@ namespace PatentSpoiler.App.Commands.User
             await session.StoreAsync(user);
             await session.SaveChangesAsync();
 
-            smtpAdapter.SendEmail("info@patent-spoiler.net", "Your password reset token", _appSettings["SiteRoot"] + "/account/VerifyResetToken?token=" + resetToken.ToString(), user.Email);
+            passwordResetMailAdapter.Send(user.Email, user.Email, _appSettings["SiteRoot"] + "/account/VerifyResetToken?token=" + resetToken);
         }
     }
 }

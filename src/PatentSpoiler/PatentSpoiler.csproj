@@ -161,6 +161,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\RavenDB.Client.MvcIntegration.3.0.3528\lib\net45\Raven.Client.MvcIntegration.dll</HintPath>
     </Reference>
+    <Reference Include="SendGrid.SmtpApi">
+      <HintPath>..\packages\SendGrid.SmtpApi.1.2.1\lib\net40\SendGrid.SmtpApi.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail">
+      <HintPath>..\packages\Sendgrid.5.1.0\lib\SendGridMail.dll</HintPath>
+    </Reference>
     <Reference Include="SimpleConfig, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\simple-config.1.3.0\lib\net40\SimpleConfig.dll</HintPath>
@@ -269,8 +275,10 @@
     <Compile Include="App\DTOs\RegistrationViewModel.cs" />
     <Compile Include="App\DTOs\SearchResultTree.cs" />
     <Compile Include="App\DTOs\SearchViewModel.cs" />
+    <Compile Include="App\ExternalInfrastructure\PasswordReset\IPasswordResetMailAdapter.cs" />
+    <Compile Include="App\ExternalInfrastructure\PasswordReset\SendGridPasswordResetMailAdapter.cs" />
     <Compile Include="App\ExternalInfrastructure\ProvideAppSettings.cs" />
-    <Compile Include="App\ExternalInfrastructure\SMTPAdapter.cs" />
+    <Compile Include="App\ExternalInfrastructure\PasswordReset\DevPasswordResetMailAdapter.cs" />
     <Compile Include="App\Filters\PatentCategoryMustExist.cs" />
     <Compile Include="App\HtmlHelperExtensions.cs" />
     <Compile Include="App\Import\Config\IImporterSettings.cs" />

@@ -5,7 +5,6 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Nest;
@@ -20,7 +19,7 @@ using PatentSpoiler.Annotations;
 using PatentSpoiler.App.Attachments;
 using PatentSpoiler.App.Data;
 using PatentSpoiler.App.Domain.Security;
-using PatentSpoiler.App.ExternalInfrastructure;
+using PatentSpoiler.App.ExternalInfrastructure.PasswordReset;
 using PatentSpoiler.App.Filters;
 using PatentSpoiler.App.Import.Config;
 using PatentSpoiler.App.Security;
@@ -61,6 +60,15 @@ namespace PatentSpoiler.App.ServiceBinding
                     else
                         cfg.InTransientScope();
                 }));
+
+            if (ConfigurationManager.AppSettings["Environment"] == "Dev")
+            {
+                Bind<IPasswordResetMailAdapter>().To<DevPasswordResetMailAdapter>();
+            }
+            else
+            {
+                Bind<IPasswordResetMailAdapter>().To<SendGridPasswordResetMailAdapter>();
+            }
 
             Bind<IPasswordHasher>().To<BCryptPasswordHasher>();
             Bind<IAuthenticationManager>().ToMethod(c => HttpContext.Current.GetOwinContext().Authentication).InRequestScope();
