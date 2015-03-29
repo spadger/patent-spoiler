@@ -17,6 +17,8 @@ namespace PatentSpoiler.App.Data
     public class PatentDatabaseIndexBuilder : IPatentDatabaseIndexBuilder
     {
         private IElasticClient elasticClient;
+        private int count = 0;
+        private BulkDescriptor bulkDescriptor;
 
         public PatentDatabaseIndexBuilder(IElasticClient elasticClient)
         {
@@ -27,26 +29,33 @@ namespace PatentSpoiler.App.Data
         {
             Check(root, new HashSet<string>(), new List<PatentHierrachyNode>());
 
-            var descriptor = new BulkDescriptor();
+            bulkDescriptor = new BulkDescriptor();
 
-            BuildIndexOperation(root, descriptor);
-
-            var result = await elasticClient.BulkAsync(descriptor);
+            await BuildIndexOperation(root);
+            var result = await elasticClient.BulkAsync(bulkDescriptor);
         }
 
-        private void BuildIndexOperation(PatentHierrachyNode node, BulkDescriptor bulkDescriptor, int level = 0)
+        private async Task BuildIndexOperation(PatentHierrachyNode node, int level = 0)
         {
             //var classification = new PatentClassification{Id=node.ClassificationSymbol, Title = node.Title};
             var classification = new PatentClassification{Id=node.ClassificationSymbol, Title = GetTotalDescriptionFor(node)};
 
             if (level > 3)
             {
+                count++;
                 bulkDescriptor.Index<PatentClassification>(x => x.Document(classification).Index("patent-classifications"));
+
+                if (count == 2500)
+                {
+                    var result = await elasticClient.BulkAsync(bulkDescriptor);
+                    count = 0;
+                    bulkDescriptor = new BulkDescriptor();
+                }
             }
             
             foreach (var child in node.Children)
             {
-                BuildIndexOperation(child, bulkDescriptor, level+1);
+                await BuildIndexOperation(child, level+1);
             }
         }
 

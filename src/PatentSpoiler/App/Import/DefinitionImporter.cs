@@ -105,7 +105,10 @@ namespace PatentSpoiler.App.Import
             };
 
             var titleParts = element.SelectNodes("class-title/title-part/text").Cast<XmlElement>().Select(x=>x.InnerXml.Trim());
-            result.Title = string.Join("; ", titleParts);
+            var cpcSpecificTitleParts = element.SelectNodes("class-title/title-part/CPC-specific-text/text").Cast<XmlElement>().Select(x=>x.InnerXml.Trim());
+
+            var allTitleParts = titleParts.Concat(cpcSpecificTitleParts);
+            result.Title = string.Join("; ", allTitleParts);
             
             return result;
         }
