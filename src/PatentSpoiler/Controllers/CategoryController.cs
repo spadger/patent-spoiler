@@ -43,7 +43,14 @@ namespace PatentSpoiler.Controllers
         [PatentCategoryMustExist("category")]
         public async Task<ActionResult> Add(string category)
         {
-            await session.StoreAsync(new PatentableEntity {Categories = new HashSet<string>(new[]{category}), Name = x++.ToString(), Description = "Tis is a description of " + x, Owner = "spadger", Attachments = GetAttachments()});
+            await session.StoreAsync(new PatentableEntity
+            {
+                Categories = new HashSet<string>(new[]{category}), 
+                Name = x++.ToString(), 
+                Description = "Tis is a description of " + x,
+                Owner = "spadger",
+                Attachments = GetAttachments()
+            });
             await session.SaveChangesAsync();
 
             return Content("Stored: " + category);

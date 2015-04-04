@@ -19,6 +19,7 @@ namespace PatentSpoiler.App.DTOs.Item
         public string Name { get; set; }
         [Required, MinLength(50)]
         public string Description { get; set; }
+        public IEnumerable<string> Claims { get; set; }
 
         [CannotBeEmpty]
         public HashSet<string> Categories { get; set; }

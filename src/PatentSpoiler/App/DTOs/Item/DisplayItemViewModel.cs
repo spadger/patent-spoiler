@@ -12,6 +12,7 @@ namespace PatentSpoiler.App.DTOs.Item
         public int? LatestId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public IEnumerable<string> Claims { get; set; }
         public string Owner { get; set; }
         public Guid SetId { get; set; }
         public HashSet<string> Categories { get; set; }

@@ -8,6 +8,7 @@ namespace PatentSpoiler.App.Domain.Patents
     {
         public PatentableEntity()
         {
+            Claims = new List<string>();
             Attachments = new List<Attachment>();
             DateCreated = DateTime.Now;
             DateUpdated = DateTime.Now;
@@ -19,8 +20,9 @@ namespace PatentSpoiler.App.Domain.Patents
         public HashSet<string> Categories { get; set; }
         public HashSet<string> ExplodedCategories { get; set; }
         public string Owner { get; set; }
-        
+
         public string Name { get; set; }
+        public List<string> Claims { get; set; }
         public string Description { get; set; }
         public string Changes { get; set; }
         

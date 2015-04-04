@@ -14,6 +14,7 @@ namespace PatentSpoiler.App.DTOs.Item
         public string Name { get; set; }
         public string Owner { get; set; }
         public string Description { get; set; }
+        public IEnumerable<string> Claims { get; set; }
         public HashSet<string> Categories { get; set; }
         public List<AttachmentViewModel> Attachments { get; set; }
     }

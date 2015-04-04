@@ -28,7 +28,7 @@
     </div>
     <div class="row">
         <div class="col-md-1">Categories</div>
-        <div class="col-md-4">
+        <div class="col-md-10">
             <ul style="">
                 @foreach (var category in Model.Categories)
                 {
@@ -39,6 +39,18 @@
     </div>
     <div class="row">
         @Html.Raw(Model.Description)
+    </div>
+
+    <div class="row">
+        <div class="col-md-1">Claims</div>
+        <div class="col-md-10">
+            <ol style="">
+                @foreach (var claim in Model.Claims)
+                {
+                    <li>@claim</li>
+                }
+            </ol>
+        </div>
     </div>
 
     <div class="row">

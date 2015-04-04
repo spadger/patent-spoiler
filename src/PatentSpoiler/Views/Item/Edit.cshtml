@@ -24,7 +24,7 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    
+
                     <div class="form-group" ng-class="{'has-error': editForm.name.$invalid && editForm.name.$pristine && submitted}">
                         <label class="control-label" for="name">Name</label>
                         <input type="text" required ng-minlength="5" class="form-control" ng-model="item.name" id="name" name="name" placeholder="name"/>
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="form-group" ng-class="{'has-error': editForm.description.$invalid && editForm.description.$pristine && submitted}">
-                        <label>Categories</label><br />
+                        <label>Categories</label><br/>
 
                         <popup-category-chooser selected-items="item.categories"></popup-category-chooser>
                         <ul>
@@ -68,8 +68,14 @@
                         </ul>
                     </div>
 
+                </div>
+            </div>
 
-
+            <div class="row">
+                <div class="col-md-6" ng-class="{'has-error': addForm.claims.$invalid && addForm.claims.$pristine && submitted}">
+                    <label for="claims">Claims</label>
+                    <claims ng-model="item.claims" claims="item.claims"></claims>
+                    <span class="help-block" ng-show="addForm.claims.$error.minlength && addForm.claims.$pristine && submitted">Please enter at least one claim</span>
                 </div>
             </div>
 

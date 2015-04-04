@@ -1,4 +1,5 @@
-﻿using PatentSpoiler.App.Domain.Patents;
+﻿using System.Collections.Generic;
+using PatentSpoiler.App.Domain.Patents;
 
 namespace PatentSpoiler.App.DTOs
 {
@@ -7,6 +8,7 @@ namespace PatentSpoiler.App.DTOs
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public IEnumerable<string> Claims { get; set; }
         public string Owner { get; set; }
         public int AttachmentCount { get; set; }
 
@@ -17,6 +19,7 @@ namespace PatentSpoiler.App.DTOs
                 Id = domainEntity.Id,
                 Name = domainEntity.Name,
                 Description = domainEntity.Description,
+                Claims = new List<string>(domainEntity.Claims),
                 Owner = domainEntity.Owner,
                 AttachmentCount = domainEntity.Attachments.Count,
             };

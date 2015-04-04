@@ -1003,6 +1003,8 @@
     <Content Include="scripts\angular-file-upload.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="scripts\custom\item\claimsDirective.js" />
+    <Content Include="scripts\custom\item\claims.html" />
     <Content Include="scripts\custom\item\viewItemController.js" />
     <Content Include="scripts\custom\item\itemHistory.html" />
     <Content Include="scripts\custom\item\editItemController.js" />
@@ -1032,6 +1034,7 @@
     <Content Include="scripts\custom\search\searchService.js" />
     <Content Include="scripts\custom\search\searchController.js" />
     <Content Include="scripts\custom\search\app.js" />
+    <Content Include="scripts\custom\_common\directives\angular-sortable-view.js" />
     <Content Include="scripts\custom\_common\directives\popupFileUploadWrapper.js" />
     <Content Include="scripts\custom\_common\directives\popupFileUploadWrapperView.html" />
     <Content Include="scripts\custom\_common\factories\queryString.js" />
