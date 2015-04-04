@@ -7,7 +7,7 @@
 
 <h2>Log in!</h2>
 <div ng-app="login" ng-controller="loginController">
-    <form role="form" novalidate id="loginForm" name="loginForm" ng-cloak class="ng-cloak" ng-submit="submit()">
+    <form class="form-horizontal" role="form" novalidate id="loginForm" name="loginForm" ng-cloak class="ng-cloak" ng-submit="submit()">
 
         <div class="form-group has-error" ng-show="serverErrors['general']">
             <span ng-repeat="error in serverErrors['general']" class="help-block">{{error}}</span>
@@ -15,46 +15,55 @@
 
         <div class="form-group" ng-class="{'has-error': (serverErrors['username'] || loginForm.username.$invalid) && loginForm.username.$pristine && submitted}">
             <label class="col-sm-2 control-label" for="username">Username</label>
-            <input type="text" name="username" id="username" ng-model="username" required class="form-control" />
-            <span class="help-block" ng-show="loginForm.username.$error.required && loginForm.username.$pristine && submitted">Please enter your username</span>
-            <span class="help-block" ng-show="serverErrors['username'] && loginForm.username.$pristine" ng-repeat="error in serverErrors['username']">{{error}}</span>
-
+            <span class="col-sm-4">
+                <input type="text" name="username" id="username" ng-model="username" required class="form-control" />
+                <span class="help-block" ng-show="loginForm.username.$error.required && loginForm.username.$pristine && submitted">Please enter your username</span>
+                <span class="help-block" ng-show="serverErrors['username'] && loginForm.username.$pristine" ng-repeat="error in serverErrors['username']">{{error}}</span>
+            </span>
         </div>
 
         <div class="form-group" ng-class="{'has-error': loginForm.password.$invalid && loginForm.password.$pristine && submitted}">
             <label class="col-sm-2 control-label" for="password">Password</label>
-            <input type="password" name="password" id="password" ng-model="password" required class="form-control" />
-            <span class="help-block" ng-show="loginForm.password.$error.required && loginForm.password.$pristine && submitted">Please enter your password</span>
-            <span class="help-block" ng-show="serverErrors['password'] && loginForm.password.$pristine" ng-repeat="error in serverErrors['password']">{{error}}</span>
+            <span class="col-sm-4">
+                <input type="password" name="password" id="password" ng-model="password" required class="form-control" />
+                <span class="help-block" ng-show="loginForm.password.$error.required && loginForm.password.$pristine && submitted">Please enter your password</span>
+                <span class="help-block" ng-show="serverErrors['password'] && loginForm.password.$pristine" ng-repeat="error in serverErrors['password']">{{error}}</span>
+            </span>
             <a href="#" ng-if="mode==='login'" ng-click="forgotPassword()">Forgot your password?</a>
         </div>
 
         <div ng-cloak class="form-group" ng-class="{'has-error': loginForm.passwordConfirmation.$invalid && loginForm.passwordConfirmation.$pristine && submitted}" ng-if="mode=='register'">
             <label class="col-sm-2 control-label" for="passwordConfirmation">Password (again)</label>
-            <input type="password" name="passwordConfirmation" id="passwordConfirmation" ng-model="$parent.passwordConfirmation" class="form-control" match="password" ng-required="{{mode=='register'}}" />
-            <span class="help-block" ng-show="loginForm.passwordConfirmation.$error.required && loginForm.passwordConfirmation.$pristine && submitted">Please enter your password again</span>
-            <span class="help-block" ng-show="loginForm.passwordConfirmation.$error.match && loginForm.passwordConfirmation.$pristine && submitted">Passwords may not differ</span>
-            <span class="help-block" ng-show="$parent.serverErrors['passwordConfirmation'] && loginForm.passwordConfirmation.$pristine" ng-repeat="error in $parent.serverErrors['passwordConfirmation']">{{error}}</span>
+            <span class="col-sm-4">
+                <input type="password" name="passwordConfirmation" id="passwordConfirmation" ng-model="$parent.passwordConfirmation" class="form-control" match="password" ng-required="{{mode=='register'}}" />
+                <span class="help-block" ng-show="loginForm.passwordConfirmation.$error.required && loginForm.passwordConfirmation.$pristine && submitted">Please enter your password again</span>
+                <span class="help-block" ng-show="loginForm.passwordConfirmation.$error.match && loginForm.passwordConfirmation.$pristine && submitted">Passwords may not differ</span>
+                <span class="help-block" ng-show="$parent.serverErrors['passwordConfirmation'] && loginForm.passwordConfirmation.$pristine" ng-repeat="error in $parent.serverErrors['passwordConfirmation']">{{error}}</span>
+            </span>
+            
         </div>
 
         <div ng-cloak class="form-group" ng-class="{'has-error': ($parent.serverErrors['email'] || loginForm.email.$invalid) && loginForm.email.$pristine && submitted}" ng-if="mode=='register'">
             <label class="col-sm-2 control-label" for="email">Email</label>
-            <input type="email" name="email" id="email" ng-model="$parent.email" class="form-control" ng-required="{{mode=='register'}}" />
-            <span class="help-block" ng-show="loginForm.email.$error.required && loginForm.email.$pristine && submitted">Please enter your email address</span>
-            <span class="help-block" ng-show="loginForm.email.$error.email && loginForm.email.$pristine && submitted">Please enter a valid email address</span>
-            <span class="help-block" ng-show="$parent.serverErrors['email'] && loginForm.email.$pristine" ng-repeat="error in $parent.serverErrors['email']">{{error}}</span>
+            <span class="col-sm-4">
+                <input type="email" name="email" id="email" ng-model="$parent.email" class="form-control" ng-required="{{mode=='register'}}" />
+                <span class="help-block" ng-show="loginForm.email.$error.required && loginForm.email.$pristine && submitted">Please enter your email address</span>
+                <span class="help-block" ng-show="loginForm.email.$error.email && loginForm.email.$pristine && submitted">Please enter a valid email address</span>
+                <span class="help-block" ng-show="$parent.serverErrors['email'] && loginForm.email.$pristine" ng-repeat="error in $parent.serverErrors['email']">{{error}}</span>
+            </span>
+            
         </div>
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" name="rememberMe" id="rememberMe" ng-model="rememberMe"/>Remember me
+                        <input type="checkbox" name="rememberMe" id="rememberMe" ng-model="rememberMe" />Remember me
                     </label>
                 </div>
             </div>
         </div>
-        
+
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10" ng-if="mode=='login' && !working">
                 <button class="btn btn-default" type="submit">Log in</button>
