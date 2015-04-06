@@ -25,7 +25,7 @@ namespace PatentSpoiler.Controllers
 
         [HttpGet]
         [Route("attachment/{id:guid}", Name = "GetAttachment")]
-        [AuthoriseRoles(UserRole.VerifiedMember)]
+        [AuthoriseRoles(UserRole.EmailConfirmed)]
         public async Task<ActionResult> Get(Guid id)
         {
             var attachmentDescriptor = await stagedAttachmentAdapter.GetAsync(id, context.Response.OutputStream);
@@ -36,7 +36,7 @@ namespace PatentSpoiler.Controllers
 
         [HttpPost]
         [Route("attachment")]
-        [AuthoriseRoles(UserRole.VerifiedMember)]
+        [AuthoriseRoles(UserRole.EmailConfirmed)]
         public async Task<ActionResult> Create()
         {
             var files = context.Request.Files;

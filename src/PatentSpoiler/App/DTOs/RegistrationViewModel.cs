@@ -29,8 +29,7 @@ namespace PatentSpoiler.App.DTOs
                 Id = Username,
                 Email = Email,
                 Passwordhash = BCrypt.Net.BCrypt.HashPassword(Password),
-                MemberSince = DateTime.Now,
-                Roles = new HashSet<UserRole> { UserRole.UnverifiedMember }
+                MemberSince = DateTime.Now
             };
         }
     }

@@ -9,5 +9,18 @@ namespace PatentSpoiler.App.Security
         {
             Roles = string.Join(",", roles);
         }
+        
+        public override void OnAuthorization(AuthorizationContext filterContext)
+        {
+            var user = filterContext.HttpContext.User;
+            if (user.Identity.IsAuthenticated && !user.IsInRole(UserRole.EmailConfirmed.ToString()))
+            {
+                filterContext.Result = new RedirectResult("/account/verify", false);
+            }
+            else
+            {
+                base.OnAuthorization(filterContext);
+            }
+        }
     }
 }

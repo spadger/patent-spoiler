@@ -137,5 +137,21 @@ namespace PatentSpoiler.Controllers
 
             return this.JsonNetResult(result);
         }
+
+
+        public async Task<ActionResult> Verify()
+        {
+            return Content("please verify your email address");
+        }
+
+        public ActionResult ResendVerificationEmail()
+        {
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+        public async Task<ActionResult> ConfirmEmailVerification()
+        {
+            return Content("Verified...");
+        }
     }
 }

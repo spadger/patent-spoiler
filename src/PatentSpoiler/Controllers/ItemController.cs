@@ -46,7 +46,7 @@ namespace PatentSpoiler.Controllers
         }
 
         [HttpPost]
-        [AuthoriseRoles(UserRole.VerifiedMember)]
+        [AuthoriseRoles(UserRole.EmailConfirmed)]
         [Route("item/add/{*category}")]
         public async Task<ActionResult> Add(AddItemRequestViewModel item)
         {
@@ -70,7 +70,7 @@ namespace PatentSpoiler.Controllers
         }
 
         [HttpGet]
-        [AuthoriseRoles(UserRole.VerifiedMember)]
+        [AuthoriseRoles(UserRole.EmailConfirmed)]
         [Route("item/{id}/edit", Name = "EditItem")]
         public async Task<ActionResult> Edit(int id)
         {
@@ -95,7 +95,7 @@ namespace PatentSpoiler.Controllers
         }
 
         [HttpPut]
-        [AuthoriseRoles(UserRole.VerifiedMember)]
+        [AuthoriseRoles(UserRole.EmailConfirmed)]
         [Route("item/{id}")]
         public async Task<ActionResult> Edit(UpdateItemRequestViewModel item)
         {

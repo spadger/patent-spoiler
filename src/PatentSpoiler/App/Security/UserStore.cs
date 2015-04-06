@@ -60,12 +60,19 @@ namespace PatentSpoiler.App.Security
 
         public async Task<bool> GetEmailConfirmedAsync(PatentSpoilerUser user)
         {
-            return await Task.FromResult(user.EmailConfirmed);
+            return user.Roles.Contains(UserRole.EmailConfirmed);
         }
 
         public async Task SetEmailConfirmedAsync(PatentSpoilerUser user, bool confirmed)
         {
-            user.EmailConfirmed = confirmed;
+            if (confirmed)
+            {
+                user.Roles.Add(UserRole.EmailConfirmed);
+            }
+            else
+            {
+                user.Roles.Remove(UserRole.EmailConfirmed);
+            }
         }
 
         public async Task<PatentSpoilerUser> FindByEmailAsync(string email)

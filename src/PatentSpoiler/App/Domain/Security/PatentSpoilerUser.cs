@@ -17,7 +17,6 @@ namespace PatentSpoiler.App.Domain.Security
         string IUser<string>.UserName { get { return Id; } set { Id = value; } }
         
         public string Email { get; set; }
-        public bool EmailConfirmed { get; set; }
         public bool Phone { get; set; }
         public DateTime? LockedOutUntil { get; set; }
         public string Passwordhash { get; set; }

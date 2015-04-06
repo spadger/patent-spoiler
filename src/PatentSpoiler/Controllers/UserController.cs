@@ -22,7 +22,7 @@ namespace PatentSpoiler.Controllers
         }
 
         [Route("me")]
-        [AuthoriseRoles(UserRole.VerifiedMember)]
+        [AuthoriseRoles(UserRole.EmailConfirmed)]
         public Task<ActionResult> Me()
         {
             return Index(user.Id);
