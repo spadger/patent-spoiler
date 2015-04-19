@@ -159,14 +159,15 @@ namespace PatentSpoiler.Controllers
             return this.JsonNetResult(result);
         }
 
-        [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string email, string confirmationToken)
         {
             var result = await completeConfirmEmailCommand.ExecuteAsync(email, confirmationToken);
 
             if (result.Success)
             {
-                return Redirect("/");
+                var user = await userManager.FindByEmailAsync(email);
+                await SignInAsync(user, false);
+                return View("Verified");
             }
             else
             {

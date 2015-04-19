@@ -41,7 +41,8 @@ namespace PatentSpoiler.App.Commands.User
                 return result;
             }
 
-            var link = string.Format("{0}//account/ConfirmEmail?email={1}&confirmationToken={2}", appSettings["SiteRoot"], user.Email, BCrypt.Net.BCrypt.HashPassword(user.Email));
+            var confirmationToken = BCrypt.Net.BCrypt.HashPassword(string.Format("{0}:{1}", user.Email, appSettings["EmailVerificationSecret"]));
+            var link = string.Format("{0}//account/ConfirmEmail?email={1}&confirmationToken={2}", appSettings["SiteRoot"], user.Email, confirmationToken);
 
             emailVerificationMailAdapter.Send(user.Email, user.Email, link);
 
