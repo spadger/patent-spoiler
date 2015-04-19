@@ -24,8 +24,11 @@ namespace PatentSpoiler.Controllers
         private readonly IFindUserForPasswordResetQuery findUserForPasswordResetQuery;
         private readonly IBeginPasswordResetCommand beginPasswordResetCommand;
         private readonly IConfirmForgottenPasswordCommand confirmForgottenPasswordCommand;
+        private readonly IBeginConfirmEmailCommand beginConfirmEmailCommand;
+        private readonly ICompleteConfirmEmailCommand completeConfirmEmailCommand;
+        private readonly PatentSpoilerUser user;
 
-        public AccountController(IAuthenticationManager authenticationManager, IRegisterNewUserCommand registerNewUserCommand, PatentSpoilerUserManager userManager, IFindUserForPasswordResetQuery findUserForPasswordResetQuery, IBeginPasswordResetCommand beginPasswordResetCommand, IConfirmForgottenPasswordCommand confirmForgottenPasswordCommand)
+        public AccountController(IAuthenticationManager authenticationManager, IRegisterNewUserCommand registerNewUserCommand, PatentSpoilerUserManager userManager, IFindUserForPasswordResetQuery findUserForPasswordResetQuery, IBeginPasswordResetCommand beginPasswordResetCommand, IConfirmForgottenPasswordCommand confirmForgottenPasswordCommand, IBeginConfirmEmailCommand beginConfirmEmailCommand, ICompleteConfirmEmailCommand completeConfirmEmailCommand, PatentSpoilerUser user)
         {
             this.authenticationManager = authenticationManager;
             this.registerNewUserCommand = registerNewUserCommand;
@@ -33,6 +36,9 @@ namespace PatentSpoiler.Controllers
             this.findUserForPasswordResetQuery = findUserForPasswordResetQuery;
             this.beginPasswordResetCommand = beginPasswordResetCommand;
             this.confirmForgottenPasswordCommand = confirmForgottenPasswordCommand;
+            this.beginConfirmEmailCommand = beginConfirmEmailCommand;
+            this.completeConfirmEmailCommand = completeConfirmEmailCommand;
+            this.user = user;
         }
         
         [AllowAnonymous]
@@ -141,17 +147,31 @@ namespace PatentSpoiler.Controllers
 
         public async Task<ActionResult> Verify()
         {
-            return Content("please verify your email address");
+            ViewData["EmailAddress"] = user.Email;
+            return View();
         }
 
-        public ActionResult ResendVerificationEmail()
+        [HttpPost]
+        public async Task<ActionResult> ResendEmailVerificationCode()
         {
-            return new HttpStatusCodeResult(HttpStatusCode.OK);
+            var result = await beginConfirmEmailCommand.ExecuteAsync(user.Email);
+
+            return this.JsonNetResult(result);
         }
 
-        public async Task<ActionResult> ConfirmEmailVerification()
+        [AllowAnonymous]
+        public async Task<ActionResult> ConfirmEmail(string email, string confirmationToken)
         {
-            return Content("Verified...");
+            var result = await completeConfirmEmailCommand.ExecuteAsync(email, confirmationToken);
+
+            if (result.Success)
+            {
+                return Redirect("/");
+            }
+            else
+            {
+                return RedirectToAction("Verify");
+            }
         }
     }
 }

@@ -43,11 +43,14 @@
                     <ul class="nav navbar-nav navbar-right">
                         @if (Html.UserIsAuthenticated())
                         {
-                            if (Html.UserIs(UserRole.Admin))
+                            if (Html.UserIs(UserRole.EmailConfirmed))
                             {
-                            <li><a href="/admin">Admin</a></li>
+                                if (Html.UserIs(UserRole.Admin))
+                                {
+                                    <li><a href="/admin">Admin</a></li>
+                                }
+                                <li><a href="/me">Account</a></li>
                             }
-                            <li><a href="/me">Account</a></li>
                             <li><a href="/account/logout">Log Out</a></li>
                         }
                         else

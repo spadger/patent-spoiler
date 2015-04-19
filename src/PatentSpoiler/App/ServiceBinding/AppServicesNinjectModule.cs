@@ -19,6 +19,7 @@ using PatentSpoiler.Annotations;
 using PatentSpoiler.App.Attachments;
 using PatentSpoiler.App.Data;
 using PatentSpoiler.App.Domain.Security;
+using PatentSpoiler.App.ExternalInfrastructure.EmailVerification;
 using PatentSpoiler.App.ExternalInfrastructure.PasswordReset;
 using PatentSpoiler.App.Filters;
 using PatentSpoiler.App.Import.Config;
@@ -64,10 +65,12 @@ namespace PatentSpoiler.App.ServiceBinding
             if (ConfigurationManager.AppSettings["Environment"] == "Dev")
             {
                 Bind<IPasswordResetMailAdapter>().To<DevPasswordResetMailAdapter>();
+                Bind<IEmailVerificationMailAdapter>().To<DevEmailVerificationMailAdapter>();
             }
             else
             {
                 Bind<IPasswordResetMailAdapter>().To<SendGridPasswordResetMailAdapter>();
+                Bind<IEmailVerificationMailAdapter>().To<SendGridEmailVerificationMailAdapter>();
             }
 
             Bind<IPasswordHasher>().To<BCryptPasswordHasher>();

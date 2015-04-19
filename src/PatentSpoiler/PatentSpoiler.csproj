@@ -244,6 +244,8 @@
     <Compile Include="App\Attachments\IAttachmentStagingSettings.cs" />
     <Compile Include="App\Commands\PatentableEntities\SaveNewPatentableEntityCommand.cs" />
     <Compile Include="App\Commands\PatentableEntities\UpdatePatentableEntityCommand.cs" />
+    <Compile Include="App\Commands\User\CompleteConfirmEmailCommand.cs" />
+    <Compile Include="App\Commands\User\BeginConfirmEmailCommand.cs" />
     <Compile Include="App\Commands\User\BeginPasswordResetCommand.cs" />
     <Compile Include="App\Commands\User\RegisterNewUserCommand.cs" />
     <Compile Include="App\Commands\User\ConfirmForgottenPasswordCommand.cs" />
@@ -281,6 +283,9 @@
     <Compile Include="App\DTOs\RegistrationViewModel.cs" />
     <Compile Include="App\DTOs\SearchResultTree.cs" />
     <Compile Include="App\DTOs\SearchViewModel.cs" />
+    <Compile Include="App\ExternalInfrastructure\EmailVerification\DevEmailVerificationMailAdapter.cs" />
+    <Compile Include="App\ExternalInfrastructure\EmailVerification\IEmailVerificationMailAdapter.cs" />
+    <Compile Include="App\ExternalInfrastructure\EmailVerification\SendGridPasswordResetMailAdapter.cs" />
     <Compile Include="App\ExternalInfrastructure\PasswordReset\IPasswordResetMailAdapter.cs" />
     <Compile Include="App\ExternalInfrastructure\PasswordReset\SendGridPasswordResetMailAdapter.cs" />
     <Compile Include="App\ExternalInfrastructure\ProvideAppSettings.cs" />
@@ -1015,6 +1020,9 @@
     <Content Include="scripts\custom\category\module.js" />
     <Content Include="scripts\custom\category\categoryListingService.js" />
     <Content Include="scripts\custom\item\ItemService.js" />
+    <Content Include="scripts\custom\account\accountController.js" />
+    <Content Include="scripts\custom\account\accountService.js" />
+    <Content Include="scripts\custom\account\module.js" />
     <Content Include="scripts\custom\login\passwordResetController.js" />
     <Content Include="scripts\custom\login\loginController.js" />
     <Content Include="scripts\custom\login\loginService.js" />
@@ -1127,6 +1135,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\TokenProblem.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Verify.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,28 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Please verify your email";
+    Bundles.Reference("scripts/custom/account", "end");
+}
+
+
+
+<div ng-app="account" ng-controller="accountController">
+    
+    <h2>Please verify your email</h2>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>Before you can continue, you need to verify that your email address is @ViewBag.EmailAddress. Check your email, or click below to resend a new link.</p>
+        </div>
+    </div>
+    {{status}}
+    <div class="row">
+        <div class="col-md-12">
+            <button ng-click="resendEmailVerificationCode()" class="btn btn-default" ng-if="working===false">Send a new code</button>
+            <img src="/Content/spinner.gif" ng-if="working" />
+        </div>
+        
+    </div>
+
+</div>
