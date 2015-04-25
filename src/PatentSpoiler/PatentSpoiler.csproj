@@ -285,7 +285,7 @@
     <Compile Include="App\DTOs\SearchViewModel.cs" />
     <Compile Include="App\ExternalInfrastructure\EmailVerification\DevEmailVerificationMailAdapter.cs" />
     <Compile Include="App\ExternalInfrastructure\EmailVerification\IEmailVerificationMailAdapter.cs" />
-    <Compile Include="App\ExternalInfrastructure\EmailVerification\SendGridPasswordResetMailAdapter.cs" />
+    <Compile Include="App\ExternalInfrastructure\EmailVerification\SendGridEmailVerificationMailAdapter.cs" />
     <Compile Include="App\ExternalInfrastructure\PasswordReset\IPasswordResetMailAdapter.cs" />
     <Compile Include="App\ExternalInfrastructure\PasswordReset\SendGridPasswordResetMailAdapter.cs" />
     <Compile Include="App\ExternalInfrastructure\ProvideAppSettings.cs" />

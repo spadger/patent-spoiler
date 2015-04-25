@@ -21,9 +21,9 @@ namespace PatentSpoiler.App.ExternalInfrastructure.EmailVerification
             };
             
             mail.AddTo(email);
-            mail.EnableTemplateEngine("02f577ae-17ad-4b38-9d98-b740cb04e59f");
-            mail.AddSubstitution("::name", new List<string>{ name });
-            mail.AddSubstitution("::link", new List<string> { link });
+            mail.EnableTemplateEngine("346dfadd-31bc-4bd4-a8b8-c57b4d58f909");
+            mail.AddSubstitution(":name", new List<string>{ name });
+            mail.AddSubstitution(":link", new List<string> { link });
             
             var credentials = new NetworkCredential(username, password);
             var transportWeb = new Web(credentials);
