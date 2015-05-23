@@ -1031,6 +1031,8 @@
     <Content Include="scripts\custom\login\loginService.js" />
     <Content Include="scripts\custom\login\matchDirective.js" />
     <Content Include="scripts\custom\login\module.js" />
+    <Content Include="scripts\custom\nav\navController.js" />
+    <Content Include="scripts\custom\nav\module.js" />
     <Content Include="scripts\custom\search\popupCategoryChooser.js" />
     <Content Include="scripts\custom\search\popupCategoryChooserPopupView.html" />
     <Content Include="scripts\custom\search\popupCategoryChooserView.html" />
@@ -1056,6 +1058,7 @@
     <Content Include="scripts\lodash.js" />
     <Content Include="scripts\custom\_common\directives\categoryHierrachyView.js" />
     <Content Include="scripts\modernizr-2.8.3.js" />
+    <Content Include="scripts\ng-modules.js" />
     <Content Include="scripts\textangular\textAngular-rangy.min.js" />
     <Content Include="scripts\textangular\textAngular-sanitize.js" />
     <Content Include="scripts\textangular\textAngular.js" />

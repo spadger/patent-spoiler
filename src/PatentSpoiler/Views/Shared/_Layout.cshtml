@@ -9,6 +9,8 @@
     <title>@ViewBag.Title</title>
     @{
         Bundles.Reference("scripts", "head");
+        Bundles.Reference("scripts/ng-modules.js", "head");
+        Bundles.Reference("scripts/custom/nav", "head");
         Bundles.Reference("Content");
     }
     @RenderSection("head", false)
@@ -17,51 +19,52 @@
     
 </head>
     <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-module="nav" ng-controller="nav">
         
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="dropdown">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">Patent Spoiler</a>
-                </div>
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="dropdown" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Patent Spoiler</a>
+            </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" ng-class="{'in':!navCollapsed}">
 
-                    <form class="navbar-form navbar-left" role="search" method="get" action="/search">
-                        <div class="form-group">
-                            @Html.TextBox("term", null, new{@class="form-control", placeholder="Search"})
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                    <ul class="nav navbar-nav navbar-right">
-                        @if (Html.UserIsAuthenticated())
+                <form class="navbar-form navbar-left" role="search" method="get" action="/search">
+                    <div class="form-group">
+                        @Html.TextBox("term", null, new { @class = "form-control", placeholder = "Search" })
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (Html.UserIsAuthenticated())
+                    {
+                        if (Html.UserIs(UserRole.EmailConfirmed))
                         {
-                            if (Html.UserIs(UserRole.EmailConfirmed))
+                            if (Html.UserIs(UserRole.Admin))
                             {
-                                if (Html.UserIs(UserRole.Admin))
-                                {
-                                    <li><a href="/admin">Admin</a></li>
-                                }
-                                <li><a href="/me">Account</a></li>
+                                <li><a href="/admin">Admin</a></li>
                             }
-                            <li><a href="/account/logout">Log Out</a></li>
+                            <li><a href="/me">Account</a></li>
                         }
-                        else
-                        {
-                            <li><a href="/account/login">Log In / Register</a></li>
-                        }
-                        
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
+                        <li><a href="/account/logout">Log Out</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="/account/login">Log In / Register</a></li>
+                    }
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
 
 
        
