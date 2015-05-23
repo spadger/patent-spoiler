@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Mvc;
 using PatentSpoiler.App.Data;
+using PatentSpoiler.App.Data.ElasticSearch;
 using PatentSpoiler.App.Domain.Security;
 using PatentSpoiler.App.Security;
 
@@ -8,12 +9,12 @@ namespace PatentSpoiler.Controllers
 {
     public class AdminController : Controller
     {
-        private readonly IPatentDatabaseIndexBuilder patentDatabaseIndexBuilder;
+        private readonly IPatentSchemeSearchIndexBuilder patentSchemeSearchIndexBuilder;
         private readonly IPatentStoreHierrachy patentStoreHierrachy;
 
-        public AdminController(IPatentDatabaseIndexBuilder patentDatabaseIndexBuilder, IPatentStoreHierrachy patentStoreHierrachy)
+        public AdminController(IPatentSchemeSearchIndexBuilder patentSchemeSearchIndexBuilder, IPatentStoreHierrachy patentStoreHierrachy)
         {
-            this.patentDatabaseIndexBuilder = patentDatabaseIndexBuilder;
+            this.patentSchemeSearchIndexBuilder = patentSchemeSearchIndexBuilder;
             this.patentStoreHierrachy = patentStoreHierrachy;
         }
 
@@ -27,7 +28,7 @@ namespace PatentSpoiler.Controllers
         {
             var root = patentStoreHierrachy.Root;
 
-            await patentDatabaseIndexBuilder.IndexCategoriesAsync(root);
+            await patentSchemeSearchIndexBuilder.IndexCategoriesAsync(root);
             return Content("Done!");
         }
     }

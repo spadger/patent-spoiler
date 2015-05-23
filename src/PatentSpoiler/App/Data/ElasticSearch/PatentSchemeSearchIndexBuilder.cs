@@ -7,20 +7,20 @@ using Nest;
 using PatentSpoiler.App.Domain.Patents;
 using PatentSpoiler.Models;
 
-namespace PatentSpoiler.App.Data
+namespace PatentSpoiler.App.Data.ElasticSearch
 {
-    public interface IPatentDatabaseIndexBuilder
+    public interface IPatentSchemeSearchIndexBuilder
     {
         Task IndexCategoriesAsync(PatentHierrachyNode root);
     }
 
-    public class PatentDatabaseIndexBuilder : IPatentDatabaseIndexBuilder
+    public class PatentSchemeSearchIndexBuilder : IPatentSchemeSearchIndexBuilder
     {
-        private IElasticClient elasticClient;
+        private readonly IElasticClient elasticClient;
         private int count = 0;
         private BulkDescriptor bulkDescriptor;
 
-        public PatentDatabaseIndexBuilder(IElasticClient elasticClient)
+        public PatentSchemeSearchIndexBuilder(IElasticClient elasticClient)
         {
             this.elasticClient = elasticClient;
         }

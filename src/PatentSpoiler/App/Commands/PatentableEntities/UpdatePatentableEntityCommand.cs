@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using PatentSpoiler.App.Attachments;
 using PatentSpoiler.App.Data;
+using PatentSpoiler.App.Data.ElasticSearch;
 using PatentSpoiler.App.Domain.Patents;
 using PatentSpoiler.App.DTOs.Item;
 using Raven.Client;
@@ -23,13 +24,15 @@ namespace PatentSpoiler.App.Commands.PatentableEntities
         private readonly IPatentStoreHierrachy patentStoreHierrachy;
         private readonly IStagingAttachmentAdapter stagingAttachmentAdapter;
         private readonly IStagedAttachmentAdapter stagedAttachmentAdapter;
+        private readonly IPatentableEntitySearchIndexMaintainer patentableEntitySearchIndexMaintainer;
 
-        public UpdatePatentableEntityCommand(IAsyncDocumentSession session, IPatentStoreHierrachy patentStoreHierrachy, IStagingAttachmentAdapter stagingAttachmentAdapter, IStagedAttachmentAdapter stagedAttachmentAdapter)
+        public UpdatePatentableEntityCommand(IAsyncDocumentSession session, IPatentStoreHierrachy patentStoreHierrachy, IStagingAttachmentAdapter stagingAttachmentAdapter, IStagedAttachmentAdapter stagedAttachmentAdapter, IPatentableEntitySearchIndexMaintainer patentableEntitySearchIndexMaintainer)
         {
             this.session = session;
             this.patentStoreHierrachy = patentStoreHierrachy;
             this.stagingAttachmentAdapter = stagingAttachmentAdapter;
             this.stagedAttachmentAdapter = stagedAttachmentAdapter;
+            this.patentableEntitySearchIndexMaintainer = patentableEntitySearchIndexMaintainer;
         }
 
         public async Task UpdateAsync(UpdateItemRequestViewModel viewModel, string userId)
@@ -65,6 +68,7 @@ namespace PatentSpoiler.App.Commands.PatentableEntities
             await session.SaveChangesAsync();
 
             Task.Run(() => DeletedStagingAttachments(viewModel.Attachments));
+            Task.Run(() => patentableEntitySearchIndexMaintainer.ItemAmendedAsync(liveEntity));
         }
 
         public async Task MergeAttachmentsAsync(PatentableEntity liveEntity, UpdateItemRequestViewModel viewModel)

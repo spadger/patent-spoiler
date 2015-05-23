@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using PatentSpoiler.App.Attachments;
 using PatentSpoiler.App.Data;
+using PatentSpoiler.App.Data.ElasticSearch;
 using PatentSpoiler.App.Domain.Patents;
 using PatentSpoiler.App.DTOs.Item;
 using Raven.Client;
@@ -22,13 +23,15 @@ namespace PatentSpoiler.App.Commands.PatentableEntities
         private readonly IPatentStoreHierrachy patentStoreHierrachy;
         private readonly IStagingAttachmentAdapter stagingAttachmentAdapter;
         private readonly IStagedAttachmentAdapter stagedAttachmentAdapter;
+        private readonly IPatentableEntitySearchIndexMaintainer patentableEntitySearchIndexMaintainer;
 
-        public SaveNewPatentableEntityCommand(IAsyncDocumentSession session, IPatentStoreHierrachy patentStoreHierrachy, IStagingAttachmentAdapter stagingAttachmentAdapter, IStagedAttachmentAdapter stagedAttachmentAdapter)
+        public SaveNewPatentableEntityCommand(IAsyncDocumentSession session, IPatentStoreHierrachy patentStoreHierrachy, IStagingAttachmentAdapter stagingAttachmentAdapter, IStagedAttachmentAdapter stagedAttachmentAdapter, IPatentableEntitySearchIndexMaintainer patentableEntitySearchIndexMaintainer)
         {
             this.session = session;
             this.patentStoreHierrachy = patentStoreHierrachy;
             this.stagingAttachmentAdapter = stagingAttachmentAdapter;
             this.stagedAttachmentAdapter = stagedAttachmentAdapter;
+            this.patentableEntitySearchIndexMaintainer = patentableEntitySearchIndexMaintainer;
         }
 
         public async Task<int> SaveAsync(AddItemRequestViewModel viewModel, string userId)
@@ -51,7 +54,8 @@ namespace PatentSpoiler.App.Commands.PatentableEntities
             await session.StoreAsync(entity);
             await session.SaveChangesAsync();
 
-            Task.Run(() => DeletedStagingAttachments(viewModel.Attachments));
+            Task.Run(() => DeleteStagingAttachments(viewModel.Attachments));
+            Task.Run(() => patentableEntitySearchIndexMaintainer.ItemCreatedAsync(entity));
 
             return entity.Id;
         }
@@ -71,8 +75,13 @@ namespace PatentSpoiler.App.Commands.PatentableEntities
             }
         }
 
-        private void DeletedStagingAttachments(List<AttachmentViewModel> attachments)
+        private void DeleteStagingAttachments(List<AttachmentViewModel> attachments)
         {
+            if (attachments == null)
+            {
+                return;
+            }
+
             foreach (var attachment in attachments)
             {
                 stagingAttachmentAdapter.Delete(attachment.Id);
