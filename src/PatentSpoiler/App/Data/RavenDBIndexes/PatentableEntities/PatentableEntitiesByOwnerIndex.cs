@@ -2,7 +2,7 @@ using System.Linq;
 using PatentSpoiler.App.Domain.Patents;
 using Raven.Client.Indexes;
 
-namespace PatentSpoiler.App.Data.Indexes.PatentableEntities
+namespace PatentSpoiler.App.Data.RavenDBIndexes.PatentableEntities
 {
     public class PatentableEntitiesByOwnerIndex : AbstractIndexCreationTask<PatentableEntity>
     {

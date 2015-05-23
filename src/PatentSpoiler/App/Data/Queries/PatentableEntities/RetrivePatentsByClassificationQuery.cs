@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using PatentSpoiler.App.Data.Indexes.PatentableEntities;
+using PatentSpoiler.App.Data.RavenDBIndexes.PatentableEntities;
 using PatentSpoiler.App.Domain.Patents;
 using PatentSpoiler.App.DTOs;
 using Raven.Client;

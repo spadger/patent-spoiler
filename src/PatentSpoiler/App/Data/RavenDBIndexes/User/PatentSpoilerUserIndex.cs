@@ -2,7 +2,7 @@
 using PatentSpoiler.App.Domain.Security;
 using Raven.Client.Indexes;
 
-namespace PatentSpoiler.App.Data.Indexes.User
+namespace PatentSpoiler.App.Data.RavenDBIndexes.User
 {
     public class PatentSpoilerUserIndex : AbstractIndexCreationTask<PatentSpoilerUser>
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using PatentSpoiler.App.Data.Indexes.User;
+using PatentSpoiler.App.Data.RavenDBIndexes.User;
 using PatentSpoiler.App.Domain.Security;
 using Raven.Client;
 
