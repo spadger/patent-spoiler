@@ -271,7 +271,7 @@
     <Compile Include="App\Data\Queries\Account\FindUserForPasswordResetQuery.cs" />
     <Compile Include="App\Domain\Patents\Attachment.cs" />
     <Compile Include="App\Domain\Patents\PatentableEntity.cs" />
-    <Compile Include="App\Domain\Patents\PatentClassification.cs" />
+    <Compile Include="App\Data\ElasticSearch\PatentClassificationIndexItem.cs" />
     <Compile Include="App\Domain\Security\PatentSpoilerUser.cs" />
     <Compile Include="App\Domain\Security\UserRole.cs" />
     <Compile Include="App\DTOs\Item\AddItemViewModel.cs" />

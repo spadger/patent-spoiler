@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Nest;
-using PatentSpoiler.App.Domain.Patents;
+using PatentSpoiler.App.Data.ElasticSearch;
 using PatentSpoiler.Models;
 
 namespace PatentSpoiler.App.Data.Queries
@@ -24,11 +24,11 @@ namespace PatentSpoiler.App.Data.Queries
 
         public IEnumerable<PatentHierrachyNode> Execute(string searchPhrase, uint pageNumber, uint pageSize)
         {
-            var searchResults = client.Search<PatentClassification>(s => s
+            var searchResults = client.Search<PatentClassificationIndexItem>(s => s
                                       .Index("patent-classifications")                      
                                       .From(0)
                                       .Size(10)
-                                      .Query(q => q.FuzzyLikeThis(fz => fz.OnFields(cat => cat.Title)
+                                      .Query(q => q.FuzzyLikeThis(fz => fz.OnFields(cat => cat.Title, cat=>cat.Id)
                                                                           .LikeText(searchPhrase)
                                                                           .MinimumSimilarity(0.8)
                                                                   )

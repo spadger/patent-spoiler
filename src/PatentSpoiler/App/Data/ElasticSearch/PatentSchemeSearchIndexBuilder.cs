@@ -38,12 +38,12 @@ namespace PatentSpoiler.App.Data.ElasticSearch
         private async Task BuildIndexOperation(PatentHierrachyNode node, int level = 0)
         {
             //var classification = new PatentClassification{Id=node.ClassificationSymbol, Title = node.Title};
-            var classification = new PatentClassification{Id=node.ClassificationSymbol, Title = GetTotalDescriptionFor(node)};
+            var classification = new PatentClassificationIndexItem { Id=node.ClassificationSymbol, Title = GetTotalDescriptionFor(node)};
 
             if (level > 3)
             {
                 count++;
-                bulkDescriptor.Index<PatentClassification>(x => x.Document(classification).Index("patent-classifications"));
+                bulkDescriptor.Index<PatentClassificationIndexItem>(x => x.Document(classification).Index("patent-classifications"));
 
                 if (count == 2500)
                 {
