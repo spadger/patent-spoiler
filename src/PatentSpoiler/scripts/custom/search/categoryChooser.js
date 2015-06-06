@@ -14,7 +14,7 @@ angular.module('search').directive('categoryChooser', ['searchService', function
             $scope.working = false;
 
             var searchSuccess = function(results) {
-                $scope.searchResults = results;
+                $scope.searchResults = results.Items;
             };
 
             var searchFailed = function(error) {

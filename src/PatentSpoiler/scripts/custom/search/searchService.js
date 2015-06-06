@@ -27,24 +27,34 @@ angular.module('search').factory('searchService', ['$http', '$q', function($http
         return node;
     }
 
+
     var service = {
-        performSearch: function(term) {
+        searchByClassification: function (term, skip) {
 
             var deferred = $q.defer();
-            $http({ method: 'GET', url: '/search/for', params: { term: term } })
+            $http({ method: 'GET', url: '/search/byclassification', params: { term: term, skip: skip } })
                 .success(deferred.resolve)
                 .error(deferred.reject);
 
             return deferred.promise;
         },
-        performSearchForCategorySelection: function(category, page) {
+        searchByEntityContent: function (term, skip) {
+
+            var deferred = $q.defer();
+            $http({ method: 'GET', url: '/search/byEntityContent', params: { term: term, skip: skip } })
+                .success(deferred.resolve)
+                .error(deferred.reject);
+
+            return deferred.promise;
+        },
+        performSearchForCategorySelection: function(category, skip) {
             var deferred = $q.defer();
 
-            var searchPromise = service.performSearch(category, page);
+            var searchPromise = service.searchByClassification(category, skip);
 
             searchPromise.then(function(results) {
                 
-                results = self.transformTreeIntoSelectableCategories(results);
+                results.Items = self.transformTreeIntoSelectableCategories(results.Items);
                 deferred.resolve(results);
             }, deferred.reject);
 

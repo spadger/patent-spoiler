@@ -28,7 +28,8 @@
 
                 <category-hierrachy-view tree="result" template-url="/scripts/custom/_common/directives/categoryHierrachyView.html"></category-hierrachy-view>
             </div>
-            
+            <span ng-show="searchResults.length>0" >Showing {{searchResults.length}} of {{searchResultCount}} items</span>
+            <button class="btn" ng-click="moreItems()" ng-show="moreResultsAvailable()">More</button>
         </div>
     </div>
 </div>

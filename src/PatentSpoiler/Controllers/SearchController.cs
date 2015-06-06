@@ -1,5 +1,7 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
+using PatentSpoiler.App.Data.ElasticSearch.Queries;
 using PatentSpoiler.App.Data.Queries;
 using PatentSpoiler.App.DTOs;
 
@@ -7,11 +9,13 @@ namespace PatentSpoiler.Controllers
 {
     public class SearchController : Controller
     {
-        private readonly ISearchForClassificationQuery searchForClassificationQuery;
+        private readonly ISearchByClassificationQuery searchByClassificationQuery;
+        private readonly ISearchByEntityContentQuery searchByEntityContentQuery;
 
-        public SearchController(ISearchForClassificationQuery searchForClassificationQuery)
+        public SearchController(ISearchByClassificationQuery searchByClassificationQuery, ISearchByEntityContentQuery searchByEntityContentQuery)
         {
-            this.searchForClassificationQuery = searchForClassificationQuery;
+            this.searchByClassificationQuery = searchByClassificationQuery;
+            this.searchByEntityContentQuery = searchByEntityContentQuery;
         }
 
         public ActionResult Index(string term)
@@ -20,11 +24,18 @@ namespace PatentSpoiler.Controllers
             return View(vm);
         }
 
-        public JsonResult For(string term)
+        public async Task<JsonResult> ByClassification(string term, int skip = 0)
         {
-            var result = searchForClassificationQuery.Execute(term, 0, 10);
+            var result = await searchByClassificationQuery.ExecuteAsync(term, skip, 10);
 
-            var results = result.Select(SearchResult.From).ToList();
+            var results = Page.Of(result.Items.Select(SearchResult.From), result.Count);
+            return Json(results, JsonRequestBehavior.AllowGet);
+        }
+
+        public async Task<JsonResult> ByEntityContent(string term, int skip = 0)
+        {
+            var results = await searchByEntityContentQuery.ExecuteAsync(term, skip, 10);
+
             return Json(results, JsonRequestBehavior.AllowGet);
         }
     }

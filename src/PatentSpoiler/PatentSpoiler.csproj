@@ -254,6 +254,7 @@
     <Compile Include="App\Data\DictionaryBasedPatentStoreHierrachy.cs" />
     <Compile Include="App\Data\ElasticSearch\PatentableEntityIndexItem.cs" />
     <Compile Include="App\Data\ElasticSearch\PatentableEntitySearchIndexMaintainer.cs" />
+    <Compile Include="App\Data\ElasticSearch\Queries\SearchByEntityContentQuery.cs" />
     <Compile Include="App\Data\RavenDBIndexes\PatentableEntities\PatentableEntitiesByCategoryIndex.cs" />
     <Compile Include="App\Data\RavenDBIndexes\PatentableEntities\PatentableEntitiesByOwnerIndex.cs" />
     <Compile Include="App\Data\RavenDBIndexes\PatentableEntities\PatentableEntitiesBySetIdIndex.cs" />
@@ -309,7 +310,7 @@
     <Compile Include="App\ServiceBinding\BindAsASingletonAttribute.cs" />
     <Compile Include="App\ServiceBinding\BindInRequestScopeAttribute.cs" />
     <Compile Include="App\ServiceBinding\RavenDBNinjectModule.cs" />
-    <Compile Include="App\Data\Queries\SearchForClassificationQuery.cs" />
+    <Compile Include="App\Data\ElasticSearch\Queries\SearchByClassificationQuery.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\EntityMappings.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
