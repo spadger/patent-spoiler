@@ -18,18 +18,40 @@
         <form ng-submit="performSearch()" role="form" class="form-inline">
             <div class="form-group">
                 <input type="text" class="form-control" ng-model="term" placeholder="search..." />
-                <button type="submit" class="btn btn-default">Search</button>    
+                <button type="submit" class="btn btn-default">Search</button>
             </div>
         </form>
-        
-        <div ng-show="working"><img src="/content/spinner.gif" title="searching..."/></div>
-        <div ng-hide="working">
-            <div ng-repeat="result in searchResults">
 
-                <category-hierrachy-view tree="result" template-url="/scripts/custom/_common/directives/categoryHierrachyView.html"></category-hierrachy-view>
-            </div>
-            <span ng-show="searchResults.length>0" >Showing {{searchResults.length}} of {{searchResultCount}} items</span>
-            <button class="btn" ng-click="moreItems()" ng-show="moreResultsAvailable()">More</button>
+        <div>
+            <tabset>
+                <tab heading="Matching classifications" select="setMode('byClassification')">
+
+                    <div ng-show="working"><img src="/content/spinner.gif" title="searching..." /></div>
+                    <div ng-hide="working">
+                        <div ng-repeat="result in searchResults">
+
+                            <category-hierrachy-view tree="result" template-url="/scripts/custom/_common/directives/categoryHierrachyView.html"></category-hierrachy-view>
+                        </div>
+                        <span ng-show="searchResults.length>0">Showing {{searchResults.length}} of {{searchResultCount}} items</span>
+                        <button class="btn" ng-click="moreItems()" ng-show="moreResultsAvailable()">More</button>
+                    </div>
+
+                </tab>
+                <tab heading="Matching entities" select="setMode('byEntityType')">
+
+                    <div ng-show="working"><img src="/content/spinner.gif" title="searching..." /></div>
+                    <div ng-hide="working">
+                        
+                        <div ng-repeat="result in searchResults">
+                            <a ng-href="/item/{{result.id}}">{{result.name}}</a>
+                        </div>
+                        <span ng-show="searchResults.length>0">Showing {{searchResults.length}} of {{searchResultCount}} items</span>
+                        <button class="btn" ng-click="moreItems()" ng-show="moreResultsAvailable()">More</button>
+                    </div>
+
+                </tab>
+            </tabset>
         </div>
-    </div>
+
+        </div>
 </div>

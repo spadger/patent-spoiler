@@ -1,28 +1,31 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Nest;
 using PatentSpoiler.App.Data.Queries;
-using PatentSpoiler.Models;
+using PatentSpoiler.App.Domain.Patents;
+using PatentSpoiler.App.DTOs;
+using Raven.Client;
 
 namespace PatentSpoiler.App.Data.ElasticSearch.Queries
 {
     public interface ISearchByEntityContentQuery
     {
-        Task<PageOf<PatentableEntityIndexItem>> ExecuteAsync(string searchPhrase, int skip, int pageSize);
+        Task<PageOf<PatentableEntityViewModel>> ExecuteAsync(string searchPhrase, int skip, int pageSize);
     }
 
     public class SearchByEntityContentQuery : ISearchByEntityContentQuery
     {
         private readonly IElasticClient client;
-        private readonly  IPatentStoreHierrachy patentStoreHierrachy;
+        private readonly IAsyncDocumentSession session;
 
-        public SearchByEntityContentQuery(IElasticClient client, IPatentStoreHierrachy patentStoreHierrachy)
+        public SearchByEntityContentQuery(IElasticClient client, IAsyncDocumentSession session)
         {
             this.client = client;
-            this.patentStoreHierrachy = patentStoreHierrachy;
+            this.session = session;
         }
 
-        public async Task<PageOf<PatentableEntityIndexItem>> ExecuteAsync(string searchPhrase, int skip, int pageSize)
+        public async Task<PageOf<PatentableEntityViewModel>> ExecuteAsync(string searchPhrase, int skip, int pageSize)
         {
             var searchResults = await client.SearchAsync<PatentableEntityIndexItem>(s => s
                                       .Index("items")                      
@@ -36,7 +39,10 @@ namespace PatentSpoiler.App.Data.ElasticSearch.Queries
                                       );
 
             var docs = searchResults.Documents;
-            return Page.Of(docs, (int)searchResults.Total);
+            
+            var entities = await session.LoadAsync<PatentableEntity>(docs.Select(x=>x.Id).Cast<ValueType>());
+
+            return Page.Of(entities.Select(PatentableEntityViewModel.FromDomainModel), (int)searchResults.Total);
         }
     }
 }
