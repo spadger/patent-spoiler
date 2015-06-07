@@ -12,7 +12,7 @@ angular.module('search').factory('searchService', ['$http', '$q', function($http
 
         for (var i = 0; i < tree.length; i++) {
             var childNode = self.getChildNode(tree[i]);
-            results.push({ id: childNode.Id, hierrachy:tree[i]});
+            results.push({ id: childNode.id, hierrachy:tree[i]});
         }
 
         return results;
@@ -20,13 +20,12 @@ angular.module('search').factory('searchService', ['$http', '$q', function($http
 
     self.getChildNode = function(node) {
 
-        while (node.Child != null) {
-            node = node.Child;
+        while (node.child != null) {
+            node = node.child;
         }
 
         return node;
     }
-
 
     var service = {
         searchByClassification: function (term, skip) {
@@ -54,7 +53,7 @@ angular.module('search').factory('searchService', ['$http', '$q', function($http
 
             searchPromise.then(function(results) {
                 
-                results.Items = self.transformTreeIntoSelectableCategories(results.Items);
+                results.items = self.transformTreeIntoSelectableCategories(results.items);
                 deferred.resolve(results);
             }, deferred.reject);
 

@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using PatentSpoiler.App;
 using PatentSpoiler.App.Data.ElasticSearch.Queries;
 using PatentSpoiler.App.Data.Queries;
 using PatentSpoiler.App.DTOs;
@@ -29,14 +30,14 @@ namespace PatentSpoiler.Controllers
             var result = await searchByClassificationQuery.ExecuteAsync(term, skip, 10);
 
             var results = Page.Of(result.Items.Select(SearchResult.From), result.Count);
-            return Json(results, JsonRequestBehavior.AllowGet);
+            return this.JsonNetResult(results, JsonRequestBehavior.AllowGet);
         }
 
         public async Task<JsonResult> ByEntityContent(string term, int skip = 0)
         {
             var results = await searchByEntityContentQuery.ExecuteAsync(term, skip, 10);
 
-            return Json(results, JsonRequestBehavior.AllowGet);
+            return this.JsonNetResult(results, JsonRequestBehavior.AllowGet);
         }
     }
 }

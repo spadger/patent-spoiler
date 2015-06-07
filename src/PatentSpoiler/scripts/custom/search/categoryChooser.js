@@ -14,7 +14,7 @@ angular.module('search').directive('categoryChooser', ['searchService', function
             $scope.working = false;
 
             var searchSuccess = function(results) {
-                $scope.searchResults = results.Items;
+                $scope.searchResults = results.items;
             };
 
             var searchFailed = function(error) {
@@ -28,7 +28,7 @@ angular.module('search').directive('categoryChooser', ['searchService', function
 
             $scope.onItemToggled = function(id, selected) {
                 if (selected) {
-                    $scope.selectedItems[id] = {Id:id};
+                    $scope.selectedItems[id] = {id:id};
                 } else {
                     delete $scope.selectedItems[id];
                 }

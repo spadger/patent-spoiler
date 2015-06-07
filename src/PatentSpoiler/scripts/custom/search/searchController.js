@@ -26,8 +26,8 @@ angular.module('search').controller('SearchController', ['$scope', '$window', 's
 
     var searchSuccess = function (results) {
 
-        $scope.searchResults = $scope.searchResults.concat(results.Items);
-        $scope.searchResultCount = results.Count;
+        $scope.searchResults = $scope.searchResults.concat(results.items);
+        $scope.searchResultCount = results.count;
         $scope.prevSearch = $scope.term;
     }
 

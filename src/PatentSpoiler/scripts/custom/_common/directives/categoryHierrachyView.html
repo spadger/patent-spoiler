@@ -3,13 +3,13 @@
         <span ng-click="toggleExpansion()">{{symbol}}</span>
         <strong>
             <label ng-if ="mode=='select'">
-                {{tree.Id}}
+                {{tree.id}}
             </label>
-            <a ng-show="mode!='select'" ng-href="/category/{{tree.Id}}">{{tree.Id}}</a>
+            <a ng-show="mode!='select'" ng-href="/category/{{tree.id}}">{{tree.id}}</a>
         </strong>
-        - {{tree.Description}}
+        - {{tree.description}}
     </li>
-    <li ng-if="tree.Child!=null && show">
-        <category-hierrachy-view tree="tree.Child" mode="{{mode}}" topic="{{topic}}" template-url="/scripts/custom/_common/directives/categoryHierrachyView.html"></category-hierrachy-view>
+    <li ng-if="tree.child!=null && show">
+        <category-hierrachy-view tree="tree.child" mode="{{mode}}" topic="{{topic}}" template-url="/scripts/custom/_common/directives/categoryHierrachyView.html"></category-hierrachy-view>
     </li>
 </ul>

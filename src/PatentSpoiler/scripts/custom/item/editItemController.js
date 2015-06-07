@@ -10,7 +10,7 @@ angular.module('item').controller('EditItemController', ['$scope', '$window', '$
     $scope.item.categories = {};
     for (var i in categories) {
         var category = categories[i];
-        $scope.item.categories[category] = { Id: category };
+        $scope.item.categories[category] = { id: category };
     }
 
     $scope.submitted = false;

@@ -10,7 +10,7 @@ angular.module('item').controller('AddItemController', ['$scope', '$window', '$m
     $scope.working = false;
 
     if ($scope.initialCategory) {
-        $scope.item.categories[$scope.initialCategory] = { Id: $scope.initialCategory };
+        $scope.item.categories[$scope.initialCategory] = { id: $scope.initialCategory };
     }
 
     $scope.removeCategory = function(id) {

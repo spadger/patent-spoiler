@@ -61,9 +61,9 @@
 
                         <popup-category-chooser selected-items="item.categories"></popup-category-chooser>
                         <ul>
-                            <li ng-repeat="category in item.categories | orderBy:category.Id">
-                                {{category.Id}}
-                                <span ng-click="removeCategory(category.Id)" class="glyphicon glyphicon-remove-sign"></span>
+                            <li ng-repeat="category in item.categories | orderBy:category.id">
+                                {{category.id}}
+                                <span ng-click="removeCategory(category.id)" class="glyphicon glyphicon-remove-sign"></span>
                             </li>
                         </ul>
                     </div>
